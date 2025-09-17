@@ -1,0 +1,52 @@
+.parallax-container {
+  position: relative;
+  min-height: 100vh; /* more space for parallax */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  background: #111;
+  padding: 2rem 1rem;
+}
+
+/* IMAGE */
+.image-box {
+  width: clamp(200px, 30vw, 400px);
+  height: clamp(200px, 30vw, 400px);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  z-index: 5;
+  margin: 2rem 0;
+}
+
+.image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* BASE STYLE for text */
+.parallax-text {
+  font-size: clamp(2rem, 5vw, 5rem); /* scales with viewport */
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: "Inter", "Poppins", "Helvetica Neue", Arial, sans-serif;
+  white-space: nowrap;
+  pointer-events: none;
+  text-align: center;
+  margin: clamp(-4rem, -5vh, -4rem) 0; /* responsive negative margin */
+}
+
+/* Top and bottom text colors */
+.top-text {
+  color: #fff;
+  z-index: 10;
+}
+
+.bottom-text {
+  color: rgba(255, 255, 255, 0.2);
+  z-index: 1;
+}
