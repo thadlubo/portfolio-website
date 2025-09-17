@@ -1,30 +1,89 @@
-import React from "react";
-import { motion } from "framer-motion";
+import "../style.css";
+import { motion, useScroll, useTransform } from "framer-motion";
 
-export const Hero: React.FC = () => {
-  return (
-    <section
-      id="hero"
-      className="h-screen flex items-center justify-center bg-fixed bg-center bg-cover"
-      style={{ backgroundImage: "url('/hero-bg.jpg')" }}
-    >
-      <motion.div
-        className="text-center p-10 bg-black bg-opacity-50 rounded-xl"
-        initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1.2 }}
-      >
-        <h1 className="text-5xl md:text-7xl font-bold text-white mb-4">Welcome to My World</h1>
-        <p className="text-xl md:text-2xl text-gray-300 mb-8">I build beautiful web experiences</p>
-        <motion.a
-          href="#projects"
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-          className="px-6 py-3 bg-blue-600 text-white rounded-lg shadow-lg uppercase font-semibold"
-        >
-          View Projects
-        </motion.a>
-      </motion.div>
-    </section>
-  );
-};
+function ParallaxText({
+    children,
+    speed,
+    className,
+    style = {},
+}: {
+    children: string;
+    speed: number;
+    className: string;
+    style?: React.CSSProperties | any;
+}) {
+    const { scrollY } = useScroll();
+    const x = useTransform(scrollY, [0, 1000], [0, speed]);
+    return (
+        <motion.div className={className} style={{ ...style, x }}>
+            {children}
+        </motion.div>
+    );
+}
+
+export default function Parallax() {
+
+    const { scrollY } = useScroll();
+    const backgroundY = useTransform(scrollY, [0, 1000], ["0%", "100%"]);
+
+    return (
+        <section className="parallax-container relative" id="parallax">
+
+            {/* Foreground top text */}
+            <ParallaxText speed={-1100} className="parallax-text top-text-dev absolute"
+                style={{
+                    width: "750px", // Set your desired width
+                    height: "750px", // Set your desired height
+                    y: backgroundY, // If you want to animate, make sure backgroundY is defined
+                }}>
+                FRONTEND
+            </ParallaxText>
+
+            {/* Foreground top text */}
+            <ParallaxText speed={-1100} className="parallax-text top-text-designer absolute top-10"
+                style={{
+                    width: "750px", // Set your desired width
+                    height: "750px", // Set your desired height
+                    y: backgroundY, // If you want to animate, make sure backgroundY is defined
+                }}>
+                UI/UX
+            </ParallaxText>
+
+            {/* Parallax Image */}
+            <motion.div
+                className="absolute bottom-0 z-0"
+                style={{
+                    width: "900px", // Set your desired width
+                    height: "900px", // Set your desired height
+                    transform: "translateX(-50%)", // Center horizontally
+                    backgroundImage: `url(${import.meta.env.BASE_URL}noBgProfilePic.png)`,
+                    backgroundPosition: "center bottom",
+                    backgroundRepeat: "no-repeat",
+                    backgroundSize: "contain", // Make image fit inside box
+                    y: backgroundY, // If you want to animate, make sure backgroundY is defined
+                }}
+                aria-hidden="true"
+            />
+
+            {/* Background bottom text */}
+            <ParallaxText speed={1100} className="parallax-text bottom-text-designer absolute bottom-10"
+                style={{
+                    width: "750px", // Set your desired width
+                    height: "750px", // Set your desired height
+                    y: backgroundY, // If you want to animate, make sure backgroundY is defined
+                }}>
+                DESIGNER
+            </ParallaxText>
+
+            {/* Background bottom text */}
+            <ParallaxText speed={1100} className="parallax-text bottom-text-dev absolute bottom-10"
+                style={{
+                    width: "750px", // Set your desired width
+                    height: "750px", // Set your desired height
+                    y: backgroundY, // If you want to animate, make sure backgroundY is defined
+                }}>
+                DEV
+            </ParallaxText>
+        </section>
+    );
+}

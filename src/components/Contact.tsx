@@ -16,7 +16,7 @@ export const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-24 bg-gray-50">
+    <section id="contact" className="py-24 contacts-section">
       <div className="max-w-md mx-auto px-6">
         <motion.h2
           className="text-4xl font-bold mb-6 text-center"

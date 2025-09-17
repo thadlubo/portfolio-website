@@ -1,9 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-export const About: React.FC = () => {
+export const Journey: React.FC = () => {
   return (
-    <section id="about" className="py-24 about-section">
+    <section id="about" className="py-24 journey-section">
       <div className="max-w-4xl mx-auto px-6">
 
         <motion.h2
@@ -13,7 +13,7 @@ export const About: React.FC = () => {
           transition={{ duration: 0.8 }}
           style={{ fontWeight: 800, fontSize: "2.5rem", marginBottom: "1rem", font: "Manrope" }}
         >
-          About Me
+          Journey
         </motion.h2>
 
         <motion.p

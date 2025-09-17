@@ -35,7 +35,7 @@ const projectData: Project[] = [
 
 export const Projects: React.FC = () => {
   return (
-    <section id="projects" className="py-24 bg-neutral-900">
+    <section id="projects" className="py-24 projects-section">
       <div className="max-w-5xl mx-auto px-6">
         <h2 className="text-4xl font-bold text-center mb-12">My Projects</h2>
         <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-2">
