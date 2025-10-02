@@ -108,7 +108,7 @@ export function Hero() {
             {/* Base Image */}
             <div className="relative w-full h-full rounded-2xl overflow-hidden">
               <img
-                src="/images/THAD.png"
+                src="images/THAD.png"
                 alt="Creative Developer Portrait"
                 className="w-full h-full object-cover object-center transition-all duration-700 ease-out"
               />
@@ -125,7 +125,7 @@ export function Hero() {
                 transition={{ duration: 0.5 }}
               >
                 <img
-                  src="/images/PortfolioLeft.png"
+                  src="images/PortfolioLeft.png"
                   alt="UI/UX Designer"
                   className="w-full h-full object-cover object-center"
                   style={{
@@ -146,7 +146,7 @@ export function Hero() {
                 transition={{ duration: 0.5 }}
               >
                 <img
-                  src="/images/PortfolioRight.png"
+                  src="images/PortfolioRight.png"
                   alt="Frontend Developer"
                   className="w-full h-full object-cover object-center"
                   style={{

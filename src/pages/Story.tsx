@@ -104,7 +104,7 @@ export function StoryPage() {
           >
             <div className="relative rounded-2xl overflow-hidden">
               <img
-                src="/images/noBG.png"
+                src="images/THAD.png"
                 alt="Creative Developer Portrait"
                 className="w-full h-full object-cover object-center transition-all duration-700 ease-out"
               />
