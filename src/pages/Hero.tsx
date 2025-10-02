@@ -11,15 +11,10 @@ import Button from 'react-bootstrap/Button';
 
 
 export function Hero() {
+
   const [hoverState, setHoverState] = useState<
     "none" | "left" | "right"
   >("none");
-
-  const scrollToAbout = () => {
-    document
-      .querySelector("#about")
-      ?.scrollIntoView({ behavior: "smooth" });
-  };
 
   const getTitle = () => {
     switch (hoverState) {
@@ -46,7 +41,7 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden pt-12"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
         {/* Interactive Image Section */}
@@ -178,7 +173,7 @@ export function Hero() {
           </div>
         </motion.div>
 
-        {/* Text Content Section - Centered */}
+        {/* Text Content Section */}
         <motion.div
           className="text-center max-w-4xl mx-auto"
           initial={{ opacity: 0, y: 50 }}
@@ -189,8 +184,9 @@ export function Hero() {
             delay: 0.2,
           }}
         >
+          {/* Title */}
           <motion.h1
-            className="text-6xl font-bold bg-gradient-to-l from-pistachio-dark via-pistachio-medium to-pistachio-dark bg-clip-text text-transparent "
+            className="text-6xl font-bold bg-gradient-to-r from-pistachio-dark via-pistachio-medium to-pistachio-dark bg-clip-text text-transparent"
             key={hoverState}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -199,6 +195,7 @@ export function Hero() {
             {getTitle()}
           </motion.h1>
 
+          {/* Subtitle */}
           <motion.p
             // className="text-lg sm:text-xl lg:text-2xl mb-8 mt-8 max-w-3xl bg-gradient-to-l from-pistachio-dark via-pistachio-medium to-pistachio-dark bg-clip-text text-transparent"
             className="text-lg sm:text-xl lg:text-2xl mb-8 mt-8 max-w-3xl text-pistachio-dark"
@@ -210,6 +207,7 @@ export function Hero() {
             {getSubtitle()}
           </motion.p>
 
+          {/* Action Buttons */}
           <motion.div
             className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8 mt-12"
             initial={{ opacity: 0, y: 30 }}
@@ -219,7 +217,7 @@ export function Hero() {
             <Button
               size="lg"
               className="bg-pistachio-dark border border-border hover:bg-pistachio-light hover:text-pistachio-dark text-white px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105"
-              onClick={scrollToAbout}
+              // need onClick to scroll to creations section
             >
               Explore Creations
             </Button>
@@ -232,7 +230,7 @@ export function Hero() {
             </Button>
           </motion.div>
 
-
+          {/* Social Links */}
           <motion.div
             className="flex justify-center space-x-6"
             initial={{ opacity: 0, y: 30 }}
@@ -265,8 +263,6 @@ export function Hero() {
             </motion.a>
           </motion.div>
         </motion.div>
-
-
       </div>
     </section>
   );

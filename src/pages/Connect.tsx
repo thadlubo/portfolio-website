@@ -34,26 +34,20 @@ export default function ConnectPage() {
     {
       icon: '📧',
       title: 'Email',
-      value: 'alex@example.com',
+      value: 'thadlubo@gmail.com',
       description: 'Send me an email anytime'
-    },
-    {
-      icon: '📱',
-      title: 'Phone',
-      value: '+1 (555) 123-4567',
-      description: 'Call for urgent matters'
     },
     {
       icon: '💬',
       title: 'LinkedIn',
-      value: '/in/alexrivera',
+      value: 'https://www.linkedin.com/in/thaddeus-lubo/',
       description: 'Connect professionally'
     },
     {
-      icon: '🐦',
-      title: 'Twitter',
-      value: '@alexdesigns',
-      description: 'Follow my design journey'
+      icon: '👀',
+      title: 'GitHub',
+      value: 'https://github.com/thadlubo',
+      description: 'Follow my design and development journey'
     }
   ];
 
@@ -72,11 +66,23 @@ export default function ConnectPage() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <span className="text-primary tracking-wide uppercase">Get In Touch</span>
-          <h2 className="text-4xl lg:text-6xl mt-4 mb-6">Let's Create Together</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          {/* Section Title */}
+          <motion.h1
+            className="mt-12 text-4xl font-bold bg-gradient-to-l from-pistachio-dark via-pistachio-medium to-pistachio-dark bg-clip-text text-transparent uppercase mb-4 block"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+          >
+            Let's Connect
+          </motion.h1>
+          <motion.p
+            className="text-lg sm:text-l lg:text-xl mb-8 mt-8 max-w-2xl text-pistachio-dark mx-auto"
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.6, duration: 0.8 }}
+          >
             Ready to bring your vision to life? I'd love to hear about your project and explore how we can work together.
-          </p>
+          </motion.p>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-16 max-w-6xl mx-auto">
@@ -88,7 +94,7 @@ export default function ConnectPage() {
             viewport={{ once: true }}
           >
             <h3 className="text-2xl mb-8">Send a Message</h3>
-            
+
             <motion.form
               ref={formRef}
               onSubmit={handleSubmit}
@@ -109,7 +115,7 @@ export default function ConnectPage() {
                   onChange={handleInputChange}
                   onFocus={() => setFocusedField('name')}
                   onBlur={() => setFocusedField(null)}
-                  className="w-full px-4 py-4 bg-input-background border border-border rounded-xl focus:outline-none focus:border-primary transition-all duration-300"
+                  className="w-full px-4 py-4 bg-input-background border border-border rounded-xl transition-all duration-300"
                   placeholder="Your Name"
                   animate={{
                     borderColor: focusedField === 'name' ? 'rgb(3, 2, 19)' : 'rgba(0, 0, 0, 0.1)',
@@ -137,7 +143,7 @@ export default function ConnectPage() {
                   onChange={handleInputChange}
                   onFocus={() => setFocusedField('email')}
                   onBlur={() => setFocusedField(null)}
-                  className="w-full px-4 py-4 bg-input-background border border-border rounded-xl focus:outline-none focus:border-primary transition-all duration-300"
+                  className="w-full px-4 py-4 bg-input-background border border-border rounded-xl transition-all duration-300"
                   placeholder="Your Email"
                   animate={{
                     borderColor: focusedField === 'email' ? 'rgb(3, 2, 19)' : 'rgba(0, 0, 0, 0.1)',
@@ -165,7 +171,7 @@ export default function ConnectPage() {
                   onChange={handleInputChange}
                   onFocus={() => setFocusedField('subject')}
                   onBlur={() => setFocusedField(null)}
-                  className="w-full px-4 py-4 bg-input-background border border-border rounded-xl focus:outline-none focus:border-primary transition-all duration-300"
+                  className="w-full px-4 py-4 bg-input-background border border-border rounded-xl transition-all duration-300"
                   placeholder="Subject"
                   animate={{
                     borderColor: focusedField === 'subject' ? 'rgb(3, 2, 19)' : 'rgba(0, 0, 0, 0.1)',
@@ -193,7 +199,7 @@ export default function ConnectPage() {
                   onFocus={() => setFocusedField('message')}
                   onBlur={() => setFocusedField(null)}
                   rows={6}
-                  className="w-full px-4 py-4 bg-input-background border border-border rounded-xl focus:outline-none focus:border-primary transition-all duration-300 resize-none"
+                  className="w-full px-4 py-4 bg-input-background border border-border rounded-xl transition-all duration-300 resize-none"
                   placeholder="Tell me about your project..."
                   animate={{
                     borderColor: focusedField === 'message' ? 'rgb(3, 2, 19)' : 'rgba(0, 0, 0, 0.1)',
@@ -264,7 +270,7 @@ export default function ConnectPage() {
             viewport={{ once: true }}
           >
             <h3 className="text-2xl mb-8">Other Ways to Connect</h3>
-            
+
             <div className="space-y-6">
               {contactMethods.map((method, index) => (
                 <motion.div
@@ -319,7 +325,7 @@ export default function ConnectPage() {
                 <h4>Available for Projects</h4>
               </div>
               <p className="text-sm text-muted-foreground">
-                I'm currently accepting new projects and collaborations. 
+                I'm currently accepting new projects and collaborations.
                 Typical response time is within 24 hours.
               </p>
             </motion.div>

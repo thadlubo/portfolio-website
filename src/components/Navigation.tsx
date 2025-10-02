@@ -26,7 +26,7 @@ export function Navigation({ currentPage, onPageChange }: NavigationProps) {
           <motion.button
             key={page.id}
             onClick={() => onPageChange(page.id)}
-            className="relative px-4 py-2 rounded-full transition-colors duration-300 focus:outline-none"
+            className="relative px-4 py-2 rounded-full transition-colors duration-300"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 1 }}
           >

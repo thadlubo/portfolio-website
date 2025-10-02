@@ -42,7 +42,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-hidden">
-      <div className="relative z-20 pt-12">
+      <div className="relative z-20">
         <Navigation currentPage={currentPage} onPageChange={setCurrentPage} />
       </div>
 

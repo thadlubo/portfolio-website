@@ -85,7 +85,7 @@ export default function FloatingDots({
           //   opacity: 1,
           //   zIndex: 60,
           //   transition: { duration: 0.2 },
-          // }}
+          // }} Makes hover effect too jarring and laggy
         />
       ))}
     </AnimatePresence>

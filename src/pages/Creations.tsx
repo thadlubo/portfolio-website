@@ -6,69 +6,62 @@ export default function CreationsPage() {
   const [selectedFilter, setSelectedFilter] = useState('all');
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
 
-  const filters = [
-    { id: 'all', label: 'All Projects' },
-    { id: 'mobile', label: 'Mobile Apps' },
-    { id: 'web', label: 'Web Design' },
-    { id: 'branding', label: 'Branding' }
-  ];
+const filters = [
+  { id: 'all', label: 'All Projects' },
+  { id: 'webapp', label: 'Web/App Design' },
+  { id: 'media', label: 'Digital Media' },
+  { id: 'theory', label: 'Design Theory' },
+  { id: 'other', label: 'Others' }
+];
 
-  const projects = [
-    {
-      id: 1,
-      title: 'E-commerce Mobile App',
-      category: 'mobile',
-      description: 'Complete redesign of a fashion e-commerce platform focusing on user experience and conversion optimization.',
-      image: 'https://images.unsplash.com/photo-1558655146-d09347e92766?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtaW5pbWFsJTIwZGVzaWduJTIwaW50ZXJmYWNlfGVufDF8fHx8MTc1OTA4Mzg2MXww&ixlib=rb-4.1.0&q=80&w=1080',
-      tags: ['UI/UX', 'Mobile', 'E-commerce'],
-      color: 'from-blue-500 to-cyan-500'
-    },
-    {
-      id: 2,
-      title: 'Healthcare Dashboard',
-      category: 'web',
-      description: 'Complex data visualization dashboard for healthcare professionals to monitor patient metrics and analytics.',
-      image: 'https://images.unsplash.com/photo-1587355760421-b9de3226a046?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx1eCUyMGRlc2lnbiUyMHByb2Nlc3N8ZW58MXx8fHwxNzU5MDc5OTA5fDA&ixlib=rb-4.1.0&q=80&w=1080',
-      tags: ['Web App', 'Dashboard', 'Healthcare'],
-      color: 'from-green-500 to-emerald-500'
-    },
-    {
-      id: 3,
-      title: 'FinTech Startup Branding',
-      category: 'branding',
-      description: 'Complete brand identity design including logo, color palette, and brand guidelines for a cryptocurrency startup.',
-      image: 'https://images.unsplash.com/photo-1710799885122-428e63eff691?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjcmVhdGl2ZSUyMGRlc2lnbiUyMHBvcnRmb2xpb3xlbnwxfHx8fDE3NTkwMzU3Mzd8MA&ixlib=rb-4.1.0&q=80&w=1080',
-      tags: ['Branding', 'Logo Design', 'FinTech'],
-      color: 'from-purple-500 to-pink-500'
-    },
-    {
-      id: 4,
-      title: 'Social Media Platform',
-      category: 'mobile',
-      description: 'User interface design for a new social media platform focused on creative professionals and portfolio sharing.',
-      image: 'https://images.unsplash.com/photo-1486486955648-a4f22566c598?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjB3b3Jrc3BhY2UlMjBkZXNpZ25lcnxlbnwxfHx8fDE3NTkxNDE0NTd8MA&ixlib=rb-4.1.0&q=80&w=1080',
-      tags: ['Mobile', 'Social Media', 'UI/UX'],
-      color: 'from-orange-500 to-red-500'
-    },
-    {
-      id: 5,
-      title: 'B2B SaaS Platform',
-      category: 'web',
-      description: 'Enterprise software interface design with complex workflows and data management capabilities.',
-      image: 'https://images.unsplash.com/photo-1558655146-d09347e92766?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtaW5pbWFsJTIwZGVzaWduJTIwaW50ZXJmYWNlfGVufDF8fHx8MTc1OTA4Mzg2MXww&ixlib=rb-4.1.0&q=80&w=1080',
-      tags: ['SaaS', 'Enterprise', 'Web App'],
-      color: 'from-indigo-500 to-purple-500'
-    },
-    {
-      id: 6,
-      title: 'Restaurant Chain Rebrand',
-      category: 'branding',
-      description: 'Complete rebranding project including visual identity, menu design, and digital presence for a restaurant chain.',
-      image: 'https://images.unsplash.com/photo-1710799885122-428e63eff691?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjcmVhdGl2ZSUyMGRlc2lnbiUyMHBvcnRmb2xpb3xlbnwxfHx8fDE3NTkwMzU3Mzd8MA&ixlib=rb-4.1.0&q=80&w=1080',
-      tags: ['Branding', 'Restaurant', 'Identity'],
-      color: 'from-yellow-500 to-orange-500'
-    }
-  ];
+const projects = [
+  {
+    id: 1,
+    title: 'E-commerce Mobile App',
+    category: 'webapp',
+    description: 'Complete redesign of a fashion e-commerce platform focusing on user experience and conversion optimization.',
+    image: 'https://images.unsplash.com/photo-1558655146-d09347e92766?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtaW5pbWFsJTIwZGVzaWduJTIwaW50ZXJmYWNlfGVufDF8fHx8MTc1OTA4Mzg2MXww&ixlib=rb-4.1.0&q=80&w=1080',
+    tags: ['UI/UX', 'Mobile', 'E-commerce'],
+    color: 'from-pistachio-light to-pistachio-medium'
+  },
+  {
+    id: 2,
+    title: 'Job Opportunity Portal',
+    category: 'webapp',
+    description: 'Complex data visualization dashboard for healthcare professionals to monitor patient metrics and analytics.',
+    image: 'https://images.unsplash.com/photo-1558655146-d09347e92766?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtaW5pbWFsJTIwZGVzaWduJTIwaW50ZXJmYWNlfGVufDF8fHx8MTc1OTA4Mzg2MXww&ixlib=rb-4.1.0&q=80&w=1080',
+    tags: ['Web App', 'Dashboard', 'Healthcare'],
+    color: 'from-pistachio-medium to-pistachio-dark'
+  },
+  {
+    id: 3,
+    title: 'Motion Graphics Campaign',
+    category: 'media',
+    description: 'Animated motion graphics series designed for a digital marketing campaign across social media platforms.',
+    image: 'https://images.unsplash.com/photo-1486486955648-a4f22566c598?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjB3b3Jrc3BhY2UlMjBkZXNpZ25lcnxlbnwxfHx8fDE3NTkxNDE0NTd8MA&ixlib=rb-4.1.0&q=80&w=1080',
+    tags: ['Digital Media', 'Animation', 'Marketing'],
+    color: 'from-pistachio-dark to-pistachio-mint'
+  },
+  {
+    id: 4,
+    title: 'Interactive Design Theory Study',
+    category: 'theory',
+    description: 'Research project exploring the cognitive principles behind interactive design and usability heuristics.',
+    image: 'https://images.unsplash.com/photo-1587355760421-b9de3226a046?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx1eCUyMGRlc2lnbiUyMHByb2Nlc3N8ZW58MXx8fHwxNzU5MDc5OTA5fDA&ixlib=rb-4.1.0&q=80&w=1080',
+    tags: ['Design Research', 'Usability', 'Theory'],
+    color: 'from-pistachio-mint to-pistachio-saturated'
+  },
+  {
+    id: 5,
+    title: 'Restaurant Chain Rebrand',
+    category: 'other',
+    description: 'Complete rebranding project including visual identity, menu design, and digital presence for a restaurant chain.',
+    image: 'https://images.unsplash.com/photo-1710799885122-428e63eff691?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjcmVhdGl2ZSUyMGRlc2lnbiUyMHBvcnRmb2xpb3xlbnwxfHx8fDE3NTkwMzU3Mzd8MA&ixlib=rb-4.1.0&q=80&w=1080',
+    tags: ['Branding', 'Restaurant', 'Identity'],
+    color: 'from-pistachio-saturated to-pistachio-shell'
+  }
+];
+
 
   const filteredProjects = selectedFilter === 'all' 
     ? projects 
@@ -89,11 +82,23 @@ export default function CreationsPage() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <span className="text-primary tracking-wide uppercase">Portfolio</span>
-          <h2 className="text-4xl lg:text-6xl mt-4 mb-6">My Creations</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          {/* Section Title */}
+          <motion.h1
+            className="mt-12 text-4xl font-bold bg-gradient-to-l from-pistachio-dark via-pistachio-medium to-pistachio-dark bg-clip-text text-transparent uppercase mb-4 block"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+          >
+            My Creations
+          </motion.h1>
+          <motion.p
+            className="text-lg sm:text-l lg:text-xl mb-8 mt-8 max-w-2xl text-pistachio-dark mx-auto"
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.6, duration: 0.8 }}
+          >
             A curated selection of projects showcasing my design process and creative solutions
-          </p>
+          </motion.p>
         </motion.div>
 
         {/* Filter Buttons */}
@@ -169,7 +174,7 @@ export default function CreationsPage() {
                       {project.tags.map((tag, tagIndex) => (
                         <motion.span
                           key={tagIndex}
-                          className="px-3 py-1 text-xs bg-accent text-accent-foreground rounded-full"
+                          className="px-3 py-1 text-xs bg-accent text-pistachio-dark rounded-full"
                           initial={{ opacity: 0, scale: 0 }}
                           animate={{ opacity: 1, scale: 1 }}
                           transition={{ delay: index * 0.1 + tagIndex * 0.05 }}
@@ -212,27 +217,6 @@ export default function CreationsPage() {
             ))}
           </motion.div>
         </AnimatePresence>
-
-        {/* CTA Section */}
-        <motion.div
-          className="text-center mt-20"
-          initial={{ y: 50, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <h3 className="text-2xl mb-4">Like what you see?</h3>
-          <p className="text-muted-foreground mb-8 max-w-md mx-auto">
-            Let's discuss how I can help bring your next project to life
-          </p>
-          <motion.button
-            className="px-8 py-4 bg-primary text-primary-foreground rounded-full hover:shadow-xl transition-all duration-300"
-            whileHover={{ scale: 1.05, y: -2 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Start a Project
-          </motion.button>
-        </motion.div>
       </div>
     </motion.div>
   );

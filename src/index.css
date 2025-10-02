@@ -19,8 +19,6 @@
   --muted-foreground: #5a7a5f;
   --accent: #9ed2a7;
   --accent-foreground: #1a2f1e;
-  --destructive: #d4183d;
-  --destructive-foreground: #ffffff;
   --border: rgba(74, 124, 89, 0.2);
   --input: transparent;
   --input-background: rgba(240, 248, 240, 0.8);
@@ -28,32 +26,22 @@
   --font-weight-medium: 500;
   --font-weight-normal: 400;
   --ring: #4a7c59;
-  --chart-1: #4a7c59;
-  --chart-2: #9ed2a7;
-  --chart-3: #6fa777;
-  --chart-4: #b8e6c1;
-  --chart-5: #7fb085;
   --radius: 0.875rem;
-  --sidebar: #f5fff5;
-  --sidebar-foreground: #1a2f1e;
-  --sidebar-primary: #4a7c59;
-  --sidebar-primary-foreground: #f4ffe7;
-  --sidebar-accent: #e8f5e8;
-  --sidebar-accent-foreground: #1a2f1e;
-  --sidebar-border: rgba(74, 124, 89, 0.2);
-  --sidebar-ring: #4a7c59;
   
   /* Pistachio theme specific colors */
   --pistachio-light: #f5fff5;
   --pistachio-soft: #e8f5e8;
   --pistachio-medium: #9ed2a7;
   --pistachio-dark: #4a7c59;
+  --pistachio-mint: #a4eda5;
+  --pistachio-saturated: #c6d67e;
+  --pistachio-shell: #948f4e;
   --cream: #FFE5B4;
   --cream-soft: #faf9f5;
 }
 
 .dark {
-  /* Dark Pistachio Theme */
+  /* Dark Pistachio Theme for future implementation*/
   --background: #0f1611;
   --foreground: #e8f5e8;
   --card: rgba(26, 47, 30, 0.7);
@@ -68,46 +56,19 @@
   --muted-foreground: #9ed2a7;
   --accent: #4a7c59;
   --accent-foreground: #e8f5e8;
-  --destructive: #ff4757;
-  --destructive-foreground: #ffffff;
   --border: rgba(158, 210, 167, 0.3);
   --input: rgba(26, 47, 30, 0.8);
   --ring: #9ed2a7;
   --font-weight-medium: 500;
   --font-weight-normal: 400;
-  --chart-1: #9ed2a7;
-  --chart-2: #4a7c59;
-  --chart-3: #7fb085;
-  --chart-4: #6fa777;
-  --chart-5: #b8e6c1;
-  --sidebar: #1a2f1e;
-  --sidebar-foreground: #e8f5e8;
-  --sidebar-primary: #9ed2a7;
-  --sidebar-primary-foreground: #0f1611;
-  --sidebar-accent: #243329;
-  --sidebar-accent-foreground: #e8f5e8;
-  --sidebar-border: rgba(158, 210, 167, 0.3);
-  --sidebar-ring: #9ed2a7;
   
-  /* Dark pistachio theme specific colors */
+  /* Dark pistachio theme specific colors (In construction) */
   --pistachio-light: #243329;
   --pistachio-soft: #1a2f1e;
   --pistachio-medium: #4a7c59;
   --pistachio-dark: #9ed2a7;
   --cream: #0f1611;
   --cream-soft: #1a2f1e;
-}
-
-/* Morphism helpers */
-.morph-card {
-  background: #FFFFFF;
-  border-radius: 16px;
-  box-shadow: 8px 8px 20px rgba(209,217,230,0.9), -8px -8px 20px rgba(255,255,255,1);
-}
-
-:focus {
-  outline: 2px solid rgba(138,203,140,0.15);
-  outline-offset: 4px;
 }
 
 body {

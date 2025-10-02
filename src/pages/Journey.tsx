@@ -16,42 +16,60 @@ export default function JourneyPage() {
     {
       year: '2017',
       title: 'First Steps',
-      company: 'Freelance Designer',
+      company: 'University of Limerick Student',
       description: 'Started my journey as a freelance designer, working on small business websites and branding projects. This was where I discovered my passion for creating user-centered designs.',
       image: 'https://images.unsplash.com/photo-1486486955648-a4f22566c598?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjB3b3Jrc3BhY2UlMjBkZXNpZ25lcnxlbnwxfHx8fDE3NTkyNTg5MzR8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
       achievements: ['5 successful projects', 'Built personal brand', 'Client satisfaction: 98%']
     },
     {
       year: '2018',
-      title: 'Junior Designer',
-      company: 'Creative Agency',
-      description: 'Joined a dynamic creative agency where I learned the foundations of user experience design, design systems, and collaborative workflows with cross-functional teams.',
+      title: 'Part-time Sales Assistant',
+      company: 'Vodafone',
+      description: 'Worked in telecoms retail through my college years before landing my first industry job, providing technical support and customer service while building strong teamwork, problem-solving, and communication skills.',
       image: 'https://images.unsplash.com/photo-1666698809123-44e998e93f23?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjcmVhdGl2ZSUyMGFnZW5jeSUyMHRlYW18ZW58MXx8fHwxNzU5MjIzOTUyfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-      achievements: ['Contributed to 15+ campaigns', 'Learned design systems', 'Team collaboration skills']
+      achievements: ["Developed strong customer-facing communication",
+        "Built technical knowledge of telecom systems",
+        "Smashed KPI sales targets"]
     },
     {
-      year: '2020',
-      title: 'Product Designer',
-      company: 'Tech Startup',
-      description: 'Moved to a fast-paced startup environment, designing mobile apps and web platforms for millions of users. Focused on user research, prototyping, and data-driven design decisions.',
+      year: '2019',
+      title: 'Software Engineer and QA Intern',
+      company: 'Hewlett-Packard Enterprise',
+      description: 'Worked as a Java Developer Intern while assisting QA teams. Gained hands-on experience with full software development lifecycle, database management, and test automation.',
+      image: 'https://images.unsplash.com/photo-1666698809123-44e998e93f23?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjcmVhdGl2ZSUyMGFnZW5jeSUyMHRlYW18ZW58MXx8fHwxNzU5MjIzOTUyfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+      achievements: ["Developed Java applications with OOP principles",
+        "Implemented SQL for data-driven projects",
+        "Automated testing with Selenium"]
+    },
+    {
+      year: '2021',
+      title: 'Graduate Engineer',
+      company: 'Career-Break',
+      description: "Took time away from professional work to provide full-time care for a terminally ill parent, managing responsibilities that demanded organization, resilience, and compassion.",
       image: 'https://images.unsplash.com/photo-1665360786492-ace5845fe817?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdGFydHVwJTIwb2ZmaWNlJTIwdGVjaG5vbG9neXxlbnwxfHx8fDE3NTkyNTg5Mzl8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-      achievements: ['2M+ active users', 'Led product redesign', '40% conversion increase']
+      achievements: ["Coordinated healthcare and legal matters",
+        "Provided daily mobility and medication support",
+        "Developed crisis management and resilience"]
     },
     {
-      year: '2022',
-      title: 'Senior UX Designer',
-      company: 'Fortune 500',
-      description: 'Led design initiatives for enterprise products, mentored junior designers, and established scalable design processes. Focused on accessibility and inclusive design practices.',
+      year: '2023',
+      title: 'Software Engineer Consultant',
+      company: 'FDM Group',
+      description: "Worked with the 'Project on Demand' team, building full-stack applications with React, Java Spring APIs, and MySQL, while applying Agile methodologies for iterative improvements.",
       image: 'https://images.unsplash.com/photo-1686100509061-f05807314c38?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3Jwb3JhdGUlMjBtZWV0aW5nJTIwcm9vbXxlbnwxfHx8fDE3NTkyMjAxMDh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-      achievements: ['Mentored 8 designers', 'WCAG AA compliance', 'Design system adoption: 95%']
+      achievements: ["Delivered full-stack job portal project",
+        "Integrated MySQL database for real-time use",
+        "Applied Agile principles for continuous improvement"]
     },
     {
       year: '2024',
-      title: 'Design Lead',
-      company: 'Innovation Lab',
-      description: 'Currently leading a team of designers, focusing on emerging technologies, AI-powered interfaces, and future-forward user experiences. Building the next generation of digital products.',
+      title: 'Junior Frontend Developer',
+      company: 'Citibank',
+      description: "Worked on internal banking applications as a dual Front-End Developer and QA Engineer, delivering responsive interfaces, API integrations, and robust automated testing pipelines.",
       image: 'https://images.unsplash.com/photo-1732552232770-1a116f777c93?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbm5vdmF0aW9uJTIwbGFiJTIwbW9kZXJufGVufDF8fHx8MTc1OTI1ODk0NXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-      achievements: ['Leading 12-person team', 'AI integration pioneer', '3 patents filed']
+      achievements: ["Built React front-ends for internal apps",
+        "Integrated with Java APIs and MySQL databases",
+        "Automated testing with Selenium, Cucumber, Jenkins"]
     }
   ];
 
@@ -67,13 +85,6 @@ export default function JourneyPage() {
     return () => unsubscribe();
   }, [scrollYProgress, activeIndex, journeyItems.length]);
 
-  const scrollToIndex = (index: number) => {
-    const element = document.getElementById(`milestone-${index}`);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      setExpandedIndex(index);
-    }
-  };
 
   const toggleExpanded = (index: number) => {
     setExpandedIndex(expandedIndex === index ? null : index);
@@ -90,25 +101,25 @@ export default function JourneyPage() {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
     >
-     
+
 
       <div className="z-10 container mx-auto px-6 py-20 max-w-4xl">
-        {/* Header */}
         <motion.div
           className="text-center mb-20"
           initial={{ y: 30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8 }}
         >
-          <motion.h1 
-            className="text-4xl font-bold bg-gradient-to-l from-pistachio-dark via-pistachio-medium to-pistachio-dark bg-clip-text text-transparent uppercase mb-4 block"
+          {/* Section Title */}
+          <motion.h1
+            className="mt-12 text-4xl font-bold bg-gradient-to-l from-pistachio-dark via-pistachio-medium to-pistachio-dark bg-clip-text text-transparent uppercase mb-4 block"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.6 }}
           >
             My Journey
           </motion.h1>
-          <motion.p 
+          <motion.p
             className="text-lg sm:text-l lg:text-xl mb-8 mt-8 max-w-2xl text-pistachio-dark mx-auto"
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -133,7 +144,7 @@ export default function JourneyPage() {
             {journeyItems.map((item, index) => {
               const ref = useRef(null);
               const isInView = useInView(ref, { margin: "-100px" });
-              
+
               return (
                 <motion.div
                   key={index}
@@ -153,8 +164,8 @@ export default function JourneyPage() {
                     transition={{ duration: 0.4, delay: index * 0.1 + 0.3 }}
                     animate={{
                       scale: isInView ? 1.2 : 1,
-                      boxShadow: isInView 
-                        ? "0 0 0 8px rgba(var(--primary), 0.1)" 
+                      boxShadow: isInView
+                        ? "0 0 0 8px rgba(var(--primary), 0.1)"
                         : "0 4px 8px rgba(0,0,0,0.1)"
                     }}
                     viewport={{ once: true }}
@@ -171,7 +182,7 @@ export default function JourneyPage() {
                     <span className="z-20 text-4xl font-bold bg-gradient-to-r from-pistachio-dark via-pistachio-medium to-pistachio-medium bg-clip-text text-transparent absolute -top-12 left-6 pointer-events-none">
                       {item.year}
                     </span>
-                  
+
                   </motion.div>
 
                   {/* Content Card */}
@@ -192,7 +203,7 @@ export default function JourneyPage() {
                         className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
-                      
+
                       {/* Overlay content */}
                       <div className="absolute bottom-4 left-6 text-white">
                         <h3 className="text-white mb-1">{item.title}</h3>
@@ -206,7 +217,7 @@ export default function JourneyPage() {
                         transition={{ duration: 0.3 }}
                       >
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                          <path d="m6 9 6 6 6-6"/>
+                          <path d="m6 9 6 6 6-6" />
                         </svg>
                       </motion.div>
                     </div>
@@ -225,7 +236,7 @@ export default function JourneyPage() {
                         <p className="text-muted-foreground mb-4 backdrop-blur-md leading-relaxed">
                           {item.description}
                         </p>
-                        
+
                         <div>
                           <h4 className="text-sm text-foreground mb-3">Key Achievements</h4>
                           <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
@@ -234,13 +245,13 @@ export default function JourneyPage() {
                                 key={achIndex}
                                 className="bg-accent/50 rounded-lg px-3 py-2 text-sm text-accent-foreground"
                                 initial={{ opacity: 0, y: 10 }}
-                                animate={{ 
+                                animate={{
                                   opacity: expandedIndex === index ? 1 : 0,
                                   y: expandedIndex === index ? 0 : 10
                                 }}
-                                transition={{ 
-                                  duration: 0.3, 
-                                  delay: expandedIndex === index ? achIndex * 0.1 : 0 
+                                transition={{
+                                  duration: 0.3,
+                                  delay: expandedIndex === index ? achIndex * 0.1 : 0
                                 }}
                               >
                                 {achievement}
@@ -254,36 +265,6 @@ export default function JourneyPage() {
                 </motion.div>
               );
             })}
-          </div>
-        </div>
-
-        {/* Bottom CTA */}
-        <motion.div
-          className="text-center mt-20 pt-12 border-t border-border"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <h3 className="mb-4">Ready to work together?</h3>
-          <p className="text-muted-foreground mb-6 max-w-lg mx-auto">
-            Let's create something amazing. I'm always excited to take on new challenges and bring innovative ideas to life.
-          </p>
-          <motion.button
-            className="bg-primary text-primary-foreground px-8 py-3 rounded-lg hover:bg-primary/90 transition-colors duration-300"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-          >
-            Get in Touch
-          </motion.button>
-        </motion.div>
-      </div>
-
-      {/* Mobile progress indicator */}
-      <div className="lg:hidden fixed bottom-8 left-1/2 -translate-x-1/2 z-20">
-        <div className="bg-card border border-border rounded-full px-4 py-2 shadow-lg">
-          <div className="text-xs text-muted-foreground">
-            {activeIndex + 1} of {journeyItems.length}
           </div>
         </div>
       </div>
