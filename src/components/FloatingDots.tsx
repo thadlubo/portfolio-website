@@ -21,7 +21,7 @@ interface FloatingDotsProps {
 }
 
 export default function FloatingDots({
-  count = 36,
+  count = 36, // Default total number of dots
   floatX = 2,
   floatY = 2,
 }: FloatingDotsProps) {
@@ -29,7 +29,7 @@ export default function FloatingDots({
     Array.from({ length: count }, (_, i) => createDot(i))
   );
 
-  // Create a single dot with random properties
+  // Single dot with random properties
   function createDot(id: number): Dot {
     const size = 0.8 + Math.random() * 1.2; // vw
     return {
@@ -79,13 +79,14 @@ export default function FloatingDots({
             ease: "easeInOut",
             delay: dot.delay,
           }}
+          // Makes hover effect too jarring and laggy (replace or delete later?)
           // whileHover={{
           //   scale: 2,
           //   filter: "blur(0px)",
           //   opacity: 1,
           //   zIndex: 60,
           //   transition: { duration: 0.2 },
-          // }} Makes hover effect too jarring and laggy
+          // }} 
         />
       ))}
     </AnimatePresence>

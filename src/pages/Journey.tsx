@@ -15,9 +15,9 @@ export default function JourneyPage() {
   const journeyItems = [
     {
       year: '2017',
-      title: 'First Steps',
-      company: 'University of Limerick Student',
-      description: 'Started my journey as a freelance designer, working on small business websites and branding projects. This was where I discovered my passion for creating user-centered designs.',
+      title: 'First Steps as a Student',
+      company: 'University of Limerick',
+      description: 'Started my journey as a student, exploring various fields before discovering my passion for design. This was where I first dabbled in web development and computing structure, laying the foundation for my future career.',
       image: 'https://images.unsplash.com/photo-1486486955648-a4f22566c598?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjB3b3Jrc3BhY2UlMjBkZXNpZ25lcnxlbnwxfHx8fDE3NTkyNTg5MzR8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
       achievements: ['5 successful projects', 'Built personal brand', 'Client satisfaction: 98%']
     },
@@ -70,7 +70,15 @@ export default function JourneyPage() {
       achievements: ["Built React front-ends for internal apps",
         "Integrated with Java APIs and MySQL databases",
         "Automated testing with Selenium, Cucumber, Jenkins"]
-    }
+    },
+    {
+      year: '2025',
+      title: 'UI/UX Masters Student',
+      company: 'University of Limerick',
+      description: 'Studied UI/UX Design at a postgraduate level, honing my skills in user-centered design, prototyping, and usability testing. This period solidified my passion for creating intuitive and engaging digital experiences.',
+      image: 'https://images.unsplash.com/photo-1486486955648-a4f22566c598?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjB3b3Jrc3BhY2UlMjBkZXNpZ25lcnxlbnwxfHx8fDE3NTkyNTg5MzR8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+      achievements: ['5 successful projects', 'Built personal brand', 'Client satisfaction: 98%']
+    },
   ];
 
   // Update active index based on scroll position
@@ -90,9 +98,6 @@ export default function JourneyPage() {
     setExpandedIndex(expandedIndex === index ? null : index);
   };
 
-  // Timeline progress calculation
-  const timelineProgress = useTransform(scrollYProgress, [0, 1], [0, 100]);
-
   return (
     <motion.div
       ref={containerRef}
@@ -101,8 +106,7 @@ export default function JourneyPage() {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
     >
-
-
+      {/* Content Container */}
       <div className="z-10 container mx-auto px-6 py-20 max-w-4xl">
         <motion.div
           className="text-center mb-20"
@@ -174,9 +178,9 @@ export default function JourneyPage() {
                   {/* Year */}
                   <motion.div
                     className="mb-6"
-                    initial={{ opacity: 0, x: -20 }}
+                    initial={{ opacity: 0, x: 0 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.1 + 0.2 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 + 0.3 }}
                     viewport={{ once: true }}
                   >
                     <span className="z-20 text-4xl font-bold bg-gradient-to-r from-pistachio-dark via-pistachio-medium to-pistachio-medium bg-clip-text text-transparent absolute -top-12 left-6 pointer-events-none">
@@ -221,7 +225,6 @@ export default function JourneyPage() {
                         </svg>
                       </motion.div>
                     </div>
-
                     {/* Expandable content */}
                     <motion.div
                       initial={false}
@@ -232,18 +235,20 @@ export default function JourneyPage() {
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                       className="overflow-hidden"
                     >
+                      {/* Description and Achievements */}
                       <div className="p-6 pt-4">
                         <p className="text-muted-foreground mb-4 backdrop-blur-md leading-relaxed">
                           {item.description}
                         </p>
-
                         <div>
-                          <h4 className="text-sm text-foreground mb-3">Key Achievements</h4>
+                          {/* Achievements title */}
+                          <h4 className="text-md text-pistachio-dark mb-3">Key Achievements</h4>
+                          {/* Achievements grid */}
                           <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                             {item.achievements.map((achievement, achIndex) => (
                               <motion.div
                                 key={achIndex}
-                                className="bg-accent/50 rounded-lg px-3 py-2 text-sm text-accent-foreground"
+                                className="bg-accent/50 rounded-lg px-3 py-2 text-sm text-accent-foreground px-3 py-1 text-xs bg-accent text-pistachio-dark rounded-full"
                                 initial={{ opacity: 0, y: 10 }}
                                 animate={{
                                   opacity: expandedIndex === index ? 1 : 0,

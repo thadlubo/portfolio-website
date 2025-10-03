@@ -1,25 +1,33 @@
-# Morphism Portfolio Starter (Framer Motion + Routes)
+# 🌿 Pistachio Portfolio
 
-Stack: Vite + React + TypeScript + TailwindCSS + Framer Motion + React Router
+A modern interactive portfolio built with **React + TailwindCSS**, styled using a **pistachio-inspired color palette**, smooth **Framer Motion animations**, and page navigation via **react-router-dom**.
 
-## Quick start
+---
 
-1. Install dependencies
+## ✨ Features
+- 🎨 **Pistachio Theme** with light, medium, dark, and cream tones  
+- 🌀 **Animations & Hover Effects** powered by **motion/react**  
+- 📌 **Dynamic Routing** using **react-router-dom** (Home, Creations, Connect, etc.)  
+- 📱 **Responsive Design** via TailwindCSS grids & utilities  
 
+---
+
+## 🛠️ Tech Stack
+**React 18** · **TypeScript** · **TailwindCSS** · **motion/react (Framer Motion v7)** · **react-router-dom** · **Vite**
+
+---
+
+## 🚀 Getting Started
 ```bash
+# Clone repo
+git clone https://github.com/yourusername/pistachio-portfolio.git
+cd pistachio-portfolio
+
+# Install dependencies
 npm install
-```
 
-2. Run dev server
-
-```bash
+# Run dev server
 npm run dev
-```
 
-This starter includes:
-- Morphism card styles and Pistachio theme
-- Reusable components (Navbar, Hero, ProjectCard, ProjectGrid)
-- Framer Motion for hover micro-interactions and route-level page transitions
-- React Router v6 sample routes (Home, About)
-
-Customize colors and shadows in `tailwind.config.cjs` and `src/index.css`.
+# Build for production
+npm run build

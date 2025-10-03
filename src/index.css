@@ -3,14 +3,11 @@
 @tailwind utilities;
 
 :root {
-  --font-size: 16px;
-  /* Pistachio Ice Cream Color Palette */
+  /* Pistachio Color Palette */
   --background: #F4FFE7;
   --foreground: #1a2f1e;
   --card: rgba(245, 255, 245, 0.7);
   --card-foreground: #1a2f1e;
-  --popover: #f4ffe7;
-  --popover-foreground: #1a2f1e;
   --primary: #4a7c59;
   --primary-foreground: #f4ffe7;
   --secondary: #e8f5e8;
@@ -20,15 +17,9 @@
   --accent: #9ed2a7;
   --accent-foreground: #1a2f1e;
   --border: rgba(74, 124, 89, 0.2);
-  --input: transparent;
-  --input-background: rgba(240, 248, 240, 0.8);
-  --switch-background: #c5e3ca;
-  --font-weight-medium: 500;
-  --font-weight-normal: 400;
-  --ring: #4a7c59;
   --radius: 0.875rem;
-  
-  /* Pistachio theme specific colors */
+
+  /* Pistachio Ice cream theme specific colors */
   --pistachio-light: #f5fff5;
   --pistachio-soft: #e8f5e8;
   --pistachio-medium: #9ed2a7;
@@ -46,8 +37,6 @@
   --foreground: #e8f5e8;
   --card: rgba(26, 47, 30, 0.7);
   --card-foreground: #e8f5e8;
-  --popover: #1a2f1e;
-  --popover-foreground: #e8f5e8;
   --primary: #9ed2a7;
   --primary-foreground: #0f1611;
   --secondary: #1a2f1e;
@@ -57,10 +46,7 @@
   --accent: #4a7c59;
   --accent-foreground: #e8f5e8;
   --border: rgba(158, 210, 167, 0.3);
-  --input: rgba(26, 47, 30, 0.8);
-  --ring: #9ed2a7;
-  --font-weight-medium: 500;
-  --font-weight-normal: 400;
+  --radius: 0.875rem;
   
   /* Dark pistachio theme specific colors (In construction) */
   --pistachio-light: #243329;

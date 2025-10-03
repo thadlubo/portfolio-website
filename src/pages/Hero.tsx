@@ -49,14 +49,14 @@ export function Hero() {
           className="relative group mb-"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 1.5, ease: "easeInOut" }}
         >
           {/* Main Image Container */}
           <div className="relative w-80 h-80 sm:w-96 sm:h-96 lg:w-[28rem] lg:h-[28rem] mx-auto glass rounded-3xl p-8 overflow-hidden">
 
             {/* Left Hover Indicator */}
             <motion.div
-              className="absolute z-10 left-2 top-1/2 transform -translate-y-1/2"
+              className="absolute z-10 left-2 top-10 transform -translate-y-1/2"
               initial={{ opacity: 0.7 }}
               animate={{
                 x: [-5, 5, -5],
@@ -79,7 +79,7 @@ export function Hero() {
 
             {/* Right Hover Indicator */}
             <motion.div
-              className="absolute z-10 right-2 top-1/2 transform -translate-y-1/2"
+              className="absolute z-10 right-2 top-10 transform -translate-y-1/2"
               initial={{ opacity: 0.7 }}
               animate={{
                 x: [5, -5, 5],
@@ -217,10 +217,11 @@ export function Hero() {
             <Button
               size="lg"
               className="bg-pistachio-dark border border-border hover:bg-pistachio-light hover:text-pistachio-dark text-white px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105"
-              // need onClick to scroll to creations section
+              
             >
               Explore Creations
             </Button>
+
             <Button
               variant="outline"
               size="lg"
@@ -232,36 +233,43 @@ export function Hero() {
 
           {/* Social Links */}
           <motion.div
-            className="flex justify-center space-x-6"
+            className="flex justify-center space-x-6 mb-4"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.8 }}
           >
             <motion.a
-              href="#"
-              className="p-3 rounded-full glass bg-card border border-border hover:bg-pistachio-medium transition-all duration-300"
+              href="https://github.com/thadlubo"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 rounded-full glass bg-card border border-border text-pistachio-dark hover:bg-pistachio-dark hover:text-pistachio-light transition-all duration-300"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
               <Github className="h-6 w-6" />
             </motion.a>
+
             <motion.a
-              href="#"
-              className="p-3 rounded-full glass bg-card border border-border hover:bg-pistachio-medium transition-all duration-300"
+              href="https://www.linkedin.com/in/thaddeus-lubo/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 rounded-full glass bg-card border border-border text-pistachio-dark hover:bg-pistachio-dark hover:text-pistachio-light transition-all duration-300"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
               <Linkedin className="h-6 w-6" />
             </motion.a>
+
             <motion.a
-              href="#"
-              className="p-3 rounded-full glass bg-card border border-border hover:bg-pistachio-medium transition-all duration-300"
+              href="mailto:thadlubo@gmail.com"
+              className="p-3 rounded-full glass bg-card border border-border text-pistachio-dark hover:bg-pistachio-dark hover:text-pistachio-light transition-all duration-300"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
               <Mail className="h-6 w-6" />
             </motion.a>
           </motion.div>
+
         </motion.div>
       </div>
     </section>

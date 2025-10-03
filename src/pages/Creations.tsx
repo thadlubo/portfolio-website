@@ -116,7 +116,7 @@ const projects = [
               className={`px-6 py-3 rounded-full transition-all duration-300 ${
                 selectedFilter === filter.id
                   ? 'bg-primary text-primary-foreground shadow-lg'
-                  : 'bg-card border border-border hover:border-primary'
+                  : 'text-pistachio-dark bg-card border border-border hover:border-primary'
               }`}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
