@@ -1,5 +1,5 @@
 module.exports = {
-  darkMode: "class", // important for future dark mode impl `.dark { ... }` 
+  darkMode: "class", // for future dark mode impl `.dark { ... }` 
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {

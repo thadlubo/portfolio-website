@@ -63,3 +63,8 @@ body {
 }
 
 
+.btn-primary {
+  @apply bg-pistachio-dark text-white px-8 py-3 rounded-full
+         hover:bg-pistachio-light hover:text-pistachio-dark
+         transition-transform duration-300 hover:scale-105;
+}

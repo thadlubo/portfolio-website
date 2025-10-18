@@ -3,7 +3,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 
 export default function Navigation() {
   const navigate = useNavigate();
-  const location = useLocation(); // 👈 determines current page
+  const location = useLocation(); 
 
   const pages = [
     { path: "/", label: "Home" },
@@ -21,6 +21,7 @@ export default function Navigation() {
       transition={{ duration: 0.6, delay: 0.2 }}
     >
       <div className="flex space-x-4 md:space-x-6 backdrop-blur-md rounded-full px-3 py-2 md:px-6 md:py-3 border border-border text-sm md:text-base scale-90 sm:scale-100">
+        {/* Navigation Routing */}
         {pages.map((page) => {
           const isActive = location.pathname === page.path;
           return (

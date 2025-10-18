@@ -95,6 +95,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.5, ease: "easeInOut" }}
         >
+          {/* Hover Me Indicator */}
           <div className="relative w-80 h-80 sm:w-96 sm:h-96 lg:w-[28rem] lg:h-[28rem] mx-auto glass rounded-3xl p-8 overflow-hidden">
             <HoverArrow side="left" hoverState={hoverState} Icon={ChevronRight} />
             <HoverArrow side="right" hoverState={hoverState} Icon={ChevronLeft} />
@@ -163,7 +164,8 @@ export default function Hero() {
           >
             {subtitle}
           </motion.p>
-
+          
+          {/* Call to Action Buttons */}
           <motion.div
             className="flex flex-col sm:flex-row gap-4 justify-center mb-8 mt-12"
             initial={{ opacity: 0, y: 30 }}
