@@ -1,6 +1,7 @@
 import { motion, useScroll, useTransform, useInView } from 'motion/react';
 import { useRef, useState, useEffect } from 'react';
 import { ImageWithFallback } from '../components/ImageWithFallback';
+import TechStack from '../components/TechStack';
 
 export default function JourneyPage() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -193,10 +194,10 @@ export default function JourneyPage() {
                   <motion.div
                     className="bg-card border border-border rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer"
                     onClick={() => toggleExpanded(index)}
-                    whileHover={{ y: -2 }}
+                    whileHover={{ y: -10 }}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.1 + 0.4 }}
+                    transition={{ duration: 0.4, delay: index * 0.1 + 0.4 }}
                     viewport={{ once: true }}
                   >
                     {/* Image with overlay */}
@@ -273,6 +274,10 @@ export default function JourneyPage() {
           </div>
         </div>
       </div>
+      <div className="mt-32">
+        <TechStack />
+      </div>
     </motion.div>
+
   );
 }

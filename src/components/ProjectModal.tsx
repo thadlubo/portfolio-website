@@ -309,6 +309,7 @@ export const ProjectModal = ({
                         <div className="flex justify-between items-center mb-1">
                           <span className="font-medium">{c.name}</span>
                           <span className="text-xs text-muted-foreground">
+
                             {c.date}
                           </span>
                         </div>
@@ -320,7 +321,7 @@ export const ProjectModal = ({
               </div>
 
               {/* Comment Form */}
-              <div className="mt-6 border-t border-border pt-4">
+              <div className="mt-6 border-t border-border pt-2">
                 <form onSubmit={handleSubmit} className="flex flex-col gap-2">
                   <input
                     type="text"
