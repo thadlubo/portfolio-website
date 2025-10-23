@@ -12,15 +12,15 @@ import ContactPage from "./pages/Connect";
 // Motion wrapper for page transitions to reduce clutter in main App component
 const PageWrapper = ({ children }: { children: React.ReactNode }) => {
   const pageVariants = {
-    initial: { opacity: 0, x: 100, scale: 0.95 },
+    initial: { opacity: 0, x: 1000, scale: 0.8 },
     enter: { opacity: 1, x: 0, scale: 1 },
-    exit: { opacity: 0, x: -100, scale: 1.05 },
+    exit: { opacity: 0, x: -1000, scale: 1.2 },
   };
 
   const pageTransition = {
     type: "tween",
     ease: "anticipate",
-    duration: 0.5,
+    duration: 0.8,
   };
 
   return (

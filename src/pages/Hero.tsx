@@ -2,6 +2,7 @@ import { motion } from "motion/react";
 import { Github, Linkedin, Mail, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
+import { useNavigate } from "react-router-dom";
 
 const hoverInfo = {
   none: {
@@ -31,7 +32,7 @@ const HoverArrow = ({
   Icon: typeof ChevronLeft;
 }) => (
   <motion.div
-    className={`absolute z-10 ${side}-4 top-10 -translate-y-1/2`}
+    className={`absolute z-10 ${side}-4 top-20 -translate-y-1/2`}
     initial={{ opacity: 0.7 }}
     animate={{
       x: side === "left" ? [-5, 5, -5] : [5, -5, 5],
@@ -78,6 +79,7 @@ const HoverZone = ({
 export default function Hero() {
   const [hoverState, setHoverState] = useState<"none" | "left" | "right">("none");
   const { title, subtitle } = hoverInfo[hoverState];
+  const navigate = useNavigate();
 
   const socials = [
     { href: "https://github.com/thadlubo", icon: Github },
@@ -164,7 +166,7 @@ export default function Hero() {
           >
             {subtitle}
           </motion.p>
-          
+
           {/* Call to Action Buttons */}
           <motion.div
             className="flex flex-col sm:flex-row gap-4 justify-center mb-8 mt-12"
@@ -172,7 +174,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.8 }}
           >
-            <Button size="lg" className="bg-pistachio-dark text-white px-8 py-3 rounded-full hover:bg-pistachio-light hover:text-pistachio-dark transition-transform duration-300 hover:scale-105">
+            <Button size="lg" onClick={() => navigate("/creations")} className="bg-pistachio-dark text-white px-8 py-3 rounded-full hover:bg-pistachio-light hover:text-pistachio-dark transition-transform duration-300 hover:scale-105">
               Explore Creations
             </Button>
             <Button
@@ -197,7 +199,7 @@ export default function Hero() {
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 rounded-full glass bg-card border text-pistachio-dark hover:bg-pistachio-dark hover:text-pistachio-light transition-all duration-300"
+                className="p-3 rounded-full glass bg-pistachio-soft border text-pistachio-dark hover:bg-pistachio-dark hover:text-pistachio-light transition-all duration-300"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
               >
