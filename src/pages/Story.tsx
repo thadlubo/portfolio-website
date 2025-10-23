@@ -13,7 +13,7 @@ export default function StoryPage() {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
+      {/* Story Intro Section */}
       <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary/5 via-background to-primary/10">
         <div className="container mx-auto px-6 text-center">
           <motion.div
@@ -21,8 +21,9 @@ export default function StoryPage() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <span className="text-primary tracking-wide uppercase text-sm">My Story</span>
-            <h1 className="text-5xl lg:text-7xl mt-4 mb-6">
+            <span className="mb-4 text-4xl font-bold bg-gradient-to-l from-pistachio-dark via-pistachio-medium to-pistachio-dark bg-clip-text text-transparent uppercase mb-4 block">
+              My Story</span>
+            <h1 className="text-5xl lg:text-7xl mb-6">
               A Journey Through
               <motion.span
                 className="block text-primary"
@@ -47,7 +48,7 @@ export default function StoryPage() {
       </section>
 
       {/* Childhood Section */}
-      <section className="min-h-screen flex items-center py-20 bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50">
+      <section className="min-h-screen flex items-center py-20 bg-gradient-to-b from-transparent via-pistachio-light to-blue-50">
         <div className="container mx-auto px-6">
           <motion.div
             className="grid lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto"
@@ -65,12 +66,12 @@ export default function StoryPage() {
                 </h2>
                 <p className="text-lg leading-relaxed text-muted-foreground">
                   As a kid, I was <span className="text-primary">stylish</span>, <span className="text-primary">brave</span>,
-                  <span className="text-primary"> quick-witted</span>, and full of adventure — never afraid to dive headfirst
-                  into new experiences (even the pool, naked!).
+                  <span className="text-primary"> quick-witted</span>, and full of adventure. Never afraid to dive headfirst
+                  into new experiences (even in the pool for the very first time, bold and naked 😂).
                 </p>
                 <p className="text-lg leading-relaxed text-muted-foreground mt-4">
                   Every day was an exploration, every moment a new discovery.
-                  I approached life with pure curiosity and zero fear.
+                  I approached life with pure curiosity and zero fear. The unknown wasn't a threat, it was an invitation
                 </p>
               </div>
             </div>
@@ -83,7 +84,7 @@ export default function StoryPage() {
                   transition={{ type: "spring", stiffness: 300 }}
                 >
                   <ImageWithFallback
-                    src="images/PortfolioRight.png"
+                    src="images/meAndPool.jpg"
                     alt="Kid at the pool"
                     className="w-48 h-36 object-cover"
                   />
@@ -96,7 +97,7 @@ export default function StoryPage() {
                   transition={{ type: "spring", stiffness: 300 }}
                 >
                   <ImageWithFallback
-                    src="https://images.unsplash.com/photo-1753742731099-028d1a0555fb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiaXJ0aGRheSUyMHBhcnR5JTIwa2lkcyUyMGNlbGVicmF0aW9ufGVufDF8fHx8MTc1OTQ0MTQ0Nnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                    src="images/meAndBirthday.jpg"
                     alt="Birthday celebration"
                     className="w-48 h-36 object-cover"
                   />
@@ -109,7 +110,7 @@ export default function StoryPage() {
       </section>
 
       {/* Teenage Years Section */}
-      <section className="min-h-screen flex items-center py-20 bg-gradient-to-br from-orange-50 via-yellow-50 to-red-50">
+      <section className="min-h-screen flex items-center py-20 bg-gradient-to-b from-blue-50 to-pistachio-medium">
         <div className="container mx-auto px-6">
           <motion.div
             className="grid lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto"
@@ -127,7 +128,7 @@ export default function StoryPage() {
                   transition={{ type: "spring", stiffness: 300 }}
                 >
                   <ImageWithFallback
-                    src="https://images.unsplash.com/photo-1626181273973-2fa879d02fe4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWVuYWdlciUyMHNrYXRlYm9hcmRpbmclMjBzdHJlZXR8ZW58MXx8fHwxNzU5NDQxNDUyfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                    src="images/meAndSkateboard.jpg"
                     alt="Skateboarding adventures"
                     className="w-full h-52 object-cover"
                   />
@@ -140,33 +141,36 @@ export default function StoryPage() {
                   transition={{ type: "spring", stiffness: 300 }}
                 >
                   <ImageWithFallback
-                    src="https://images.unsplash.com/photo-1758521540798-6cec2067be4f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWVuYWdlciUyMHBsYXlpbmclMjBndWl0YXIlMjBtdXNpY3xlbnwxfHx8fDE3NTk0NDE0NTZ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                    src="images/meAndGuitar.jpg"
                     alt="Guitar playing"
                     className="w-full h-52 object-cover"
                   />
                   <p className="text-xs text-center mt-3 font-mono text-gray-700">Music passion 🎸</p>
                 </motion.div>
               </div>
+              <div className="flex justify-center mt-8">
+                <motion.div
+                  className="w-64 bg-gradient-to-br from-blue-600 to-purple-700 text-white p-4 rounded-lg shadow-lg opacity-90"
+                  initial={{ scale: 0, rotate: -10 }}
+                  whileInView={{ scale: 1, rotate: 0 }}
+                  transition={{ delay: 0.5, type: "spring" }}
+                  viewport={{ once: true }}
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                >
+                  <div className="flex items-center gap-2 mb-2">
+                    <Gamepad2 className="w-4 h-4" />
+                    <span className="text-xs font-mono">WoW Custom UI</span>
+                  </div>
+                  <ImageWithFallback
+                    src="images/wowUI.png"
+                    alt="WoW UI screenshot"
+                    className="w-full h-40 object-cover"
+                  />
 
-              <motion.div
-                className="mt-8 bg-gradient-to-br from-blue-600 to-purple-700 text-white p-4 rounded-lg shadow-lg opacity-90"
-                whileInView={{ scale: 1, rotate: 0 }}
-                transition={{ delay: 0.5, type: "spring" }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.1, rotate: 5 }}
-              >
-                <div className="flex items-center gap-2 mb-2">
-                  <Gamepad2 className="w-4 h-4" />
-                  <span className="text-xs font-mono">WoW Custom UI</span>
-                </div>
-                <ImageWithFallback
-                  src="images/wowUI.png"
-                  className="w-90 h-36 object-cover"
-                />
-                <p className="text-xs mt-1 font-mono">Level 70 Achieved!</p>
-              </motion.div>
+                  <p className="text-xs mt-1 font-mono">Level 70 Achieved!</p>
+                </motion.div>
+              </div>
             </div>
-
             <div className="space-y-8 order-1 lg:order-2">
               <div>
                 <h2 className="text-4xl lg:text-5xl mb-6">
@@ -174,13 +178,14 @@ export default function StoryPage() {
                   <span className="block text-2xl text-muted-foreground mt-2">Age 13-18</span>
                 </h2>
                 <p className="text-lg leading-relaxed text-muted-foreground">
-                  As a teenager, I embraced my creative side. Between <span className="text-primary">skateboarding</span>,
+                  As a teenager, I embraced my creative side which drove me to <span className="text-primary">problem-solve</span> 
+                  skills I want to learn through <span className="text-primary">skateboarding</span>,
                   <span className="text-primary"> music</span>, and <span className="text-primary">gaming</span> (World of Warcraft),
-                  I discovered my passion for computers.
+                  Where I discovered my passion and knack for computers.
                 </p>
                 <p className="text-lg leading-relaxed text-muted-foreground mt-4">
-                  I even scripted custom UIs and helped run a private server, making the game free-to-play.
-                  This was my first taste of <span className="text-primary">coding</span> and
+                  I began by scripting custom UIs, then took it a step further by helping manage a private server to make the game free to play.
+                  This hands on work was my first exposure to <span className="text-primary">coding</span> and
                   <span className="text-primary"> digital creation</span>.
                 </p>
               </div>
@@ -190,7 +195,7 @@ export default function StoryPage() {
       </section>
 
       {/* University & Career Section */}
-      <section className="min-h-screen flex items-center py-20 bg-gradient-to-br from-green-50 via-blue-50 to-indigo-50">
+      <section className="min-h-screen flex items-center py-20 bg-pistachio-medium">
         <div className="container mx-auto px-6">
           <motion.div
             className="grid lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto"
@@ -204,16 +209,15 @@ export default function StoryPage() {
               <div>
                 <h2 className="text-4xl lg:text-5xl mb-6">
                   University & Career
-                  <span className="block text-2xl text-muted-foreground mt-2">Age 19-25</span>
+                  <span className="block text-2xl text-muted-foreground mt-2">Currently</span>
                 </h2>
                 <p className="text-lg leading-relaxed text-muted-foreground">
-                  I graduated in <span className="text-primary">ECE at UL</span>, then worked as a
-                  <span className="text-primary"> front-end developer</span> and <span className="text-primary">QA</span>.
+                  After graduating in <span className="text-primary">ECE at UL</span>, I took a necessary career break to care for my terminally ill mother. 
+                  This challenging time taught me  <span className="text-primary">resiliency</span> on how to handle emergencies and unexpected situations with both 
+                  <span className="text-primary">empathy and sensitivity</span>.
                 </p>
                 <p className="text-lg leading-relaxed text-muted-foreground mt-4">
-                  Inspired by working closely with a design lead, I absorbed everything I could —
-                  and found my calling in <span className="text-primary">UI/UX design</span>.
-                  This was where technical skills met creative vision.
+                  I then jumped back into the technical world, leveraging my side-projects to land a role as a <span className="text-primary">front-end developer</span> and <span className="text-primary">QA</span>. Inspired by working closely with a design lead, I realized my calling was at the intersection of my technical skills and creative vision. I am currently deepening this expertise through a Master's in <span className="text-primary">UI/UX Design</span>.
                 </p>
               </div>
             </div>
@@ -225,21 +229,21 @@ export default function StoryPage() {
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1738949538812-aebbb54a0592?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx1bml2ZXJzaXR5JTIwZ3JhZHVhdGlvbiUyMGNlcmVtb255fGVufDF8fHx8MTc1OTM4Mjk0Mnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                  src="images/momAndMe.jpg"
                   alt="University graduation"
                   className="w-full h-72 object-cover"
                 />
                 <p className="text-sm text-center mt-4 font-mono text-gray-700">ECE Graduate & Developer Journey 🎓</p>
 
                 <motion.div
-                  className="absolute top-4 right-4 bg-black/90 text-green-400 p-2 text-xs font-mono"
+                  className="absolute -top-2 -right-10 bg-black/90 text-green-400 p-2 text-xs font-mono"
                   initial={{ scale: 0, opacity: 0 }}
                   whileInView={{ scale: 1, opacity: 1 }}
                   transition={{ delay: 0.7, type: "spring" }}
                   viewport={{ once: true }}
                 >
-                  <div>{'const designer = () => {'}</div>
-                  <div className="ml-1">{'return passion + skills;'}</div>
+                  <div>{'const creative developer = () => {'}</div>
+                  <div className="ml-1">{'return passion.design + skills.coding;'}</div>
                   <div>{'};'}</div>
                 </motion.div>
               </motion.div>
