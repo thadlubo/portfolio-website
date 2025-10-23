@@ -21,7 +21,7 @@ export default function StoryPage() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <span className="mb-4 text-4xl font-bold bg-gradient-to-l from-pistachio-dark via-pistachio-medium to-pistachio-dark bg-clip-text text-transparent uppercase mb-4 block">
+            <span className="mb-4 text-4xl font-bold bg-gradient-to-br from-pistachio-dark via-pistachio-medium to-pistachio-dark bg-clip-text text-transparent uppercase mb-4 block">
               My Story</span>
             <h1 className="text-5xl lg:text-7xl mb-6">
               A Journey Through
@@ -79,7 +79,7 @@ export default function StoryPage() {
             <div className="relative">
               <div className="relative">
                 <motion.div
-                  className="absolute -rotate-6 bg-white p-4 shadow-xl border-2 border-white"
+                  className="absolute -top-10 -rotate-6 bg-white p-4 shadow-xl border-2 border-white"
                   whileHover={{ rotate: -3, scale: 1.05 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
@@ -92,7 +92,7 @@ export default function StoryPage() {
                 </motion.div>
 
                 <motion.div
-                  className="absolute right-0 top-16 rotate-12 bg-white p-4 shadow-xl border-2 border-white"
+                  className="absolute right-0 top-1 rotate-12 bg-white p-4 shadow-xl border-2 border-white"
                   whileHover={{ rotate: 8, scale: 1.05 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
@@ -155,7 +155,7 @@ export default function StoryPage() {
                   whileInView={{ scale: 1, rotate: 0 }}
                   transition={{ delay: 0.5, type: "spring" }}
                   viewport={{ once: true }}
-                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  whileHover={{ scale: 1.5 }}
                 >
                   <div className="flex items-center gap-2 mb-2">
                     <Gamepad2 className="w-4 h-4" />
@@ -178,7 +178,7 @@ export default function StoryPage() {
                   <span className="block text-2xl text-muted-foreground mt-2">Age 13-18</span>
                 </h2>
                 <p className="text-lg leading-relaxed text-muted-foreground">
-                  As a teenager, I embraced my creative side which drove me to <span className="text-primary">problem-solve</span> 
+                  Moving to Ireland as a teenager, I embraced my creative side which drove me to <span className="text-primary">problem-solve</span> 
                   skills I want to learn through <span className="text-primary">skateboarding</span>,
                   <span className="text-primary"> music</span>, and <span className="text-primary">gaming</span> (World of Warcraft),
                   Where I discovered my passion and knack for computers.
@@ -195,7 +195,7 @@ export default function StoryPage() {
       </section>
 
       {/* University & Career Section */}
-      <section className="min-h-screen flex items-center py-20 bg-pistachio-medium">
+      <section className="min-h-screen flex items-center py-20 bg-gradient-to-b from-pistachio-medium via-pistachio-light to-transparent">
         <div className="container mx-auto px-6">
           <motion.div
             className="grid lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto"

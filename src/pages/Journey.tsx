@@ -117,7 +117,7 @@ export default function JourneyPage() {
         >
           {/* Section Title */}
           <motion.h1
-            className="mt-12 text-4xl font-bold bg-gradient-to-l from-pistachio-dark via-pistachio-medium to-pistachio-dark bg-clip-text text-transparent uppercase mb-4 block"
+            className="mt-12 text-4xl font-bold bg-gradient-to-br from-pistachio-dark via-pistachio-medium to-pistachio-dark bg-clip-text text-transparent uppercase mb-4 block"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.6 }}
@@ -184,7 +184,7 @@ export default function JourneyPage() {
                     transition={{ duration: 0.6, delay: index * 0.1 + 0.3 }}
                     viewport={{ once: true }}
                   >
-                    <span className="z-20 text-4xl font-bold bg-gradient-to-r from-pistachio-dark via-pistachio-medium to-pistachio-medium bg-clip-text text-transparent absolute -top-12 left-6 pointer-events-none">
+                    <span className="z-20 text-4xl font-bold bg-gradient-to-br from-pistachio-dark via-pistachio-medium to-pistachio-dark bg-clip-text text-transparent absolute -top-12 left-6 pointer-events-none">
                       {item.year}
                     </span>
 

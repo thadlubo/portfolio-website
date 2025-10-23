@@ -8,6 +8,7 @@ import StoryPage from "./pages/Story";
 import JourneyPage from "./pages/Journey";
 import CreationsPage from "./pages/Creations";
 import ContactPage from "./pages/Connect";
+import { useEffect } from "react";
 
 // Motion wrapper for page transitions to reduce clutter in main App component
 const PageWrapper = ({ children }: { children: React.ReactNode }) => {
@@ -39,6 +40,10 @@ const PageWrapper = ({ children }: { children: React.ReactNode }) => {
 
 export default function App() {
   const location = useLocation();
+  // Scroll to top on route change
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [location.pathname]);
 
   const routes = [
     { path: "/", element: <HeroPage /> },

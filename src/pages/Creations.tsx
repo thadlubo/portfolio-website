@@ -146,7 +146,7 @@ export default function CreationsPage() {
           viewport={{ once: true }}
         >
           <motion.h1
-            className="mt-12 text-4xl font-bold bg-gradient-to-l from-pistachio-dark via-pistachio-medium to-pistachio-dark bg-clip-text text-transparent uppercase mb-4"
+            className="mt-12 text-4xl font-bold bg-gradient-to-br from-pistachio-dark via-pistachio-medium to-pistachio-medium bg-clip-text text-transparent uppercase mb-4"
           >
             My Creations
           </motion.h1>
