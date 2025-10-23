@@ -266,8 +266,8 @@ export const ProjectModal = ({
             {/* Right Side Info and Comments */}
             <div className="w-full md:w-1/3 bg-white dark:bg-neutral-900 flex flex-col justify-between p-6 text-left overflow-y-auto max-h-[90vh]">
               <div>
-                <h2 className="text-2xl font-semibold mb-2">{project.title}</h2>
-                <p className="text-muted-foreground mb-4 leading-relaxed">
+                <h2 className="text-2xl text-primary dark:text-primary font-semibold mb-2">{project.title}</h2>
+                <p className="text-primary dark:text-accent-foreground mb-4 leading-relaxed">
                   {project.description}
                 </p>
 
@@ -299,7 +299,7 @@ export const ProjectModal = ({
 
                 {/* Comments List */}
                 <div className="mt-6">
-                  <h3 className="font-semibold mb-3">Comments</h3>
+                  <h3 className="font-semibold text-primary dark:text-foreground mb-3">Comments</h3>
                   <div className="space-y-3">
                     {(comments[project.id] || []).map((c, i) => (
                       <div
@@ -307,13 +307,13 @@ export const ProjectModal = ({
                         className="border border-border rounded-lg p-3 bg-card/40"
                       >
                         <div className="flex justify-between items-center mb-1">
-                          <span className="font-medium">{c.name}</span>
-                          <span className="text-xs text-muted-foreground">
+                          <span className="font-medium text-primary dark:text-foreground">{c.name}</span>
+                          <span className="text-xs text-primary text-muted-foreground">
 
                             {c.date}
                           </span>
                         </div>
-                        <p className="text-sm text-foreground">{c.text}</p>
+                        <p className="text-sm text-primary">{c.text}</p>
                       </div>
                     ))}
                   </div>

@@ -1,9 +1,30 @@
 import { motion } from "framer-motion";
 import { useNavigate, useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Sun, Moon } from "lucide-react"; // icons
 
 export default function Navigation() {
   const navigate = useNavigate();
   const location = useLocation(); 
+
+  const [isDark, setIsDark] = useState(false);
+
+  // System preference for dark or light mode
+  useEffect(() => {
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      setIsDark(true);
+      document.documentElement.classList.add("dark");
+    }
+  }, []);
+
+  // Apply dark or light class when toggled
+  useEffect(() => {
+    if (isDark) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [isDark]);
 
   const pages = [
     { path: "/", label: "Home" },
@@ -20,7 +41,8 @@ export default function Navigation() {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, delay: 0.2 }}
     >
-      <div className="flex space-x-4 md:space-x-6 backdrop-blur-md rounded-full px-3 py-2 md:px-6 md:py-3 border border-border text-sm md:text-base scale-90 sm:scale-100">
+      <div className="flex items-center space-x-4 md:space-x-6 backdrop-blur-md rounded-full px-3 py-2 md:px-6 md:py-3 border border-border text-sm md:text-base scale-90 sm:scale-100">
+        
         {/* Navigation Routing */}
         {pages.map((page) => {
           const isActive = location.pathname === page.path;
@@ -32,17 +54,16 @@ export default function Navigation() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
             >
-              {/* Tab Hover and Active State */}
               <span
-                className={`transition-colors duration-300 ${isActive
+                className={`transition-colors duration-300 ${
+                  isActive
                     ? "text-pistachio-light"
                     : "text-primary hover:text-pistachio-medium"
-                  }`}
+                }`}
               >
                 {page.label}
               </span>
-              
-              {/* Tab animation*/}
+
               {isActive && (
                 <motion.div
                   className="absolute inset-0 bg-pistachio-dark rounded-full"
@@ -54,6 +75,20 @@ export default function Navigation() {
             </motion.button>
           );
         })}
+
+        {/* Dark mode toggle */}
+        <motion.button
+          onClick={() => setIsDark(!isDark)}
+          className="ml-2 p-2 rounded-full border border-border bg-card text-primary hover:bg-pistachio-light hover:text-pistachio-dark transition-all duration-300"
+          whileHover={{ scale: 1.1, rotate: 5 }}
+          whileTap={{ scale: 0.9 }}
+        >
+          {isDark ? (
+            <Sun className="w-4 h-4 text-pistachio-medium" />
+          ) : (
+            <Moon className="w-4 h-4 text-pistachio-dark" />
+          )}
+        </motion.button>
       </div>
     </motion.nav>
   );

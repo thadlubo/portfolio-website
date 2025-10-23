@@ -48,7 +48,7 @@ export default function StoryPage() {
       </section>
 
       {/* Childhood Section */}
-      <section className="min-h-screen flex items-center py-20 bg-gradient-to-b from-transparent via-pistachio-light to-blue-50">
+      <section className="min-h-screen flex items-center py-20 bg-gradient-to-b from-transparent via-pistachio-light to-blue-50 dark:from-transparent dark:via-transparent dark:to-pistachio-light">
         <div className="container mx-auto px-6">
           <motion.div
             className="grid lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto"
@@ -110,7 +110,7 @@ export default function StoryPage() {
       </section>
 
       {/* Teenage Years Section */}
-      <section className="min-h-screen flex items-center py-20 bg-gradient-to-b from-blue-50 to-pistachio-medium">
+      <section className="min-h-screen flex items-center py-20 bg-gradient-to-b from-blue-50 to-pistachio-medium dark:from-pistachio-light dark:via-pistachio-soft dark:to-pistachio-medium">
         <div className="container mx-auto px-6">
           <motion.div
             className="grid lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto"
