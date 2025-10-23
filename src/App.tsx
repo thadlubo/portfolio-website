@@ -66,7 +66,7 @@ export default function App() {
       {/* Background layer for floating dots */}
       <div className="fixed inset-0 pointer-events-none z-0" />
       {/* Floating dots component */}
-      <FloatingDots count={50} floatX={10} floatY={10} />
+      <FloatingDots count={50} floatX={20} floatY={20} />
     </div>
   );
 }

@@ -20,6 +20,39 @@ export default function CreationsPage() {
   const projects = [
     {
       id: 1,
+      title: "Product Demo Video",
+      category: "media",
+      shortDescription:
+        "Animated motion graphics created for a digital marketing campaign.",
+      description:
+        "Product demo video for a digital marketing campaign across social media platforms, highlighting key product features through engaging motion design and sound.",
+      media: [
+        { type: "youtube", src: "https://www.youtube.com/embed/SR__amDl1c8?si=iVKrqQQtRfyUNgbo" },
+        { type: "youtube", src: "https://www.youtube.com/embed/d8iuUDam0Fo?si=iurFlPgUWcXd-DPQ" },
+      ],
+      tags: ["Digital Media", "Animation", "Marketing"],
+      color: "from-pistachio-dark to-pistachio-mint",
+    },
+    {
+      id: 2,
+      title: "Disposable Camera Photography Series",
+      category: "media",
+      shortDescription:
+        "A collection of photographs taken in Malta with a disposable camera, exploring themes of nostalgia and imperfection.",
+      description:
+        "LOREM IPSUM TEST SCROLL AREA. A collection of photographs taken in Malta with a disposable camera, exploring themes of nostalgia and imperfection through authentic analog aesthetics.s of nostalgia and imperfection through authentic analog aesthetics.s of nostalgia and imperfection through authentic analog aesthetics.s of nostalgia and imperfection through authentic analog aesthetics.s of nostalgia and imperfection through authentic analog aesthetics.s of nostalgia and imperfection through authentic analog aesthetics.s of nostalgia and imperfection through authentic analog aesthetics.s of nostalgia and imperfection through authentic analog aesthetics.s of nostalgia and imperfection through authentic analog aesthetics.s of nostalgia and imperfection through authentic analog aesthetics.s of nostalgia and imperfection through authentic analog aesthetics.s of nostalgia and imperfection through authentic analog aesthetics.s of nostalgia and imperfection through authentic analog aesthetics.s of nostalgia and imperfection through authentic analog aesthetics.s of nostalgia and imperfection through authentic analog aesthetics.s of nostalgia and imperfection through authentic analog aesthetics.s of nostalgia and imperfection through authentic analog aesthetics.s of nostalgia and imperfection through authentic analog aesthetics.s of nostalgia and imperfection through authentic analog aesthetics.s of nostalgia and imperfection through authentic analog aesthetics.s of nostalgia and imperfection through authentic analog aesthetics.s of nostalgia and imperfection through authentic analog aesthetics.s of nostalgia and imperfection through authentic analog aesthetics.s of nostalgia and imperfection through authentic analog aesthetics.",
+      media: [
+        { type: "image", src: "images/Photography.png" },
+        { type: "image", src: "images/malta1.jpg" },
+        { type: "image", src: "images/malta2.jpg" },
+        { type: "image", src: "images/malta3.jpg" },
+        { type: "image", src: "images/malta4.jpg" },
+      ],
+      tags: ["Digital Media", "Marketing"],
+      color: "from-pistachio-dark to-pistachio-mint",
+    },
+    {
+      id: 3,
       title: "E-commerce Mobile App",
       category: "webapp",
       description:
@@ -33,7 +66,7 @@ export default function CreationsPage() {
       color: "from-pistachio-light to-pistachio-medium",
     },
     {
-      id: 2,
+      id: 4,
       title: "Job Opportunity Portal",
       category: "webapp",
       description:
@@ -42,24 +75,11 @@ export default function CreationsPage() {
         { type: "image", src: "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1080&q=80" },
         { type: "image", src: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1080&q=80" },
       ],
-      tags: ["Web App", "Dashboard", "Healthcare"],
+      tags: ["Web App", "Dashboard", "Job Portal"],
       color: "from-pistachio-medium to-pistachio-dark",
     },
     {
-      id: 3,
-      title: "Motion Graphics Campaign",
-      category: "media",
-      description:
-        "Animated motion graphics series designed for a digital marketing campaign across social media platforms.",
-      media: [
-        { type: "youtube", src: "https://www.youtube.com/embed/d8iuUDam0Fo?si=iurFlPgUWcXd-DPQ" },
-        { type: "image", src: "https://images.unsplash.com/photo-1486486955648-a4f22566c598?auto=format&fit=crop&w=1080&q=80" },
-      ],
-      tags: ["Digital Media", "Animation", "Marketing"],
-      color: "from-pistachio-dark to-pistachio-mint",
-    },
-    {
-      id: 4,
+      id: 5,
       title: "Interactive Design Theory Study",
       category: "theory",
       description:
@@ -71,7 +91,7 @@ export default function CreationsPage() {
       color: "from-pistachio-mint to-pistachio-saturated",
     },
     {
-      id: 5,
+      id: 6,
       title: "Restaurant Chain Rebrand",
       category: "other",
       description:
@@ -85,7 +105,13 @@ export default function CreationsPage() {
     },
   ];
 
-  // 🔹 Helper: Auto-generate thumbnail for YouTube media
+  // Short description helper
+  const getShortDescription = (text: string, maxLength = 90) => {
+    if (text.length <= maxLength) return text;
+    return text.substring(0, maxLength).trim() + "…";
+  };
+
+  // Video thumbnail helper
   const getThumbnailSrc = (media: any[]) => {
     const first = media[0];
     if (first.type === "youtube") {
@@ -143,11 +169,10 @@ export default function CreationsPage() {
             <motion.button
               key={filter.id}
               onClick={() => setSelectedFilter(filter.id)}
-              className={`px-6 py-3 rounded-full transition-all duration-300 ${
-                selectedFilter === filter.id
-                  ? "bg-primary text-primary-foreground shadow-lg"
-                  : "text-pistachio-dark bg-card border border-border hover:border-primary"
-              }`}
+              className={`px-6 py-3 rounded-full transition-all duration-300 ${selectedFilter === filter.id
+                ? "bg-primary text-primary-foreground shadow-lg"
+                : "text-pistachio-dark bg-card border border-border hover:border-primary"
+                }`}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -240,9 +265,14 @@ export default function CreationsPage() {
                     <h3 className="text-xl mb-2 group-hover:text-primary transition-colors duration-300">
                       {project.title}
                     </h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed">
-                      {project.description}
+
+                    <p className="text-muted-foreground text-sm leading-relaxed mb-2">
+                      {project.shortDescription || getShortDescription(project.description, 90)}
                     </p>
+
+                    <span className="text-pistachio-dark text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      Read more →
+                    </span>
 
                     <motion.div
                       className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-primary to-accent"
