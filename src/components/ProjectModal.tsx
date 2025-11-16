@@ -267,7 +267,7 @@ export const ProjectModal = ({
             <div className="w-full md:w-1/3 bg-white dark:bg-neutral-900 flex flex-col justify-between p-6 text-left overflow-y-auto max-h-[90vh]">
               <div>
                 <h2 className="text-2xl text-primary dark:text-primary font-semibold mb-2">{project.title}</h2>
-                <p className="text-primary dark:text-accent-foreground mb-4 leading-relaxed">
+                <p className="text-primary dark:text-accent-foreground mb-4 leading-relaxed whitespace-pre-line">
                   {project.description}
                 </p>
 

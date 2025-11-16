@@ -45,7 +45,7 @@ const HoverArrow = ({
       scale: { duration: 0.3 },
     }}
   >
-    <Button variant="light" className="rounded-full glass p-2 border-0 shadow-lg pointer-events-none">
+    <Button variant="light" className="rounded-full bg-pistachio-medium text-white p-2 border-0 shadow-lg pointer-events-none">
       <Icon size={20} />
     </Button>
   </motion.div>

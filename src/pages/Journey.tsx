@@ -217,7 +217,7 @@ export default function JourneyPage() {
 
                       {/* Expand indicator */}
                       <motion.div
-                        className="absolute top-4 right-4 w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white"
+                        className="absolute top-4 right-4 w-8 h-8 bg-pistachio-medium rounded-full flex items-center justify-center text-white"
                         animate={{ rotate: expandedIndex === index ? 180 : 0 }}
                         transition={{ duration: 0.3 }}
                       >

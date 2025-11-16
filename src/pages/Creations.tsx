@@ -35,6 +35,109 @@ export default function CreationsPage() {
     },
     {
       id: 2,
+      title: "Formal Business Type Headshot",
+      category: "media",
+      shortDescription:
+        "Experimenting with portrait settings with a variable focal length and prime lenses",
+      description: `Experimenting photo edits in Lightroom in addition to portrait settings with a variable focal length and prime lense cameras.
+
+      Shot 1 on a Canon EOS Kiss (X7i) with:
+      • 50mm - classic focal length for natural, flattering portraits
+      • f/2.5 - shallow depth of field to keep the background soft
+      • 1/50s - slow enough to let in more light while keeping motion blur under control
+      • ISO 1600 - boosted sensitivity to handle indoor lighting
+      • +0.3 EV - slight exposure compensation to brighten the skin tones
+
+      Shot 2 on a Sony ILCE-7M3 (A7 III) with:
+      • 24mm - wider focal length for environmental context
+      • f/1.4 - very shallow depth of field for experiment
+      • 1/60s - fast enough to freeze motion
+      • ISO 1000 - moderate sensitivity for cleaner image
+      • White Balance: 5200K - to match indoor lighting conditions
+
+      Post-Processing in Lightroom (Photo 1):
+      • Cropped to 4:5 aspect ratio and rule of thirds composition
+      • Exposure: +0.25 
+      • Contrast: +15 
+      • Highlights: -20 
+      • Shadows: +30 
+      • Whites: +15
+      • HSL Adjustments:
+        > Reds: -10 Saturation
+        > Oranges: -10 Saturation and +10
+        > Green: -20 Saturation
+        > Yellows: -10 Saturation
+      • Sharpening: +40
+      • Texture: -10
+      • Clarity -10
+      • Vignette: -15
+
+      Takeaways:
+      • Variable focal lengths dramatically change composition and subject emphasis.
+      • Wider apertures create beautiful background blur but require precise focusing (Photo 2 taken below eye level).
+      • Post-processing is key but more importantly, getting the shot and lighting right in-camera is crucial.
+      • Definitely have the lights at a higher angle next time to avoid unflattering shadows
+      • Watch tutorials on portrait lighting setups and post-processing techniques to improve skills and find unique style.
+
+      Overall, a fun and learning experience, experimenting with different lenses, settings and editing to capture portrait shots. `,
+      media: [
+        { type: "image", src: "images/VariableFocalLength.jpeg" },
+        { type: "image", src: "images/PrimeLense.jpeg" },
+        { type: "image", src: "images/LightRoomEdit.jpeg" },
+      ],
+      tags: ["Digital Media", "Lightroom", "Photography"],
+      color: "from-pistachio-dark to-pistachio-mint",
+    },
+    {
+      id: 3,
+      title: "Aesthetic shot from Video Production",
+      category: "media",
+      shortDescription:
+        "An aesthetic still shot taken from a video production project.",
+      description:
+        `An aesthetic still shot taken from a video production project, showcasing composition, lighting, and color grading techniques to create a visually appealing image.
+        
+        This shot was captured using a Sony ILCE-7M3 (A7 III) camera with a 50mm lens, set to an aperture of f/1.8 to achieve a shallow depth of field, and ISO 1000 to accommodate low light conditions while maintaining dark and gritty aesthetics.
+
+        Post-processing involved color grading to enhance the mood, adjusting contrast and saturation to make the colors pop, and applying a subtle vignette to draw focus to the subject.
+
+        Video production location is set in Clare Abbey in Ireland, known for its historic ruins and picturesque landscapes, providing a perfect backdrop for capturing aesthetic and gritty visuals.
+
+        Overall, this still shot represents the culmination of technical skills in videography and post-production, resulting in a captivating image that tells a story and evokes emotion. 
+        Production team waited for the perfect lighting and moment in the afternoon (Waiting for rain to settle in Ireland) to capture this frame during the shoot. See blog for behind the scenes footage!
+        `,
+      media: [
+        { type: "image", src: "images/Aestethic.jpeg" },
+      ],
+      tags: ["Digital Media", "Marketing", "50 mm Lens", "Contemporary Dance"],
+      color: "from-pistachio-dark to-pistachio-mint",
+    },
+    {
+      id: 4,
+      title: "Passion Shot",
+      category: "media",
+      shortDescription:
+        "Image that reflects my passion in life",
+      description:
+        ` With every step, I kept asking myself what passion is supposed to look like.
+        Something bold? Something artistic? Something with edge and ambition?
+        I chased those ideas for a moment, but they felt like costumes that is too polished, too loud and too far from the pulse of my actual life.
+
+        Then, I stopped to take a breath, looked up and saw this golden light spilling over the ocean, the tide breathing its slow reassurance, a sandy nosed dog whose appreciation and joy so pure it rearranges something inside me.
+
+        And there it was, my answer. I remembered that my truest passion isn't about performance, perfection or achievemens. It's about presence, connection and the simple, sacred truth that the smallest breathing moment can hold the deepest meaning.
+
+        This photo captures that realization for me. Whenever my heart and mind feels crowded with shoulds and musts. I let myself step into a small moment and let it open a window to my true passion.
+        `,
+      media: [
+        { type: "image", src: "images/Passion.jpeg" },
+        { type: "image", src: "images/Passion.jpeg" },
+      ],
+      tags: ["Digital Media", "Marketing"],
+      color: "from-pistachio-dark to-pistachio-mint",
+    },
+    {
+      id: 5,
       title: "Disposable Camera Photography Series",
       category: "media",
       shortDescription:
@@ -52,7 +155,7 @@ export default function CreationsPage() {
       color: "from-pistachio-dark to-pistachio-mint",
     },
     {
-      id: 3,
+      id: 6,
       title: "E-commerce Mobile App",
       category: "webapp",
       description:
@@ -66,7 +169,7 @@ export default function CreationsPage() {
       color: "from-pistachio-light to-pistachio-medium",
     },
     {
-      id: 4,
+      id: 7,
       title: "Job Opportunity Portal",
       category: "webapp",
       description:
@@ -79,7 +182,7 @@ export default function CreationsPage() {
       color: "from-pistachio-medium to-pistachio-dark",
     },
     {
-      id: 5,
+      id: 8,
       title: "Interactive Design Theory Study",
       category: "theory",
       description:
@@ -91,7 +194,7 @@ export default function CreationsPage() {
       color: "from-pistachio-mint to-pistachio-saturated",
     },
     {
-      id: 6,
+      id: 9,
       title: "Restaurant Chain Rebrand",
       category: "other",
       description:

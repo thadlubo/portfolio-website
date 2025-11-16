@@ -66,12 +66,12 @@ export default function StoryPage() {
                 </h2>
                 <p className="text-lg leading-relaxed text-muted-foreground">
                   As a kid, I was <span className="text-primary">stylish</span>, <span className="text-primary">brave</span>,
-                  <span className="text-primary"> quick-witted</span>, and full of adventure. Never afraid to dive headfirst
-                  into new experiences (even in the pool for the very first time, bold and naked 😂).
+                  <span className="text-primary"> quick-witted</span>, and full of adventure. I was the one who dove headfirst into new experiences. Sometimes literally, like the first time I jumped into a pool, bold and completely naked 😂
+                  Every day felt like unexplored territory. I’d wake up ready to test something, touch something, climb something.
                 </p>
                 <p className="text-lg leading-relaxed text-muted-foreground mt-4">
-                  Every day was an exploration, every moment a new discovery.
-                  I approached life with pure curiosity and zero fear. The unknown wasn't a threat, it was an invitation
+                  Curiosity was my compass, fear was barely a concept, and uncertainty only made things more exciting.
+                  I didn’t analyze or hesitate I just trusted that the world was worth discovering. The unknown didn’t feel like a threat. It felt like an open door, waiting for a little chaos, courage, and imagination to walk through it.
                 </p>
               </div>
             </div>
@@ -178,15 +178,15 @@ export default function StoryPage() {
                   <span className="block text-2xl text-muted-foreground mt-2">Age 13-18</span>
                 </h2>
                 <p className="text-lg leading-relaxed text-muted-foreground">
-                  Moving to Ireland as a teenager, I embraced my creative side which drove me to <span className="text-primary">problem-solve</span> 
-                  skills I want to learn through <span className="text-primary">skateboarding</span>,
+                  Moving to Ireland as a teenager pushed me out of my comfort zone and into my creativity. It taught me early how to <span className="text-primary">problem-solve</span> 
+                  , not just in school, but in the everyday challenges of starting over somewhere new. I grew my skills through <span className="text-primary">skateboarding</span>,
                   <span className="text-primary"> music</span>, and <span className="text-primary">gaming</span> (World of Warcraft),
-                  Where I discovered my passion and knack for computers.
+                  Where curiosity, trial-and error became second nature and discovered my passion and knack for Computers.
                 </p>
                 <p className="text-lg leading-relaxed text-muted-foreground mt-4">
                   I began by scripting custom UIs, then took it a step further by helping manage a private server to make the game free to play.
                   This hands on work was my first exposure to <span className="text-primary">coding</span> and
-                  <span className="text-primary"> digital creation</span>.
+                  <span className="text-primary"> digital creation</span>. What began as exploration quickly became a path shaped by grit, creativity, and a steady drive to understand how things work.
                 </p>
               </div>
             </div>
