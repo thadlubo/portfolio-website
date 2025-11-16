@@ -42,20 +42,20 @@ export default function CreationsPage() {
       description: `Experimenting photo edits in Lightroom in addition to portrait settings with a variable focal length and prime lense cameras.
 
       Shot 1 on a Canon EOS Kiss (X7i) with:
-      • 50mm - classic focal length for natural, flattering portraits
+      • 50mm - classic focal length for portraits
       • f/2.5 - shallow depth of field to keep the background soft
       • 1/50s - slow enough to let in more light while keeping motion blur under control
       • ISO 1600 - boosted sensitivity to handle indoor lighting
       • +0.3 EV - slight exposure compensation to brighten the skin tones
 
       Shot 2 on a Sony ILCE-7M3 (A7 III) with:
-      • 24mm - wider focal length for environmental context
+      • 24mm - wider focal length for environmental portrait
       • f/1.4 - very shallow depth of field for experiment
       • 1/60s - fast enough to freeze motion
       • ISO 1000 - moderate sensitivity for cleaner image
       • White Balance: 5200K - to match indoor lighting conditions
 
-      Post-Processing in Lightroom (Photo 1):
+      Shot 3 Post-Processing in Lightroom (Photo 1):
       • Cropped to 4:5 aspect ratio and rule of thirds composition
       • Exposure: +0.25 
       • Contrast: +15 
@@ -75,9 +75,10 @@ export default function CreationsPage() {
       Takeaways:
       • Variable focal lengths dramatically change composition and subject emphasis.
       • Wider apertures create beautiful background blur but require precise focusing (Photo 2 taken below eye level).
-      • Post-processing is key but more importantly, getting the shot and lighting right in-camera is crucial.
-      • Definitely have the lights at a higher angle next time to avoid unflattering shadows
+      • Post-processing is key but more importantly, getting the shot and lighting right in the camera is crucial.
+      • Definitely have the lights at a  better or higher angle next time to avoid unflattering shadows
       • Watch tutorials on portrait lighting setups and post-processing techniques to improve skills and find unique style.
+      • Need work on posing and post-processing techniques to enhance portrait quality.
 
       Overall, a fun and learning experience, experimenting with different lenses, settings and editing to capture portrait shots. `,
       media: [
@@ -131,7 +132,7 @@ export default function CreationsPage() {
         `,
       media: [
         { type: "image", src: "images/Passion.jpeg" },
-        { type: "image", src: "images/Passion.jpeg" },
+        { type: "image", src: "images/PassionSettings.jpeg" },
       ],
       tags: ["Digital Media", "Marketing"],
       color: "from-pistachio-dark to-pistachio-mint",
