@@ -1,8 +1,13 @@
 import { motion } from 'motion/react';
 import { ImageWithFallback } from '../components/ImageWithFallback';
 import { Gamepad2 } from 'lucide-react';
+import { FooterCTA } from './FooterCTA';
+import { useState } from 'react';
+import { ContactModal } from '../components/ContactModal';
+
 
 export default function StoryPage() {
+  const [isContactOpen, setIsContactOpen] = useState(false);
   const containerVariants = {
     hidden: { opacity: 0, scale: 0.8 },
     visible: {
@@ -251,6 +256,14 @@ export default function StoryPage() {
           </motion.div>
         </div>
       </section>
+       {/* Footer CTA */}
+      <FooterCTA onContactClick={() => setIsContactOpen(true)} />
+
+      {/* Contact modal */}
+      <ContactModal
+        isOpen={isContactOpen}
+        onClose={() => setIsContactOpen(false)}
+      />
     </div>
   );
 }

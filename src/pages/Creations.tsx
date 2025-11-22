@@ -2,12 +2,15 @@ import { motion, AnimatePresence } from "motion/react";
 import { useState } from "react";
 import { ImageWithFallback } from "../components/ImageWithFallback";
 import { ProjectModal } from "../components/ProjectModal";
+import { FooterCTA } from "./FooterCTA";
+import { ContactModal } from "../components/ContactModal";
 
 export default function CreationsPage() {
   const [selectedFilter, setSelectedFilter] = useState("all");
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
   const [selectedProject, setSelectedProject] = useState<any | null>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isContactOpen, setIsContactOpen] = useState(false);
 
   const filters = [
     { id: "all", label: "All Projects" },
@@ -401,6 +404,14 @@ export default function CreationsPage() {
         onClose={() => setSelectedProject(null)}
         currentIndex={currentIndex}
         setCurrentIndex={setCurrentIndex}
+      />
+      {/* Footer CTA */}
+      <FooterCTA onContactClick={() => setIsContactOpen(true)} />
+
+      {/* Contact modal */}
+      <ContactModal
+        isOpen={isContactOpen}
+        onClose={() => setIsContactOpen(false)}
       />
     </motion.div>
   );

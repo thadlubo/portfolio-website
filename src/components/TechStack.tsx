@@ -32,8 +32,7 @@ export default function TechStack() {
     <main className="z-0 min-h-screen">
       <motion.section className="min-h-screen flex items-center relative py-10">
         <div className="z-0 absolute inset-0 bg-gradient-to-b from-transparent to-pistachio-mint" />
-
-
+        
         <div className="container mx-auto px-6 relative z-10">
           {/* Heading */}
           <motion.div

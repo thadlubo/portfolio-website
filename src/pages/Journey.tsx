@@ -2,6 +2,8 @@ import { motion, useScroll, useTransform, useInView } from 'motion/react';
 import { useRef, useState, useEffect } from 'react';
 import { ImageWithFallback } from '../components/ImageWithFallback';
 import TechStack from '../components/TechStack';
+import { FooterCTA } from './FooterCTA';
+import { ContactModal } from '../components/ContactModal';
 
 export default function JourneyPage() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -12,6 +14,7 @@ export default function JourneyPage() {
 
   const [activeIndex, setActiveIndex] = useState(0);
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+  const [isContactOpen, setIsContactOpen] = useState(false);
 
   const journeyItems = [
     {
@@ -276,6 +279,16 @@ export default function JourneyPage() {
       </div>
       <div className="mt-32">
         <TechStack />
+      </div>
+      <div className='bg-gradient-to-t from-transparent via-transparent to-pistachio-mint'>
+        {/* Footer CTA */}
+        <FooterCTA onContactClick={() => setIsContactOpen(true)} />
+
+        {/* Contact modal */}
+        <ContactModal
+          isOpen={isContactOpen}
+          onClose={() => setIsContactOpen(false)}
+        />
       </div>
     </motion.div>
 
