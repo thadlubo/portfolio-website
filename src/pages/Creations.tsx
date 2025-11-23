@@ -2,7 +2,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { useState } from "react";
 import { ImageWithFallback } from "../components/ImageWithFallback";
 import { ProjectModal } from "../components/ProjectModal";
-import { FooterCTA } from "./FooterCTA";
+import { FooterCTA } from "../components/FooterCTA";
 import { ContactModal } from "../components/ContactModal";
 
 export default function CreationsPage() {

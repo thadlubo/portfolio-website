@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { ImageWithFallback } from '../components/ImageWithFallback';
 import { Gamepad2 } from 'lucide-react';
-import { FooterCTA } from './FooterCTA';
+import { FooterCTA } from '../components/FooterCTA';
 import { useState } from 'react';
 import { ContactModal } from '../components/ContactModal';
 

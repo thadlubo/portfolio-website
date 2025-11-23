@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { Sun, Moon } from "lucide-react"; // icons
+import { Sun, Moon } from "lucide-react";
 
 export default function Navigation() {
   const navigate = useNavigate();
@@ -31,7 +31,7 @@ export default function Navigation() {
     { path: "/story", label: "Story" },
     { path: "/journey", label: "Journey" },
     { path: "/creations", label: "Creations" },
-    { path: "/contact", label: "Contact" },
+    { path: "/blogs", label: "Blogs" },
   ];
 
   return (

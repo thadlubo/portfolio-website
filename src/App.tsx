@@ -7,7 +7,7 @@ import HeroPage from "./pages/Hero";
 import StoryPage from "./pages/Story";
 import JourneyPage from "./pages/Journey";
 import CreationsPage from "./pages/Creations";
-import ContactPage from "./pages/Connect";
+import { BlogPage } from "./pages/Blog";
 import { useEffect } from "react";
 
 // Motion wrapper for page transitions to reduce clutter in main App component
@@ -50,7 +50,9 @@ export default function App() {
     { path: "/story", element: <StoryPage /> },
     { path: "/journey", element: <JourneyPage /> },
     { path: "/creations", element: <CreationsPage /> },
-    { path: "/contact", element: <ContactPage /> },
+    { path: "/blogs", element: <BlogPage onContactClick={function (): void {
+      throw new Error("Function not implemented.");
+    } } />},
   ];
 
   return (

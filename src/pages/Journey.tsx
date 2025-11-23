@@ -2,7 +2,7 @@ import { motion, useScroll, useTransform, useInView } from 'motion/react';
 import { useRef, useState, useEffect } from 'react';
 import { ImageWithFallback } from '../components/ImageWithFallback';
 import TechStack from '../components/TechStack';
-import { FooterCTA } from './FooterCTA';
+import { FooterCTA } from '../components/FooterCTA';
 import { ContactModal } from '../components/ContactModal';
 
 export default function JourneyPage() {
