@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { motion } from 'motion/react';
 import { BlogCarousel } from '../components/BlogCarousel';
 import { BentoGrid } from '../components/BentoGrid';
-import { BlogDetailPage } from '../components/BlogDetailPage';
+import BlogDetailPage from '../components/BlogDetailPage';
 import { FooterCTA } from '../components/FooterCTA';
 
 export interface BlogPost {
@@ -21,51 +21,51 @@ interface BlogPageProps {
 const blogPosts: BlogPost[] = [
   {
     id: '1',
-    title: 'Designing the Future of Web Applications',
-    excerpt: 'Explore the latest trends in web design and development, and how they are shaping the future of web applications.',
-    image: 'https://via.placeholder.com/300x200',
-    category: 'Design',
-    date: '2023-09-15'
+    title: 'Rain, Ruins, and Rhythm: Behind the Scenes',
+    excerpt: 'A glimpse into our shoot at Clare Abbey. Rain, ruins, a tough barefoot dancer, and the small moments that made the day feel like its own story behind the camera.',
+    image: "images/videography/Middle.jpeg",
+    category: 'Videography',
+    date: '2025-11-23'
   },
   {
     id: '2',
-    title: 'The Role of AI in Modern Software Development',
-    excerpt: 'Discover how artificial intelligence is transforming software development processes and enhancing productivity.',
-    image: 'https://via.placeholder.com/300x200',
-    category: 'Development',
-    date: '2023-08-20'
+    title: 'Rain, Ruins, and Rhythm: Behind the Scenes',
+    excerpt: 'A glimpse into our shoot at Clare Abbey. Rain, ruins, a tough barefoot dancer, and the small moments that made the day feel like its own story behind the camera.',
+    image: "images/videography/SideWallGimble.jpeg",
+    category: 'Videography',
+    date: '2025-11-23'
   },
   {
     id: '3',
-    title: 'Creating Engaging User Experiences',
-    excerpt: 'Learn the key principles of user experience design and how to create engaging and intuitive digital experiences.',
-    image: 'https://via.placeholder.com/300x200',
-    category: 'UX',
-    date: '2023-07-10'
+    title: 'Rain, Ruins, and Rhythm: Behind the Scenes',
+    excerpt: 'A glimpse into our shoot at Clare Abbey. Rain, ruins, a tough barefoot dancer, and the small moments that made the day feel like its own story behind the camera.',
+    image: "images/videography/Outside.jpeg",
+    category: 'Videography',
+    date: '2025-11-23'
   },
   {
     id: '4',
-    title: 'The Impact of Cloud Computing on Businesses',
-    excerpt: 'Understand the benefits and challenges of cloud computing and how it is revolutionizing the business landscape.',
-    image: 'https://via.placeholder.com/300x200',
-    category: 'Cloud',
-    date: '2023-06-25'
+    title: 'Rain, Ruins, and Rhythm: Behind the Scenes',
+    excerpt: 'A glimpse into our shoot at Clare Abbey. Rain, ruins, a tough barefoot dancer, and the small moments that made the day feel like its own story behind the camera.',
+    image: "images/videography/DanceLol.jpeg",
+    category: 'Videography',
+    date: '2025-11-23'
   },
   {
     id: '5',
-    title: 'The Future of Mobile App Development',
-    excerpt: 'Explore the latest advancements in mobile app development and their implications for the future.',
-    image: 'https://via.placeholder.com/300x200',
-    category: 'Mobile',
-    date: '2023-05-30'
+    title: 'Rain, Ruins, and Rhythm: Behind the Scenes',
+    excerpt: 'A glimpse into our shoot at Clare Abbey. Rain, ruins, a tough barefoot dancer, and the small moments that made the day feel like its own story behind the camera.',
+    image: "images/videography/Middle2.jpeg",
+    category: 'Videography',
+    date: '2025-11-23'
   },
   {
     id: '6',
-    title: 'The Importance of Data Security in the Digital Age',
-    excerpt: 'Learn about the critical role of data security in protecting sensitive information and maintaining trust.',
-    image: 'https://via.placeholder.com/300x200',
-    category: 'Security',
-    date: '2023-04-15'
+    title: 'Rain, Ruins, and Rhythm: Behind the Scenes',
+    excerpt: 'A glimpse into our shoot at Clare Abbey. Rain, ruins, a tough barefoot dancer, and the small moments that made the day feel like its own story behind the camera.',
+    image: "images/videography/GroupPhoto.jpeg",
+    category: 'Videography',
+    date: '2025-11-23'
   }
 ];
 
@@ -76,14 +76,12 @@ export function BlogPage({ onContactClick }: BlogPageProps) {
   if (selectedBlog) {
     return (
       <BlogDetailPage
-        blog={selectedBlog}
-        onBack={() => setSelectedBlog(null)}
       />
     );
   }
 
   // Latest 2 for carousel
-  const latestBlogs = blogPosts.slice(0, 2);
+  const latestBlogs = blogPosts.slice(0, 3);
   // Remaining for bento grid. add slice (2)
   const remainingBlogs = blogPosts;
 

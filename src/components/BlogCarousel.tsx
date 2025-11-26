@@ -1,8 +1,8 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
 import { ImageWithFallback } from "./ImageWithFallback";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import Button from "react-bootstrap/Button";
 import type { BlogPost } from "./BlogCard";
 
 interface BlogCarouselProps {
@@ -11,6 +11,7 @@ interface BlogCarouselProps {
 
 export function BlogCarousel({ blogs }: BlogCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const navigate = useNavigate();
 
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % blogs.length);
@@ -22,6 +23,10 @@ export function BlogCarousel({ blogs }: BlogCarouselProps) {
 
   const goToSlide = (index: number) => {
     setCurrentIndex(index);
+  };
+
+  const handleReadFullArticle = () => {
+    navigate("/blogs/rain-ruins-rhythm");
   };
 
   return (
@@ -47,33 +52,58 @@ export function BlogCarousel({ blogs }: BlogCarouselProps) {
                 <ImageWithFallback
                   src={blogs[currentIndex].image}
                   alt={blogs[currentIndex].title}
-                  className="w-full h-full object-cover"
+                  className="absolute inset-0 w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent" />
               </div>
 
               {/* Content Section */}
-              <div className="flex flex-col justify-center p-8 md:p-12">
+              <div className="flex flex-col justify-center p-8 md:p-12 bg-gradient-to-tr from-background to-pistachio-dark">
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="text-sm px-4 py-1.5 rounded-full bg-indigo-100 text-indigo-700">
+                  <span className="text-sm px-4 py-1.5 rounded-full bg-accent text-pistachio-dark">
                     {blogs[currentIndex].category}
                   </span>
-                  <span className="text-sm text-gray-500">{blogs[currentIndex].date}</span>
+                  <span className="text-sm text-muted-foreground">{blogs[currentIndex].date}</span>
                 </div>
 
-                <h2 className="mb-4 text-gray-900">
+                <h2 className="text-xl mb-4">
                   {blogs[currentIndex].title}
                 </h2>
 
-                <p className="text-gray-600 mb-6 line-clamp-3">
+                <p className="mb-6 line-clamp-3">
                   {blogs[currentIndex].excerpt}
                 </p>
 
-                <Button 
-                  className="bg-indigo-600 hover:bg-indigo-700 text-white w-full md:w-auto"
+                <motion.button
+                  onClick={handleReadFullArticle}
+                  className="relative w-full md:w-auto items-center px-6 py-3 bg-gradient-to-r from-primary via-primary to-accent text-primary-foreground rounded-2xl overflow-hidden shadow-2xl group"
+                  whileHover={{ scale: 1.03, y: -2 }}
+                  whileTap={{ scale: 0.97 }}
                 >
-                  Read Full Article
-                </Button>
+                  {/* Shine sweep */}
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent"
+                    animate={{ x: ["-200%", "200%"] }}
+                    transition={{
+                      duration: 3,
+                      repeat: Infinity,
+                      ease: "linear",
+                      repeatDelay: 1,
+                    }}
+                  />
+
+                  {/* Text + Arrow */}
+                  <span className="relative z-10 text-base font-medium">
+                    Read Full Article
+                  </span>
+
+                  {/* Hover Glow */}
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-0 group-hover:opacity-100 blur-xl"
+                    transition={{ duration: 0.3 }}
+                  />
+                </motion.button>
+
               </div>
             </div>
           </motion.div>
@@ -82,7 +112,7 @@ export function BlogCarousel({ blogs }: BlogCarouselProps) {
         {/* Navigation Arrows */}
         <button
           onClick={prevSlide}
-          className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white/90 hover:bg-white shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110"
+          className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-pistachio-medium text-white rounded-full hover:bg-white shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110"
           aria-label="Previous slide"
         >
           <ChevronLeft className="w-6 h-6 text-gray-800" />
@@ -90,7 +120,7 @@ export function BlogCarousel({ blogs }: BlogCarouselProps) {
 
         <button
           onClick={nextSlide}
-          className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white/90 hover:bg-white shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110"
+          className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-pistachio-medium text-white hover:bg-white shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110"
           aria-label="Next slide"
         >
           <ChevronRight className="w-6 h-6 text-gray-800" />
@@ -102,11 +132,10 @@ export function BlogCarousel({ blogs }: BlogCarouselProps) {
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                index === currentIndex
-                  ? "bg-white w-8"
-                  : "bg-white/50 hover:bg-white/75"
-              }`}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentIndex
+                ? "bg-pistachio-mint w-8"
+                : "bg-pistachio-medium hover:bg-primary"
+                }`}
               aria-label={`Go to slide ${index + 1}`}
             />
           ))}

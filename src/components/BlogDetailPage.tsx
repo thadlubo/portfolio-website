@@ -1,138 +1,141 @@
-import { motion } from "motion/react";
-import { ImageWithFallback } from "./ImageWithFallback";
-import { Button } from "react-bootstrap";
-import { ArrowLeft, Calendar, Tag, Clock } from "lucide-react";
-import type { BlogPost } from "./BlogCard";
+import { VideoFrame } from "./VideoFrame";
+import { BlogSection } from "./BlogSection";
+import { BlogHeroSection } from "./BlogHeroSection";
+const base = import.meta.env.BASE_URL; 
 
-interface BlogDetailPageProps {
-  blog: BlogPost;
-  onBack: () => void;
-}
-
-export function BlogDetailPage({ blog, onBack }: BlogDetailPageProps) {
+export default function BlogDetailPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-indigo-50/30 to-purple-50/30">
-      {/* Back Button */}
-      <motion.div
-        initial={{ opacity: 0, x: -20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.5 }}
-        className="pt-24 px-6 max-w-4xl mx-auto"
-      >
-        <Button
-          variant="ghost"
-          onClick={onBack}
-          className="mb-8 hover:bg-indigo-100"
-        >
-          <ArrowLeft className="w-4 h-4 mr-2" />
-          Back to Blogs
-        </Button>
-      </motion.div>
+    <div className="scroll-snap-container">
+      <BlogHeroSection
+        date="Nov 2025"
+        tags={["Behind the Scenes", "Videography", "Cinematography", "Contemporary Dance"]}
+        title="Road Trip to the Abbey Ruins – Dance Session"
+        description="A cinematic, rain-soaked day with a dancer from the Irish World Academy of Music and Dance ..."
+        imageUrl={`${base}images/Aestethic.jpeg`}
+      />
 
-      {/* Hero Image */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.95 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.6 }}
-        className="px-6 max-w-5xl mx-auto mb-12"
-      >
-        <div className="relative h-96 rounded-3xl overflow-hidden shadow-2xl">
-          <ImageWithFallback
-            src={blog.image}
-            alt={blog.title}
-            className="w-full h-full object-cover"
+      {/* Section 1 */}
+      <BlogSection
+        title="Rain, Ruins, and Rhythm: Behind the Scenes"
+        body={
+          <>
+            <p>
+              Some shoot days start with a storyboard. Ours started with a road trip.
+              We left the University of Limerick with a dancer from the Irish World Academy of Music and Dance, someone we had only met briefly before the project. The drive became our unexpected warm-up for an hour where moments when the camera stayed off, and the storytelling began.
+            </p>
+            <p>
+              As we moved through the Irish countryside, we learned where she was from, how her grandmother taught her to dance by turning the living room into a stage, and why she chose UL. "It's one of the best in Europe for dance", she said with quiet pride.
+              I mentioned, half jokingly, that I used to compete in hip hop competitions but was probably "too old for that now.""
+              She immediately shook her head.
+              "It's never too old to dance.", "Dancing has no  age."
+              Then she smiled. "My grandma still dances."
+            </p>
+            <p>
+              It was the kind of line that stays with you, even before you start filming.
+            </p>
+          </>
+        }
+        videoPlaceholder={
+          <VideoFrame
+            videoId="section1"
+            imageUrl={`${base}videos/Intro.png`}
+            videoSrc={`${base}videos/Intro.mp4`}
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-        </div>
-      </motion.div>
 
-      {/* Article Content */}
-      <motion.article
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-        className="px-6 max-w-3xl mx-auto pb-24"
-      >
-        {/* Meta Information */}
-        <div className="flex flex-wrap items-center gap-4 mb-6 text-gray-600">
-          <div className="flex items-center gap-2">
-            <Calendar className="w-4 h-4" />
-            <span>{blog.date}</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Tag className="w-4 h-4" />
-            <span className="px-3 py-1 rounded-full bg-indigo-100 text-indigo-700 text-sm">
-              {blog.category}
-            </span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Clock className="w-4 h-4" />
-            <span>5 min read</span>
-          </div>
-        </div>
+        }
+      />
 
-        {/* Title */}
-        <h1 className="text-gray-900 mb-6">
-          {blog.title}
-        </h1>
+      {/* Section 2 */}
+      <BlogSection
+        title="Arrival & Warmup"
+        body={
+          <>
+            <p>
+              When we arrived at Clare Abbey, the whole team went silent for a moment. The ruins rose out of the grey Irish light with a kind of ancient confidence. A thin mist of rain drifted across the fields, soft enough to shoot in, cold enough to make us wish we had packed thicker jackets.
+            </p>
+            <p>
+              Before each shot, our dancer warmed up with quiet stretches, soft breaths, bare foot on wet stone.
+            </p>
+            <p>
+              We planned three main shots:
+            </p>
+            <ul>
+              <li>in the center of the abbey tower, framed by the vertical stone archways</li>
+              <li>against a side wall, where the texture caught the light</li>
+              <li>and finally, outside in the courtyard fields, where movement could open up</li>
+            </ul>
+          </>
+        }
+        videoPlaceholder={
+          <VideoFrame
+            videoId="section2"
+            imageUrl={`${base}videos/dance.png`}
+            videoSrc={`${base}videos/Dance.mp4`}
+          />
+        }
+      />
 
-        {/* Excerpt */}
-        <p className="text-gray-700 mb-8 text-lg leading-relaxed">
-          {blog.excerpt}
-        </p>
+      {/* Section 3 */}
+      <BlogSection
+        title="Between Rain & Review"
+        body={
+          <>
+            <p>
+              Rain kept interrupting us, so between takes we'd sprint back to the car, heater blasting, reviewing footage on tiny screens while sipping whatever warm drink we had left. These pauses became part of the rhythm of the shoot.
+            </p>
+            <p>
+              Technically, the main aesthetic shots were captured on the Sony A7 III using a 50mm f/1.8 at ISO 1000. A balance that held onto the moody, low-light atmosphere without sacrificing clarity. We swapped in the GM 24mm for wider environmental frames.
+            </p>
+            <p>
+              For BTS moments, we used the DJI Pocket 3 and a Sony PC-120 MiniDV handycam, which added a nostalgic, 90s-style texture to the off-camera memories.
+            </p>
+            <p>
+              In post-production, we leaned into a darker, gritty grade, richer contrast, softened saturation, and a subtle vignette to pull the eye toward her movement. The rain, once a problem, now gave the frame its atmosphere.
+            </p>
+          </>
+        }
+        videoPlaceholder={
+          <VideoFrame
+            videoId="section3"
+            imageUrl={`${base}videos/VideoDiscussion.png`}
+            videoSrc={`${base}videos/RainReview.mp4`}
+          />
+        }
+      />
 
-        {/* Article Body */}
-        <div className="prose prose-lg max-w-none">
-          <h2 className="text-gray-900 mt-12 mb-4">Introduction</h2>
-          <p className="text-gray-700 mb-6 leading-relaxed">
-            In today's fast-paced digital landscape, creating meaningful and effective design solutions requires a deep understanding of user needs, business goals, and technical constraints. This article explores key principles and practical insights that can help designers and developers create better digital experiences.
-          </p>
-
-          <h2 className="text-gray-900 mt-12 mb-4">The Foundation</h2>
-          <p className="text-gray-700 mb-6 leading-relaxed">
-            Every great design starts with a solid foundation. Understanding the core principles allows us to make informed decisions that benefit both users and stakeholders. By focusing on clarity, consistency, and user-centered thinking, we can create interfaces that not only look beautiful but also solve real problems.
-          </p>
-
-          <blockquote className="border-l-4 border-indigo-600 pl-6 my-8 italic text-gray-700">
-            "Good design is obvious. Great design is transparent." - Joe Sparano
-          </blockquote>
-
-          <h2 className="text-gray-900 mt-12 mb-4">Key Takeaways</h2>
-          <ul className="list-disc pl-6 mb-6 text-gray-700 space-y-2">
-            <li>Always prioritize user needs and business objectives</li>
-            <li>Consistency in design creates familiarity and trust</li>
-            <li>Test early and iterate based on real feedback</li>
-            <li>Balance aesthetics with functionality</li>
-            <li>Stay updated with industry trends and best practices</li>
-          </ul>
-
-          <h2 className="text-gray-900 mt-12 mb-4">Practical Applications</h2>
-          <p className="text-gray-700 mb-6 leading-relaxed">
-            When applying these principles in your work, consider the context and constraints of each project. What works for one product may not work for another. The key is to remain flexible and adapt your approach based on user research, testing, and continuous feedback.
-          </p>
-
-          <h2 className="text-gray-900 mt-12 mb-4">Conclusion</h2>
-          <p className="text-gray-700 mb-6 leading-relaxed">
-            Creating exceptional digital experiences is an ongoing journey of learning, experimentation, and refinement. By staying curious, embracing feedback, and continuously improving our craft, we can build products that truly make a difference in people's lives.
-          </p>
-        </div>
-
-        {/* Call to Action */}
-        <div className="mt-16 p-8 bg-gradient-to-r from-indigo-100 to-purple-100 rounded-2xl">
-          <h3 className="text-gray-900 mb-3">
-            Want to learn more?
-          </h3>
-          <p className="text-gray-700 mb-6">
-            Explore more articles and insights on design, development, and digital experiences.
-          </p>
-          <Button
-            onClick={onBack}
-            className="bg-indigo-600 hover:bg-indigo-700 text-white"
-          >
-            View All Articles
-          </Button>
-        </div>
-      </motion.article>
+      {/* Section 4 */}
+      <BlogSection
+        title="What I Learned"
+        body={
+          <>
+            <p>
+              How to work with unpredictable natural light<br />
+              Balancing low light with ISO and aperture control<br />
+              Using focal length to shape emotion and movement<br />
+              Managing multiple camera systems for different storytelling layers<br />
+              Directing performance-based shots calmly despite weather disruptions
+            </p>
+            <p>
+              By the time we wrapped, we were freezing, soaked, and happy.
+            </p>
+            <p>
+              We drove back into town, stopped for tea at the station, and replayed the day through shaky MiniDV clips and quiet laughter.
+            </p>
+            <p>
+              A day of rain, ruins, and rhythm<br />
+              and a reminder that some stories begin long before you start rolling.
+            </p>
+          </>
+        }
+        videoPlaceholder={
+          <VideoFrame
+            videoId="section4"
+            imageUrl={`${base}videos/Rewind.png`}
+            videoSrc={`${base}videos/Rewind.mp4`}
+          />
+        }
+      />
     </div>
   );
 }
+

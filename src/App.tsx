@@ -9,6 +9,7 @@ import JourneyPage from "./pages/Journey";
 import CreationsPage from "./pages/Creations";
 import { BlogPage } from "./pages/Blog";
 import { useEffect } from "react";
+import BlogDetailPage from "./components/BlogDetailPage";
 
 // Motion wrapper for page transitions to reduce clutter in main App component
 const PageWrapper = ({ children }: { children: React.ReactNode }) => {
@@ -53,6 +54,7 @@ export default function App() {
     { path: "/blogs", element: <BlogPage onContactClick={function (): void {
       throw new Error("Function not implemented.");
     } } />},
+    { path: "/blogs/rain-ruins-rhythm", element: <BlogDetailPage /> },
   ];
 
   return (

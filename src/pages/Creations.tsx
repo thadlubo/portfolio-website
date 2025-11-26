@@ -23,10 +23,38 @@ export default function CreationsPage() {
   const projects = [
     {
       id: 1,
+      title: "Innovation at UL - Hackathon Project Winner",
+      category: "webapp",
+      description:
+        ` From an Idea to a winning prototype. Honoured to win UL Hackathon 2025 with a product that transforms how student and staff access CSIS systems. Big moment. Big Gratitude.
+        
+        The CSIS IAM Portal is a central dashboard where students and staff can access all CSIS services through one secure login. It provides a clean, personalised interface where users can view their information, manage their roles, access tools like equipment booking or FYP portals, and update their account details, all in one place.
+      
+        The user portal uses a clean, minimal interface with UL-inspired colours, high contrast typography, and generous spacing. Primary actions are visually clear, with a persistent ‘Get in touch’ call-to-action and a card-based layout that makes complex information scannable and approachable for students and staff.
+        • A calm, neutral background with UL green as the primary accent
+        • Clear visual hierarchy using bold headings, subtle subheadings, and body text optimised for readability
+        • Card-based sections for applications and roles, keeping content chunked and scannable
+        • A consistent Navigation bar that anchors every page and reduces decision fatigue
+        • Soft shadows, rounded corners, and balanced white space to make the experience feel approachable, not ‘enterprise-heavy’
+      `,
+      media: [
+        { type: "image", src: "images/Hackathon/Login_Hackathon.png" },
+        { type: "image", src: "images/Hackathon/AdminDashboard_Hackathon.png" },
+        { type: "image", src: "images/Hackathon/AdminUserManagement_Hackathon.png" },
+        { type: "image", src: "images/Hackathon/AdminRoles_Hackathon.png" },
+        { type: "image", src: "images/Hackathon/AdminConnectedApps_Hackathon.png" },
+        { type: "image", src: "images/Hackathon/AdminLogs_Hackathon.png" },
+        { type: "image", src: "images/Hackathon/UserHome_Hackathon.png" },
+      ],
+      tags: ["Web App", "Dashboard", "University System"],
+      color: "from-pistachio-medium to-pistachio-dark",
+    },
+    {
+      id: 2,
       title: "Product Demo Video",
       category: "media",
       shortDescription:
-        "Animated motion graphics created for a digital marketing campaign.",
+        "Cinematography, cross collaboration with UL dance student. To be updated",
       description:
         "Product demo video for a digital marketing campaign across social media platforms, highlighting key product features through engaging motion design and sound.",
       media: [
@@ -37,53 +65,54 @@ export default function CreationsPage() {
       color: "from-pistachio-dark to-pistachio-mint",
     },
     {
-      id: 2,
+      id: 3,
       title: "Formal Business Type Headshot",
       category: "media",
       shortDescription:
         "Experimenting with portrait settings with a variable focal length and prime lenses",
-      description: `Experimenting photo edits in Lightroom in addition to portrait settings with a variable focal length and prime lense cameras.
+      description:
+        `Experimenting photo edits in Lightroom in addition to portrait settings with a variable focal length and prime lense cameras.
 
-      Shot 1 on a Canon EOS Kiss (X7i) with:
-      • 50mm - classic focal length for portraits
-      • f/2.5 - shallow depth of field to keep the background soft
-      • 1/50s - slow enough to let in more light while keeping motion blur under control
-      • ISO 1600 - boosted sensitivity to handle indoor lighting
-      • +0.3 EV - slight exposure compensation to brighten the skin tones
+        Shot 1 on a Canon EOS Kiss (X7i) with:
+        • 50mm - classic focal length for portraits
+        • f/2.5 - shallow depth of field to keep the background soft
+        • 1/50s - slow enough to let in more light while keeping motion blur under control
+        • ISO 1600 - boosted sensitivity to handle indoor lighting
+        • +0.3 EV - slight exposure compensation to brighten the skin tones
 
-      Shot 2 on a Sony ILCE-7M3 (A7 III) with:
-      • 24mm - wider focal length for environmental portrait
-      • f/1.4 - very shallow depth of field for experiment
-      • 1/60s - fast enough to freeze motion
-      • ISO 1000 - moderate sensitivity for cleaner image
-      • White Balance: 5200K - to match indoor lighting conditions
+        Shot 2 on a Sony ILCE-7M3 (A7 III) with:
+        • 24mm - wider focal length for environmental portrait
+        • f/1.4 - very shallow depth of field for experiment
+        • 1/60s - fast enough to freeze motion
+        • ISO 1000 - moderate sensitivity for cleaner image
+        • White Balance: 5200K - to match indoor lighting conditions
 
-      Shot 3 Post-Processing in Lightroom (Photo 1):
-      • Cropped to 4:5 aspect ratio and rule of thirds composition
-      • Exposure: +0.25 
-      • Contrast: +15 
-      • Highlights: -20 
-      • Shadows: +30 
-      • Whites: +15
-      • HSL Adjustments:
-        > Reds: -10 Saturation
-        > Oranges: -10 Saturation and +10
-        > Green: -20 Saturation
-        > Yellows: -10 Saturation
-      • Sharpening: +40
-      • Texture: -10
-      • Clarity -10
-      • Vignette: -15
+        Shot 3 Post-Processing in Lightroom (Photo 1):
+        • Cropped to 4:5 aspect ratio and rule of thirds composition
+        • Exposure: +0.25 
+        • Contrast: +15 
+        • Highlights: -20 
+        • Shadows: +30 
+        • Whites: +15
+        • HSL Adjustments:
+          > Reds: -10 Saturation
+          > Oranges: -10 Saturation and +10
+          > Green: -20 Saturation
+          > Yellows: -10 Saturation
+        • Sharpening: +40
+        • Texture: -10
+        • Clarity -10
+        • Vignette: -15
 
-      Takeaways:
-      • Variable focal lengths dramatically change composition and subject emphasis.
-      • Wider apertures create beautiful background blur but require precise focusing (Photo 2 taken below eye level).
-      • Post-processing is key but more importantly, getting the shot and lighting right in the camera is crucial.
-      • Definitely have the lights at a  better or higher angle next time to avoid unflattering shadows
-      • Watch tutorials on portrait lighting setups and post-processing techniques to improve skills and find unique style.
-      • Need work on posing and post-processing techniques to enhance portrait quality.
+        Takeaways:
+        • Variable focal lengths dramatically change composition and subject emphasis.
+        • Wider apertures create beautiful background blur but require precise focusing (Photo 2 taken below eye level).
+        • Post-processing is key but more importantly, getting the shot and lighting right in the camera is crucial.
+        • Definitely have the lights at a  better or higher angle next time to avoid unflattering shadows
+        • Watch tutorials on portrait lighting setups and post-processing techniques to improve skills and find unique style.
+        • Need work on posing and post-processing techniques to enhance portrait quality.
 
-      Overall, a fun and learning experience, experimenting with different lenses, settings and editing to capture portrait shots. `,
+        Overall, a fun and learning experience, experimenting with different lenses, settings and editing to capture portrait shots. `,
       media: [
         { type: "image", src: "images/VariableFocalLength.jpeg" },
         { type: "image", src: "images/PrimeLense.jpeg" },
@@ -93,11 +122,9 @@ export default function CreationsPage() {
       color: "from-pistachio-dark to-pistachio-mint",
     },
     {
-      id: 3,
+      id: 4,
       title: "Aesthetic shot from Video Production",
       category: "media",
-      shortDescription:
-        "An aesthetic still shot taken from a video production project.",
       description:
         `An aesthetic still shot taken from a video production project, showcasing composition, lighting, and color grading techniques to create a visually appealing image.
         
@@ -113,15 +140,13 @@ export default function CreationsPage() {
       media: [
         { type: "image", src: "images/Aestethic.jpeg" },
       ],
-      tags: ["Digital Media", "Marketing", "50 mm Lens", "Contemporary Dance"],
+      tags: ["Digital Media", "50 mm Lens", "Contemporary Dance"],
       color: "from-pistachio-dark to-pistachio-mint",
     },
     {
-      id: 4,
+      id: 5,
       title: "Passion Shot",
       category: "media",
-      shortDescription:
-        "Image that reflects my passion in life",
       description:
         ` With every step, I kept asking myself what passion is supposed to look like.
         Something bold? Something artistic? Something with edge and ambition?
@@ -141,13 +166,22 @@ export default function CreationsPage() {
       color: "from-pistachio-dark to-pistachio-mint",
     },
     {
-      id: 5,
+      id: 6,
       title: "Disposable Camera Photography Series",
       category: "media",
       shortDescription:
         "A collection of photographs taken in Malta with a disposable camera, exploring themes of nostalgia and imperfection.",
       description:
-        "LOREM IPSUM TEST SCROLL AREA. A collection of photographs taken in Malta with a disposable camera, exploring themes of nostalgia and imperfection through authentic analog aesthetics.s of nostalgia and imperfection through authentic analog aesthetics.s of nostalgia and imperfection through authentic analog aesthetics.s of nostalgia and imperfection through authentic analog aesthetics.s of nostalgia and imperfection through authentic analog aesthetics.s of nostalgia and imperfection through authentic analog aesthetics.s of nostalgia and imperfection through authentic analog aesthetics.s of nostalgia and imperfection through authentic analog aesthetics.s of nostalgia and imperfection through authentic analog aesthetics.s of nostalgia and imperfection through authentic analog aesthetics.s of nostalgia and imperfection through authentic analog aesthetics.s of nostalgia and imperfection through authentic analog aesthetics.s of nostalgia and imperfection through authentic analog aesthetics.s of nostalgia and imperfection through authentic analog aesthetics.s of nostalgia and imperfection through authentic analog aesthetics.s of nostalgia and imperfection through authentic analog aesthetics.s of nostalgia and imperfection through authentic analog aesthetics.s of nostalgia and imperfection through authentic analog aesthetics.s of nostalgia and imperfection through authentic analog aesthetics.s of nostalgia and imperfection through authentic analog aesthetics.s of nostalgia and imperfection through authentic analog aesthetics.s of nostalgia and imperfection through authentic analog aesthetics.s of nostalgia and imperfection through authentic analog aesthetics.s of nostalgia and imperfection through authentic analog aesthetics.",
+        `Shooting in Malta with a disposable camera strips away control and leaves only instinct: light, timing, and the quiet hope that something honest will appear on the film.
+
+        Walking through Valletta’s limestone tunnels, past harbours, balconies, horse carriages, and hidden courtyards, every click felt like stitching myself into the rhythm of the island.
+        
+        No retakes, no edits, no digital polishing! just Malta as it is, textured, warm, a little unpredictable, and beautifully human.
+        
+        There’s a kind of truth in these imperfections that digital can’t imitate. Maybe that’s the magic of film: it remembers the world softly.
+
+        A reminder to slow down, welcome imperfection, and let life reveal itself frame by frame. Because sometimes the most imperfect photos are the ones that tell the truest story.
+        ` ,
       media: [
         { type: "image", src: "images/Photography.png" },
         { type: "image", src: "images/malta1.jpg" },
@@ -159,56 +193,45 @@ export default function CreationsPage() {
       color: "from-pistachio-dark to-pistachio-mint",
     },
     {
-      id: 6,
-      title: "E-commerce Mobile App",
-      category: "webapp",
-      description:
-        "Complete redesign of a fashion e-commerce platform focusing on user experience and conversion optimization.",
-      media: [
-        { type: "image", src: "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1080&q=80" },
-        { type: "video", src: "https://www.w3schools.com/html/mov_bbb.mp4" },
-        { type: "image", src: "https://images.unsplash.com/photo-1587355760421-b9de3226a046?auto=format&fit=crop&w=1080&q=80" },
-      ],
-      tags: ["UI/UX", "Mobile", "E-commerce"],
-      color: "from-pistachio-light to-pistachio-medium",
-    },
-    {
       id: 7,
-      title: "Job Opportunity Portal",
-      category: "webapp",
-      description:
-        "Complex data visualization dashboard for healthcare professionals to monitor patient metrics and analytics.",
-      media: [
-        { type: "image", src: "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1080&q=80" },
-        { type: "image", src: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1080&q=80" },
-      ],
-      tags: ["Web App", "Dashboard", "Job Portal"],
-      color: "from-pistachio-medium to-pistachio-dark",
-    },
-    {
-      id: 8,
-      title: "Interactive Design Theory Study",
+      title: "Norman's Principles: Designs that make sense",
       category: "theory",
       description:
-        "Research project exploring the cognitive principles behind interactive design and usability heuristics.",
+        `A breakdown of Norman’s four essential interaction principles: mapping, affordance, feedback, and constraints. Paired with real-world good and bad examples. 
+        
+        This slide explores how these principles guide effective user-centered design. Created in Canva and inspired by Neubratlism aesthetic style.
+        `,
       media: [
-        { type: "image", src: "https://images.unsplash.com/photo-1587355760421-b9de3226a046?auto=format&fit=crop&w=1080&q=80" },
+        { type: "image", src: "images/presentation1/1.png" },
+        { type: "image", src: "images/presentation1/2.png" },
+        { type: "image", src: "images/presentation1/3.png" },
+        { type: "image", src: "images/presentation1/4.png" },
+        { type: "image", src: "images/presentation1/5.png" },
+        { type: "image", src: "images/presentation1/6.png" },
+        { type: "image", src: "images/presentation1/7.png" },
+        { type: "image", src: "images/presentation1/8.png" },
+        { type: "image", src: "images/presentation1/9.png" },
+        { type: "image", src: "images/presentation1/10.png" },
+        { type: "image", src: "images/presentation1/11.png" },
+        { type: "image", src: "images/presentation1/12.png" },
+        { type: "image", src: "images/presentation1/13.png" },
+        { type: "image", src: "images/presentation1/14.png" },
       ],
-      tags: ["Design Research", "Usability", "Theory"],
+      tags: ["Design Research", "Usability", "Neubrutalism"],
       color: "from-pistachio-mint to-pistachio-saturated",
     },
     {
-      id: 9,
-      title: "Restaurant Chain Rebrand",
-      category: "other",
+      id: 8,
+      title: "Job Opportunity Portal Project",
+      category: "webapp",
       description:
-        "Complete rebranding project including visual identity, menu design, and digital presence for a restaurant chain.",
+        "A modern, self-directed project exploring how users can create job listings and apply to opportunities through a clean, streamlined interface. Designed after college while working as a caregiver to continue developing UX and coding skills. Ultimately used as part of a portfolio that helped me landed my first job as a Software Engineer.",
       media: [
-        { type: "image", src: "https://images.unsplash.com/photo-1710799885122-428e63eff691?auto=format&fit=crop&w=1080&q=80" },
-        { type: "image", src: "https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=1080&q=80" },
+        { type: "image", src: "images/Echo_AMpage_home.PNG" },
+        { type: "image", src: "images/Echo_AMpage_CreateJobPopulated.PNG" },
       ],
-      tags: ["Branding", "Restaurant", "Identity"],
-      color: "from-pistachio-saturated to-pistachio-shell",
+      tags: ["Web App", "Dashboard", "Job Portal"],
+      color: "from-pistachio-medium to-pistachio-dark",
     },
   ];
 
