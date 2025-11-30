@@ -277,7 +277,7 @@ export default function JourneyPage() {
           </div>
         </div>
       </div>
-      <div className="mt-32">
+      <div>
         <TechStack />
       </div>
       <div className='bg-gradient-to-t from-transparent via-transparent to-pistachio-mint'>

@@ -138,10 +138,10 @@ export function BlogPage({ onContactClick }: BlogPageProps) {
             transition={{ duration: 0.6 }}
             className="mb-12"
           >
-            <h2 className="text-center text-gray-900 mb-2">
+            <h2 className="text-center text-primary mb-2">
               More Articles
             </h2>
-            <p className="text-center text-gray-600">
+            <p className="text-center text-primary">
               Discover more insights and stories
             </p>
           </motion.div>

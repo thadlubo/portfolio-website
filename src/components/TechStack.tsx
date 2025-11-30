@@ -6,7 +6,6 @@ import {
   Activity,
   Guitar,
   Brush,
-  Coffee,
   Braces,
   FileCode,
   Component,
@@ -25,14 +24,15 @@ import {
   Dribbble,
   Camera,
   Video,
+  FileSpreadsheet,
 } from "lucide-react";
 
 export default function TechStack() {
   return (
     <main className="z-0 min-h-screen">
-      <motion.section className="min-h-screen flex items-center relative py-10">
+      <motion.section className="min-h-screen flex items-center relative pb-40">
         <div className="z-0 absolute inset-0 bg-gradient-to-b from-transparent to-pistachio-mint" />
-        
+
         <div className="container mx-auto px-6 relative z-10">
           {/* Heading */}
           <motion.div
@@ -52,73 +52,234 @@ export default function TechStack() {
           </motion.div>
 
           {/* Tech Stack Grid */}
-          <div className="grid lg:grid-cols-5 gap-16 items-start">
+          <div className="grid lg:grid-cols-4 gap-16 items-start">
             {/* FRONTEND */}
             <TechColumn
               title="FRONTEND"
               delay={0.1}
               items={[
-                { name: "JavaScript", color: "bg-cream", text: "text-foreground", icon: Braces },
-                { name: "TypeScript", color: "bg-pistachio-mint", text: "text-foreground", icon: FileCode },
-                { name: "React", color: "bg-pistachio-medium", text: "text-foreground", icon: Component },
-                { name: "Next.Js", color: "bg-cream-soft", text: "text-foreground", icon: Layers },
-                { name: "Redux", color: "bg-pistachio-saturated", text: "text-foreground", icon: Boxes },
-                { name: "Tailwind CSS", color: "bg-pistachio-light", text: "text-foreground", icon: Paintbrush },
-                { name: "Framer Motion", color: "bg-pistachio-dark", text: "text-primary-foreground", icon: Activity },
-                { name: "Sass", color: "bg-cream", text: "text-foreground", icon: Palette },
-                { name: "Bootstrap", color: "bg-pistachio-shell", text: "text-white", icon: Code },
+                {
+                  name: "JavaScript",
+                  color: "bg-cream",
+                  text: "text-foreground",
+                  icon: Braces,
+                },
+                {
+                  name: "TypeScript",
+                  color: "bg-pistachio-mint",
+                  text: "text-foreground",
+                  icon: FileCode,
+                },
+                {
+                  name: "C++",
+                  color: "bg-pistachio-shell",
+                  text: "text-white",
+                  icon: Code
+                },
+                {
+                  name: "React",
+                  color: "bg-pistachio-medium",
+                  text: "text-foreground",
+                  icon: Component,
+                },
+                {
+                  name: "Next.Js",
+                  color: "bg-cream-soft",
+                  text: "text-foreground",
+                  icon: Layers,
+                },
+                {
+                  name: "Redux",
+                  color: "bg-pistachio-saturated",
+                  text: "text-foreground",
+                  icon: Boxes,
+                },
+                {
+                  name: "Tailwind CSS",
+                  color: "bg-pistachio-light",
+                  text: "text-foreground",
+                  icon: Paintbrush,
+                },
+                {
+                  name: "Framer Motion",
+                  color: "bg-pistachio-dark",
+                  text: "text-primary-foreground",
+                  icon: Activity,
+                },
+                {
+                  name: "Sass",
+                  color: "bg-cream",
+                  text: "text-foreground",
+                  icon: Palette,
+                },
+                {
+                  name: "Bootstrap",
+                  color: "bg-pistachio-shell",
+                  text: "text-white",
+                  icon: Code,
+                },
               ]}
             />
 
-            {/* BACKEND */}
+            {/* BACKEND & DATABASE */}
             <TechColumn
-              title="BACKEND"
+              title="BACKEND & DATABASE"
               delay={0.2}
               items={[
-                { name: "Node.Js", color: "bg-pistachio-dark", text: "text-primary-foreground", icon: Server },
-                { name: "NestJS", color: "bg-cream", text: "text-foreground", icon: Boxes },
-                { name: "Express.Js", color: "bg-pistachio-shell", text: "text-white", icon: Workflow },
-              ]}
-            />
-
-            {/* DATABASE */}
-            <TechColumn
-              title="DATABASE"
-              delay={0.3}
-              items={[
-                { name: "MySQL", color: "bg-pistachio-medium", text: "text-foreground", icon: Database },
-                { name: "PostgreSQL", color: "bg-pistachio-dark", text: "text-primary-foreground", icon: Database },
-                { name: "MongoDB", color: "bg-pistachio-saturated", text: "text-foreground", icon: Database },
+                {
+                  name: "Node.Js",
+                  color: "bg-pistachio-dark",
+                  text: "text-primary-foreground",
+                  icon: Server,
+                },
+                {
+                  name: "NestJS",
+                  color: "bg-cream",
+                  text: "text-foreground",
+                  icon: Boxes,
+                },
+                {
+                  name: "Express.Js",
+                  color: "bg-pistachio-shell",
+                  text: "text-white",
+                  icon: Workflow,
+                },
+                {
+                  name: "MySQL",
+                  color: "bg-pistachio-medium",
+                  text: "text-foreground",
+                  icon: Database,
+                },
+                {
+                  name: "PostgreSQL",
+                  color: "bg-pistachio-dark",
+                  text: "text-primary-foreground",
+                  icon: Database,
+                },
+                {
+                  name: "MongoDB",
+                  color: "bg-pistachio-saturated",
+                  text: "text-foreground",
+                  icon: Database,
+                },
               ]}
             />
 
             {/* TOOLS */}
             <TechColumn
               title="TOOLS"
-              delay={0.4}
+              delay={0.3}
               items={[
-                { name: "Git", color: "bg-cream", text: "text-foreground", icon: GitBranch },
-                { name: "Figma", color: "bg-pistachio-soft", text: "text-foreground", icon: Figma },
-                { name: "Photoshop", color: "bg-cream-soft", text: "text-foreground", icon: ImageIcon },
-                { name: "GIMP", color: "bg-pistachio-shell", text: "text-white", icon: Palette },
-                { name: "VS Code", color: "bg-pistachio-dark", text: "text-primary-foreground", icon: Terminal },
+                {
+                  name: "Git",
+                  color: "bg-cream",
+                  text: "text-foreground",
+                  icon: GitBranch,
+                },
+                {
+                  name: "Figma",
+                  color: "bg-pistachio-soft",
+                  text: "text-foreground",
+                  icon: Figma,
+                },
+                {
+                  name: "Photoshop",
+                  color: "bg-cream-soft",
+                  text: "text-foreground",
+                  icon: ImageIcon,
+                },
+                {
+                  name: "GIMP",
+                  color: "bg-pistachio-shell",
+                  text: "text-white",
+                  icon: Palette,
+                },
+                {
+                  name: "VS Code",
+                  color: "bg-pistachio-dark",
+                  text: "text-primary-foreground",
+                  icon: Terminal,
+                },
+                {
+                  name: "Adobe After Effects",
+                  color: "bg-pistachio-saturated",
+                  text: "text-foreground",
+                  icon: Video,
+                },
+                {
+                  name: "Clipchamp",
+                  color: "bg-pistachio-light",
+                  text: "text-foreground",
+                  icon: Video,
+                },
+                {
+                  name: "Excel",
+                  color: "bg-cream",
+                  text: "text-foreground",
+                  icon: FileSpreadsheet,
+                },
               ]}
             />
 
             {/* LIFE */}
             <TechColumn
               title="LIFE"
-              delay={0.5}
+              delay={0.4}
               items={[
-                { name: "Guitar", color: "bg-pistachio-saturated", text: "text-foreground", icon: Guitar },
-                { name: "Singing", color: "bg-cream", text: "text-foreground", icon: Mic2 },
-                { name: "Skateboarding", color: "bg-pistachio-shell", text: "text-white", icon: Activity },
-                { name: "Drawing", color: "bg-pistachio-light", text: "text-foreground", icon: Brush },
-                { name: "Boxing", color: "bg-pistachio-dark", text: "text-primary-foreground", icon: Hand },
-                { name: "Basketball", color: "bg-cream", text: "text-foreground", icon: Dribbble },
-                { name: "Dancing", color: "bg-pistachio-soft", text: "text-foreground", icon: Music },
-                { name: "Photography", color: "bg-pistachio-medium", text: "text-foreground", icon: Camera },
-                { name: "Videography", color: "bg-cream-soft", text: "text-foreground", icon: Video },
+                {
+                  name: "Guitar",
+                  color: "bg-pistachio-saturated",
+                  text: "text-foreground",
+                  icon: Guitar,
+                },
+                {
+                  name: "Singing",
+                  color: "bg-cream",
+                  text: "text-foreground",
+                  icon: Mic2,
+                },
+                {
+                  name: "Skateboarding",
+                  color: "bg-pistachio-shell",
+                  text: "text-white",
+                  icon: Activity,
+                },
+                {
+                  name: "Drawing",
+                  color: "bg-pistachio-light",
+                  text: "text-foreground",
+                  icon: Brush,
+                },
+                {
+                  name: "Boxing",
+                  color: "bg-pistachio-dark",
+                  text: "text-primary-foreground",
+                  icon: Hand,
+                },
+                {
+                  name: "Basketball",
+                  color: "bg-cream",
+                  text: "text-foreground",
+                  icon: Dribbble,
+                },
+                {
+                  name: "Dancing",
+                  color: "bg-pistachio-soft",
+                  text: "text-foreground",
+                  icon: Music,
+                },
+                {
+                  name: "Photography",
+                  color: "bg-pistachio-medium",
+                  text: "text-foreground",
+                  icon: Camera,
+                },
+                {
+                  name: "Videography",
+                  color: "bg-cream-soft",
+                  text: "text-foreground",
+                  icon: Video,
+                },
               ]}
             />
           </div>

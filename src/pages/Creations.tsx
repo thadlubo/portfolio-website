@@ -51,17 +51,30 @@ export default function CreationsPage() {
     },
     {
       id: 2,
-      title: "Product Demo Video",
+      title: "Video Production Demo",
       category: "media",
-      shortDescription:
-        "Cinematography, cross collaboration with UL dance student. To be updated",
       description:
-        "Product demo video for a digital marketing campaign across social media platforms, highlighting key product features through engaging motion design and sound.",
+        `This short film blends expressive performance with casual, documentary style conversation to reveal the dancer’s craft, thoughts, and creative process, expressed in a natural, human way.
+
+        The original goal was to produce a demo reel product for Irish World Academy of Music and Dance. However, the project shifted into a more personal collaboration after an early interview with the performer. She was given full freedom to choose her music and develop the ideas that mattered most to her. Together, we landed on a dark yet elegant theme shaped by electronic dance music. A ruined abbey and UL’s dance studio were chosen to reflect this mood.
+
+        The journey itself became part of the story. We documented our full filming session and captured a short, natural interview during the drive to the locations, allowing the process to unfold on screen as it happened.
+
+        Challenges & Lessons Learned:
+        • Working through cold weather and rain delays
+        • Maintaining steady movement while tracking the dancer
+        • Managing multiple camera systems for layered storytelling
+        • Directing performance calmly under changing conditions
+        • Balancing low light using ISO and aperture control
+        • Using focal length to shape emotion and motion
+        • Color grading each clip for contrast, warmth, and tone
+        • Matching movement and environment through transitions
+        • Blending jump cuts and music-driven timing
+        `,
       media: [
-        { type: "youtube", src: "https://www.youtube.com/embed/SR__amDl1c8?si=iVKrqQQtRfyUNgbo" },
-        { type: "youtube", src: "https://www.youtube.com/embed/d8iuUDam0Fo?si=iurFlPgUWcXd-DPQ" },
+        { type: "youtube", src: "https://www.youtube.com/embed/cMqekz5MRks?si=G3kW5_97C7CHJllh" },
       ],
-      tags: ["Digital Media", "Animation", "Marketing"],
+      tags: ["Digital Media", "Videography", "Video-Editing"],
       color: "from-pistachio-dark to-pistachio-mint",
     },
     {
@@ -162,7 +175,7 @@ export default function CreationsPage() {
         { type: "image", src: "images/Passion.jpeg" },
         { type: "image", src: "images/PassionSettings.jpeg" },
       ],
-      tags: ["Digital Media", "Marketing"],
+      tags: ["Digital Media", "Photography"],
       color: "from-pistachio-dark to-pistachio-mint",
     },
     {
@@ -189,7 +202,7 @@ export default function CreationsPage() {
         { type: "image", src: "images/malta3.jpg" },
         { type: "image", src: "images/malta4.jpg" },
       ],
-      tags: ["Digital Media", "Marketing"],
+      tags: ["Digital Media", "Photography", "Travel"],
       color: "from-pistachio-dark to-pistachio-mint",
     },
     {

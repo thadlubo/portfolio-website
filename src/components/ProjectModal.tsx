@@ -93,12 +93,12 @@ export const ProjectModal = ({
         ...prev,
         [project.id]: [
           {
-            name: "Rory",
-            text: "Love the site! Reminds me of my green jacket ;)",
+            name: "Rory McIlroy",
+            text: "Love the site! Reminds me of my green jacket 👀",
             date: new Date().toLocaleDateString(),
           },
           {
-            name: "Lebron",
+            name: "Lebron James",
             text: "Keep the main thing, the main thing! The visuals are 🔥",
             date: new Date().toLocaleDateString(),
           },
