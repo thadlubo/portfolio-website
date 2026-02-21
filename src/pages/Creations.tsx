@@ -22,7 +22,70 @@ export default function CreationsPage() {
 
   const projects = [
     {
+      id: 0,
+      title: "UN Global Goals Interactive Art Installation",
+      category: "media",
+      description:
+        ` Embodied Earth: A Living Feedback System is an immersive projection-based installation that translates human presence into ecological consequence. Through real-time sensing, participants’ movement, density, and interaction with modular objects dynamically influence a simulated ecosystem of flowing water, plant growth, and marine vitality. At the core of the system is an Environmental Health Index (EHI), a continuous computational variable that governs ecological states ranging from equilibrium to collapse. As bodies gather, construct, settle, or accumulate material proxies of infrastructure and waste, the environment degrades; when restorative elements such as trees or renewable “energy” objects are introduced, regeneration becomes possible but asymmetrically slower than damage. The installation visualises climate feedback loops and tipping points through embodied interaction rather than abstract data.
+
+Grounded in UN Sustainable Development Goals 13 (Climate Action), 14 (Life Below Water), and 15 (Life on Land), the project positions sustainability as a collective spatial decision rather than an individual moral gesture. By combining depth-camera tracking, fluid simulation shaders, and state-based ecological logic, Embodied Earth operates as both interactive artwork and computational research artifact. It demonstrates how embodied systems design can render planetary interdependence perceptible, transforming environmental impact from distant abstraction into immediate experiential awareness.
+      `,
+      media: [
+        { type: "image", src: "images/InteractiveArt/S1.png" },
+        { type: "image", src: "images/InteractiveArt/S2.png" },
+        { type: "image", src: "images/InteractiveArt/S3.png" },
+        { type: "image", src: "images/InteractiveArt/S4.png" },
+        { type: "image", src: "images/InteractiveArt/S5.png" },
+        { type: "image", src: "images/InteractiveArt/S6.png" },
+        { type: "image", src: "images/InteractiveArt/S7.png" },
+        { type: "image", src: "images/InteractiveArt/S8.png" },
+        { type: "image", src: "images/InteractiveArt/S9.png" },
+        { type: "image", src: "images/InteractiveArt/S10.png" },
+        { type: "image", src: "images/InteractiveArt/S11.png" },
+      ],
+      tags: ["UN Global Goals", "Interactive Art", "Storyboard", "Presentation"],
+      color: "from-pistachio-medium to-pistachio-dark",
+    },
+    {
       id: 1,
+      title: "3D Modelling and Animation Project",
+      category: "media" ,
+      description:
+        `Watch the squirrel hop, jump and more! Rendered on a Toasty laptop. This isn't just a video. it's the 720-frame product of a desperate, 72+ hour rendering marathon designed to provide zero-emission, sustainable heat for my room this winter.
+
+        The Rigging and Modeling Furnace:
+        Geometry: Low-Poly Triangulation for optimized polycount, followed by meticulous Edge Refinement for clean subdivision.
+
+        Deformation: Comprehensive Rigging and Skin Painting to ensure perfect, smooth deformation, even during extreme run cycles.
+
+        Water Animation: Custom water particle effects were introduced to simulate a dynamic environment (and spike the render time).
+
+        PBR and Texturing (The Heat Sink):
+        PBR Materials: Used industry-standard Physically Based Rendering materials to achieve hyper-realistic surface interaction.
+
+        Mapping: Layered materials using Diffuse, Specular, and Bump Maps to define color, shine (specular), and surface detail, significantly increasing the complexity of lighting calculations.
+
+        Camera Work and Animation (The Control Room):
+        Cinematography: Utilized Multiple Cameras and the Action Cam technique with Rule of Thirds framing for dynamic, professional shots.
+
+        Smoothness: Achieved fluidity through advanced Animation Techniques for Smoothness (tangent control and baking).
+
+        Blur Effects: Used Motion Blur for dynamic movement and a bit of extra computational heat.
+
+        Arnold Rendering (The Space Heater)
+        The 720-frame Arnold Render was the engine of this operation. We fought Anti-Aliasing and shadow noise by manually dialing the Sampling to its limit. The process involved 72+ hours of trial and error just to get clean shadows and smooth animation.
+
+        🎞️ Post-Production
+        Final Edit: The sequence was polished with Color Grading and compiled entirely in Microsoft Clipchamp (because, let's be honest, those After Effects subscription fees would negate the savings from the free laptop heating).
+        `,
+      media: [
+        { type: "youtube", src: "https://www.youtube.com/embed/wv0m8THZG9o?si=gtfKvas-CM2iTOzD" },
+      ],
+      tags: ["Animation", "3D Modelling", "Video-Editing"],
+      color: "from-pistachio-dark to-pistachio-mint",
+    },
+    {
+      id: 2,
       title: "Innovation at UL - Hackathon Project Winner",
       category: "webapp",
       description:
@@ -50,7 +113,35 @@ export default function CreationsPage() {
       color: "from-pistachio-medium to-pistachio-dark",
     },
     {
-      id: 2,
+      id: 3,
+      title: "Wayfinder Kiosk Prototype Demo",
+      category: "webapp",
+      description:
+        `This project addresses the navigation challenges faced by new and international
+        students at the University of Limerick (UL). During key periods such as
+        orientation and assessments, many students struggle to find buildings, rooms
+        and essential services. Complex layouts, inconsistent signage and unreliable
+        mobile connectivity make it hard to build a clear mental map of the campus and
+        limit the usefulness of personal navigation apps (Zolkefil, 2022).
+        UL Wayfinder is proposed as a response. It consists of interactive kiosks in high
+        traffic locations where users can search for destinations, view routes and see
+        approximate travel times. Student ID integration enables personalised guidance,
+        for example routes to upcoming classes, and routes can be handed over to a
+        student’s phone to support continuous navigation across campus.
+        The project focuses on complex, heavily used areas such as the Main Building,
+        the Glucksman Library and the Student Centre. While the primary audience is
+        new and international students, the system is also intended to support visitors
+        and staff who may be unfamiliar with room codes or building layouts, particularly
+        during busy or high stress periods.
+        `,
+      media: [
+        { type: "youtube", src: "https://www.youtube.com/embed/WGkT6V41o38?si=jZIWJH5O7cQxZQrs" },
+      ],
+      tags: ["Kiosk App", "Navigation", "Prototype"],
+      color: "from-pistachio-dark to-pistachio-mint",
+    },
+    {
+      id: 4,
       title: "Video Production Demo",
       category: "media",
       description:
@@ -78,7 +169,7 @@ export default function CreationsPage() {
       color: "from-pistachio-dark to-pistachio-mint",
     },
     {
-      id: 3,
+      id: 5,
       title: "Formal Business Type Headshot",
       category: "media",
       shortDescription:
@@ -135,7 +226,7 @@ export default function CreationsPage() {
       color: "from-pistachio-dark to-pistachio-mint",
     },
     {
-      id: 4,
+      id: 6,
       title: "Aesthetic shot from Video Production",
       category: "media",
       description:
@@ -157,7 +248,7 @@ export default function CreationsPage() {
       color: "from-pistachio-dark to-pistachio-mint",
     },
     {
-      id: 5,
+      id: 7,
       title: "Passion Shot",
       category: "media",
       description:
@@ -179,7 +270,7 @@ export default function CreationsPage() {
       color: "from-pistachio-dark to-pistachio-mint",
     },
     {
-      id: 6,
+      id: 8,
       title: "Disposable Camera Photography Series",
       category: "media",
       shortDescription:
@@ -206,7 +297,7 @@ export default function CreationsPage() {
       color: "from-pistachio-dark to-pistachio-mint",
     },
     {
-      id: 7,
+      id: 9,
       title: "Norman's Principles: Designs that make sense",
       category: "theory",
       description:
@@ -234,7 +325,7 @@ export default function CreationsPage() {
       color: "from-pistachio-mint to-pistachio-saturated",
     },
     {
-      id: 8,
+      id: 10,
       title: "Job Opportunity Portal Project",
       category: "webapp",
       description:
