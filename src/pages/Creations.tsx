@@ -16,6 +16,132 @@ const creationsFilters = [
 const creationsProjects = [
   {
     id: 0,
+    title: "Interactive & Modular Sculpture",
+    category: "other",
+    shortDescription:
+      "Physical-digital sculpture exploring modularity, presence, and playful interaction.",
+    description:
+      `Documentation of an interactive, modular sculpture build: materials, assembly, and how people engage with the piece in space.
+
+Watch the full walkthrough and process video: https://www.youtube.com/watch?v=X3Y4dqWDYIY`,
+    media: [
+      { type: "youtube", src: "https://www.youtube.com/embed/X3Y4dqWDYIY" },
+    ],
+    tags: ["Digital Media", "Sculpture", "Interactive", "Others"],
+    color: "from-pistachio-medium to-pistachio-dark",
+  },
+  {
+    id: 1,
+    title: "CladdaghAI",
+    category: "webapp",
+    shortDescription:
+      "The ring that approves love — a playful web experience built around the Claddagh story.",
+    description:
+      `CladdaghAI is a small web experience that reframes the Claddagh ring as a lighthearted “approval” ritual for love and connection.
+
+Live site: https://thadlubo.github.io/claddagh-ai/`,
+    media: [
+      { type: "image", src: "images/Hackathon/Login_Hackathon.png" },
+      { type: "image", src: "images/InteractiveArt/S4.png" },
+      { type: "image", src: "images/Hackathon/AdminDashboard_Hackathon.png" },
+    ],
+    tags: ["Web App", "UI", "Storytelling"],
+    color: "from-pistachio-medium to-pistachio-dark",
+  },
+  {
+    id: 2,
+    title: "PineSense",
+    category: "other",
+    shortDescription:
+      "Concept and demo around sensing, feedback, and embodied interaction (video + stills).",
+    description:
+      `PineSense sits at the intersection of design theory and hands-on digital/physical prototyping—thinking through sensors, feedback, and what “sense” means in an interface beyond the screen.
+
+Process and demo video: https://youtu.be/KESrMXEDSnw`,
+    media: [
+      { type: "youtube", src: "https://www.youtube.com/embed/KESrMXEDSnw" },
+      { type: "image", src: "images/InteractiveArt/S5.png" },
+      { type: "image", src: "images/InteractiveArt/S6.png" },
+    ],
+    tags: ["Design Theory", "Others", "Prototype"],
+    color: "from-pistachio-dark to-pistachio-mint",
+  },
+  {
+    id: 3,
+    title: "Echo Capsule",
+    category: "webapp",
+    shortDescription:
+      "A capsule-shaped web concept for capturing and replaying moments of voice and memory.",
+    description:
+      `Echo Capsule is a self-directed web experiment focused on tone, pacing, and a contained UI for “echoes” of short recordings or prompts.
+
+Live build: https://thadlubo.github.io/echo-capsule/`,
+    media: [
+      { type: "image", src: "images/Echo_AMpage_home.PNG" },
+      { type: "image", src: "images/Echo_AMpage_CreateJobPopulated.PNG" },
+      { type: "image", src: "images/Hackathon/UserHome_Hackathon.png" },
+    ],
+    tags: ["Web App", "Audio UX", "Experimental"],
+    color: "from-pistachio-medium to-pistachio-dark",
+  },
+  {
+    id: 4,
+    title: "Algorithmic Soundscape Performance",
+    category: "media",
+    shortDescription:
+      "Live-coded / algorithm-led sound work—performance documentation plus supporting visuals.",
+    description:
+      `An algorithmic soundscape performance tying generative or rule-based sound to a live listening experience. The piece connects digital media practice with reflective design-theory questions about authorship, audience, and machine agency.
+
+Performance video: https://youtu.be/rxhTL-eY6-0`,
+    media: [
+      { type: "youtube", src: "https://www.youtube.com/embed/rxhTL-eY6-0" },
+      { type: "image", src: "images/presentation1/1.png" },
+      { type: "image", src: "images/InteractiveArt/S7.png" },
+      { type: "image", src: "images/malta2.jpg" },
+    ],
+    tags: ["Digital Media", "Design Theory", "Sound", "Others"],
+    color: "from-pistachio-dark to-pistachio-mint",
+  },
+  {
+    id: 5,
+    title: "Interactive Media Project Course Reflection",
+    category: "theory",
+    shortDescription:
+      "Reflection on an interactive media module—process, constraints, and what carried forward.",
+    description:
+      `A structured reflection on an interactive media project course: milestones, collaboration, technical constraints, and how theory met production in the final piece.
+
+Video reflection: https://youtu.be/7p09qldViyg`,
+    media: [
+      { type: "youtube", src: "https://www.youtube.com/embed/7p09qldViyg" },
+    ],
+    tags: ["Design Theory", "Digital Media", "Education"],
+    color: "from-pistachio-mint to-pistachio-saturated",
+  },
+  {
+    id: 6,
+    title: 'Restaurant re-design "Curry House"',
+    category: "webapp",
+    shortDescription:
+      "Dual touchpoint redesign: live restaurant site plus a portfolio microsite for the concept.",
+    description:
+      `A web/app design exploration for “Curry House,” spanning a real restaurant presence and a companion portfolio-style build that showcases layout, typography, and menu hierarchy.
+
+References:
+• https://indiancurryrestaurant.de/
+• https://thadlubo.github.io/curry-house/`,
+    media: [
+      { type: "image", src: "images/malta1.jpg" },
+      { type: "image", src: "images/VariableFocalLength.jpeg" },
+      { type: "image", src: "images/Hackathon/AdminRoles_Hackathon.png" },
+      { type: "image", src: "images/LightRoomEdit.jpeg" },
+    ],
+    tags: ["Web App", "Branding", "Food & Hospitality"],
+    color: "from-pistachio-medium to-pistachio-dark",
+  },
+  {
+    id: 7,
     title: "UN Global Goals Interactive Art Installation",
     category: "media",
     description:
@@ -40,7 +166,7 @@ Grounded in UN Sustainable Development Goals 13 (Climate Action), 14 (Life Below
     color: "from-pistachio-medium to-pistachio-dark",
   },
   {
-    id: 1,
+    id: 8,
     title: "3D Modelling and Animation Project",
     category: "media" ,
     description:
@@ -78,7 +204,7 @@ Grounded in UN Sustainable Development Goals 13 (Climate Action), 14 (Life Below
     color: "from-pistachio-dark to-pistachio-mint",
   },
   {
-    id: 2,
+    id: 9,
     title: "Innovation at UL - Hackathon Project Winner",
     category: "webapp",
     description:
@@ -106,7 +232,7 @@ Grounded in UN Sustainable Development Goals 13 (Climate Action), 14 (Life Below
     color: "from-pistachio-medium to-pistachio-dark",
   },
   {
-    id: 3,
+    id: 10,
     title: "Wayfinder Kiosk Prototype Demo",
     category: "webapp",
     description:
@@ -134,7 +260,7 @@ Grounded in UN Sustainable Development Goals 13 (Climate Action), 14 (Life Below
     color: "from-pistachio-dark to-pistachio-mint",
   },
   {
-    id: 4,
+    id: 11,
     title: "Video Production Demo",
     category: "media",
     description:
@@ -162,7 +288,7 @@ Grounded in UN Sustainable Development Goals 13 (Climate Action), 14 (Life Below
     color: "from-pistachio-dark to-pistachio-mint",
   },
   {
-    id: 5,
+    id: 12,
     title: "Formal Business Type Headshot",
     category: "media",
     shortDescription:
@@ -219,7 +345,7 @@ Grounded in UN Sustainable Development Goals 13 (Climate Action), 14 (Life Below
     color: "from-pistachio-dark to-pistachio-mint",
   },
   {
-    id: 6,
+    id: 13,
     title: "Aesthetic shot from Video Production",
     category: "media",
     description:
@@ -241,7 +367,7 @@ Grounded in UN Sustainable Development Goals 13 (Climate Action), 14 (Life Below
     color: "from-pistachio-dark to-pistachio-mint",
   },
   {
-    id: 7,
+    id: 14,
     title: "Passion Shot",
     category: "media",
     description:
@@ -263,7 +389,7 @@ Grounded in UN Sustainable Development Goals 13 (Climate Action), 14 (Life Below
     color: "from-pistachio-dark to-pistachio-mint",
   },
   {
-    id: 8,
+    id: 15,
     title: "Disposable Camera Photography Series",
     category: "media",
     shortDescription:
@@ -290,7 +416,7 @@ Grounded in UN Sustainable Development Goals 13 (Climate Action), 14 (Life Below
     color: "from-pistachio-dark to-pistachio-mint",
   },
   {
-    id: 9,
+    id: 16,
     title: "Norman's Principles: Designs that make sense",
     category: "theory",
     description:
@@ -318,7 +444,7 @@ Grounded in UN Sustainable Development Goals 13 (Climate Action), 14 (Life Below
     color: "from-pistachio-mint to-pistachio-saturated",
   },
   {
-    id: 10,
+    id: 17,
     title: "Job Opportunity Portal Project",
     category: "webapp",
     description:
