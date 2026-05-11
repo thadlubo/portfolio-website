@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 import { X, ChevronLeft, ChevronRight, Heart } from "lucide-react";
 
@@ -116,6 +116,22 @@ export const ProjectModal = ({
     }
   }, [project, likeCounts]);
 
+  useEffect(() => {
+    if (!project || project.media.length < 2) return;
+    const len = project.media.length;
+    const preload = (idx: number) => {
+      const item = project.media[idx];
+      if (item?.type === "image") {
+        const img = new Image();
+        img.decoding = "async";
+        img.sizes = "(max-width: 768px) 100vw, min(1200px, 66vw)";
+        img.src = item.src;
+      }
+    };
+    preload((currentIndex + 1) % len);
+    preload((currentIndex - 1 + len) % len);
+  }, [project, currentIndex]);
+
   // NEED TO RETURN EARLY IF NO PROJECT
   if (!project) return null;
 
@@ -176,10 +192,11 @@ export const ProjectModal = ({
     <AnimatePresence>
       {project && (
         <motion.div
-          className="fixed inset-0 bg-black/70 backdrop-blur-md flex items-center justify-center z-[999]"
+          className="fixed inset-0 z-[999] flex items-center justify-center bg-black/75"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
+          transition={{ duration: 0.15 }}
           onClick={onClose}
         >
           <motion.div
@@ -204,7 +221,10 @@ export const ProjectModal = ({
                 <img
                   src={media.src}
                   alt={project.title}
-                  className="object-contain max-h-[80vh] w-full transition-all"
+                  decoding="async"
+                  fetchPriority="high"
+                  sizes="(max-width: 768px) 100vw, min(1200px, 66vw)"
+                  className="h-auto max-h-[80vh] w-full max-w-full object-contain"
                 />
               )}
               {media.type === "video" && (
@@ -212,17 +232,19 @@ export const ProjectModal = ({
                   src={media.src}
                   controls
                   autoPlay
-                  className="object-contain max-h-[80vh] w-full"
+                  preload="metadata"
+                  className="max-h-[80vh] w-full object-contain"
                 />
               )}
               {media.type === "youtube" && (
-                <div className="w-full aspect-video">
+                <div className="aspect-video w-full">
                   <iframe
                     src={media.src}
                     title={project.title}
+                    loading="lazy"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
-                    className="w-full h-full rounded-none md:rounded-l-2xl"
+                    className="h-full w-full rounded-none md:rounded-l-2xl"
                   />
                 </div>
               )}
