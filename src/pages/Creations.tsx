@@ -19,7 +19,7 @@ const creationsProjects = [
     title: "Interactive & Modular Sculpture",
     category: "other",
     shortDescription:
-      "Physical-digital sculpture exploring modularity, presence, and playful interaction.",
+      "Physical and projected visual sculpture exploring modularity, presence, and playful interaction.",
     description:
       `Documentation of an interactive, modular sculpture build: materials, assembly, and how people engage with the piece in space.
 
@@ -37,14 +37,21 @@ Watch the full walkthrough and process video: https://www.youtube.com/watch?v=Sr
     shortDescription:
       "The ring that approves love. A playful dystopian web experience built around the Claddagh AI story.",
     description:
-      `CladdaghAI is a small web experience that reframes the Claddagh ring as a government-mandated, lighthearted “approval” ritual for love and connection.
+      `CladdaghAI is a dystopian web experience that reframes the Claddagh ring as a government-mandated, lighthearted "approval" ritual for love and connection.
 
 Live site: https://thadlubo.github.io/claddagh-ai/`,
-link: { label: "Live site", href: "https://thadlubo.github.io/claddagh-ai/" },
+    link: { label: "Live site", href: "https://thadlubo.github.io/claddagh-ai/" },
     media: [
-      { type: "image", src: "images/Hackathon/Login_Hackathon.png" },
-      { type: "image", src: "images/InteractiveArt/S4.png" },
-      { type: "image", src: "images/Hackathon/AdminDashboard_Hackathon.png" },
+      { type: "image", src: "images/CladdaghAI/CAI1.jpg" },
+      { type: "video", src: "images/CladdaghAI/RingAnimation.mp4" },
+      { type: "image", src: "images/CladdaghAI/CAI2.jpg" },
+      { type: "image", src: "images/CladdaghAI/CAI3.jpg" },
+      { type: "image", src: "images/CladdaghAI/CAI4.jpg" },
+      { type: "image", src: "images/CladdaghAI/CAI5.jpg" },
+      { type: "image", src: "images/CladdaghAI/CAI6.jpg" },
+      { type: "image", src: "images/CladdaghAI/CAI7.jpg" },
+      { type: "image", src: "images/CladdaghAI/CAI8.jpg" },
+      { type: "image", src: "images/CladdaghAI/CAI9.jpg" },
     ],
     tags: ["Web App", "UI", "Storytelling"],
     color: "from-pistachio-medium to-pistachio-dark",
@@ -54,15 +61,19 @@ link: { label: "Live site", href: "https://thadlubo.github.io/claddagh-ai/" },
     title: "PineSense",
     category: "other",
     shortDescription:
-      "Concept and demo around sensing, feedback, and embodied interaction (video + stills).",
+      "Concept and demo around fabrication, sensing, feedback, and embodied interaction (video + stills).",
     description:
-      `PineSense sits at the intersection of design theory and hands-on digital/physical prototyping—thinking through sensors, feedback, and what “sense” means in an interface beyond the screen.
+      `PineSense sits at the intersection of design theory and hands-on digital/physical prototyping, 3d fabrication, laser-cutting, thinking through sensors, feedback, and what “sense” means in an interface beyond the screen.
 
 Process and demo video: https://youtu.be/KESrMXEDSnw`,
     media: [
       { type: "youtube", src: "https://www.youtube.com/embed/KESrMXEDSnw" },
-      { type: "image", src: "images/InteractiveArt/S5.png" },
-      { type: "image", src: "images/InteractiveArt/S6.png" },
+      { type: "video", src: "images/PineSense/AIRSTATE_GOOD.mp4" },
+      { type: "video", src: "images/PineSense/AIRSTATE_POOR.mp4" },
+      { type: "video", src: "images/PineSense/AIRSTATE_WARNING.mp4" },
+      { type: "image", src: "images/PineSense/Assembly_PineSense_Base_Electronics.png" },
+      { type: "image", src: "images/PineSense/Assembly_PineSense_MiddleMechanism.png" },
+      { type: "image", src: "images/PineSense/Assembly_PineSense_Top.png" },
     ],
     tags: ["Design Theory", "Others", "Prototype"],
     color: "from-pistachio-dark to-pistachio-mint",
@@ -72,15 +83,33 @@ Process and demo video: https://youtu.be/KESrMXEDSnw`,
     title: "Echo Capsule",
     category: "webapp",
     shortDescription:
-      "A capsule-shaped web concept for capturing and replaying moments of voice and memory.",
+      "A web concept for capturing and replaying moments through meaningful experience using geolocation and shared interaction.",
     description:
-      `Echo Capsule is a self-directed web experiment focused on tone, pacing, and a contained UI for “echoes” of short recordings or prompts.
+      `EchoCapsule is a mobile app concept that allows users to leave digital capsules in real places for themselves, for another person, or for a group, to be opened at a meaningful future moment. 
+      
+      A capsule can contain text, voice notes, photographs, or short videos. Unlike conventional social media, its value does not come from instant posting or immediate visibility. 
+      
+      Instead, it is built around delayed interaction. A capsule may open on a future date, when a user returns to a specific location, or through a shared ritual in which users must be in the same place and time and physically press and hold the unlock button together on their phones. 
+      
+      In EchoCapsule, time, place, relationship, and coordinated action are not background metadata; they are the central materials of the experience.
+    
+      Live build (Best Viewed on 430x932): 
+      https://thadlubo.github.io/echo-capsule/
 
-Live build: https://thadlubo.github.io/echo-capsule/`,
+      Figma prototype:
+      https://www.figma.com/proto/7WsGDDZ7HQlyaxYYdWb487/Echo-Capsule-Mobile-Design?node-id=2008-913&p=f&viewport=515%2C208%2C0.03&t=iDLpymefLUrSlG9O-1&scaling=scale-down&content-scaling=fixed&page-id=13%3A4588
+      Figma wireframes:
+      https://www.figma.com/design/7WsGDDZ7HQlyaxYYdWb487/Echo-Capsule-Mobile-Design?node-id=13-4588&p=f&t=5bdU8xddzQUISbhi-0
+      `,
+
     media: [
-      { type: "image", src: "images/Echo_AMpage_home.PNG" },
-      { type: "image", src: "images/Echo_AMpage_CreateJobPopulated.PNG" },
-      { type: "image", src: "images/Hackathon/UserHome_Hackathon.png" },
+      { type: "youtube", src: "https://www.youtube.com/embed/UnWG0GjkWtk" },
+      { type: "image", src: "images/EchoCapsule/ECBanner.jpg" },
+      { type: "image", src: "images/EchoCapsule/EC1.jpg" },
+      { type: "image", src: "images/EchoCapsule/EC2.jpg" },
+      { type: "image", src: "images/EchoCapsule/EC3.jpg" },
+      { type: "image", src: "images/EchoCapsule/EC4.jpg" },
+      { type: "image", src: "images/EchoCapsule/EC5.jpg" },
     ],
     tags: ["Web App", "Audio UX", "Experimental"],
     color: "from-pistachio-medium to-pistachio-dark",
@@ -90,30 +119,41 @@ Live build: https://thadlubo.github.io/echo-capsule/`,
     title: "Algorithmic Soundscape Performance",
     category: "media",
     shortDescription:
-      "Live-coded / algorithm-led sound work—performance documentation plus supporting visuals.",
+      "Algorithmic led sound performance and documentation plus supporting visuals.",
     description:
       `An algorithmic soundscape performance tying generative or rule-based sound to a live listening experience. The piece connects digital media practice with reflective design-theory questions about authorship, audience, and machine agency.
 
-Performance video: https://youtu.be/rxhTL-eY6-0`,
+      This project began somewhere between watching The Queen’s Gambit, Old cartoon SFX and my deep affection for game audio that makes every action feel absurdly important. I wanted to perform interactive chess, less like silent thinking and more like a kingdom on the verge of trouble.
+
+      Performance also draws from John Cage’s spiritual use of chance and ego-less decision making, where rules shape the outcome without fully controlling it, and from Brian Eno’s rule based ambient systems, where layered sound evolves through process rather than traditional composition. These all felt right for the chess soundscape performance: strategy, tension, ceremony, and occasional nonsense.
+        
+      Performance video: https://youtu.be/rxhTL-eY6-0`,
     media: [
       { type: "youtube", src: "https://www.youtube.com/embed/rxhTL-eY6-0" },
-      { type: "image", src: "images/presentation1/1.png" },
-      { type: "image", src: "images/InteractiveArt/S7.png" },
-      { type: "image", src: "images/malta2.jpg" },
+      { type: "image", src: "images/SoundScape/ss1.jpg" },
+      { type: "image", src: "images/SoundScape/ss2.jpg" },
+      { type: "image", src: "images/SoundScape/ss3.jpg" },
+      { type: "image", src: "images/SoundScape/ss4.jpg" },
+      { type: "image", src: "images/SoundScape/ss5.jpg" },
+      { type: "image", src: "images/SoundScape/ss6.jpg" },
+      { type: "image", src: "images/SoundScape/ss7.jpg" },
+      { type: "image", src: "images/SoundScape/ss8.jpg" },
+      { type: "image", src: "images/SoundScape/ss9.jpg" },
+      { type: "image", src: "images/SoundScape/ss10.jpg" },
     ],
     tags: ["Digital Media", "Design Theory", "Sound", "Others"],
     color: "from-pistachio-dark to-pistachio-mint",
   },
   {
     id: 5,
-    title: "Interactive Media Project Course Reflection",
+    title: "Interactive Media Module Reflection",
     category: "theory",
     shortDescription:
-      "Reflection on an interactive media module—process, constraints, and what carried forward.",
+      "A reflective look at artworks, workshops, readings, and learnings across the Interactive Media module.",
     description:
-      `A structured reflection on an interactive media project course: milestones, collaboration, technical constraints, and how theory met production in the final piece.
+      `A personal reflection on the Interactive Media module. Revisiting the artworks encountered, workshops attended, readings explored, and the ideas and learnings that shaped my thinking throughout.
 
-Video reflection: https://youtu.be/7p09qldViyg`,
+      Video reflection: https://youtu.be/7p09qldViyg`,
     media: [
       { type: "youtube", src: "https://www.youtube.com/embed/7p09qldViyg" },
     ],
@@ -122,27 +162,6 @@ Video reflection: https://youtu.be/7p09qldViyg`,
   },
   {
     id: 6,
-    title: 'Restaurant re-design "Curry House"',
-    category: "webapp",
-    shortDescription:
-      "Dual touchpoint redesign: live restaurant site plus a portfolio microsite for the concept.",
-    description:
-      `A web/app design exploration for “Curry House,” spanning a real restaurant presence and a companion portfolio-style build that showcases layout, typography, and menu hierarchy.
-
-References:
-• https://indiancurryrestaurant.de/
-• https://thadlubo.github.io/curry-house/`,
-    media: [
-      { type: "image", src: "images/malta1.jpg" },
-      { type: "image", src: "images/VariableFocalLength.jpeg" },
-      { type: "image", src: "images/Hackathon/AdminRoles_Hackathon.png" },
-      { type: "image", src: "images/LightRoomEdit.jpeg" },
-    ],
-    tags: ["Web App", "Branding", "Food & Hospitality"],
-    color: "from-pistachio-medium to-pistachio-dark",
-  },
-  {
-    id: 7,
     title: "UN Global Goals Interactive Art Installation",
     category: "media",
     description:
@@ -167,9 +186,35 @@ Grounded in UN Sustainable Development Goals 13 (Climate Action), 14 (Life Below
     color: "from-pistachio-medium to-pistachio-dark",
   },
   {
+    id: 7,
+    title: 'Restaurant re-design "Curry House"',
+    category: "webapp",
+    shortDescription:
+      "Dual touchpoint redesign: live restaurant site plus a portfolio microsite for the concept.",
+    description:
+      `A web/app design exploration for “Curry House,” spanning a real restaurant presence and a companion portfolio-style build that showcases layout, typography, and menu hierarchy.
+
+References:
+• https://indiancurryrestaurant.de/
+• https://thadlubo.github.io/curry-house/`,
+media: [
+  { type: "image", src: "images/CurryHouse/CH0.jpg" },
+  { type: "image", src: "images/CurryHouse/OLDCH0.jpg" },
+  { type: "image", src: "images/CurryHouse/CH1.jpg" },
+  { type: "image", src: "images/CurryHouse/OLDCH1.jpg" },
+  { type: "image", src: "images/CurryHouse/CH2.jpg" },
+  { type: "image", src: "images/CurryHouse/OLDCH2.jpg" },
+  { type: "image", src: "images/CurryHouse/CH3.jpg" },
+  { type: "image", src: "images/CurryHouse/OLDCH3.jpg" },
+  { type: "image", src: "images/CurryHouse/CH4.jpg" },
+],
+    tags: ["Web App", "Branding", "Food & Hospitality"],
+    color: "from-pistachio-medium to-pistachio-dark",
+  },
+  {
     id: 8,
     title: "3D Modelling and Animation Project",
-    category: "media" ,
+    category: "media",
     description:
       `Watch the squirrel hop, jump and more! Rendered on a Toasty laptop. This isn't just a video. it's the 720-frame product of a desperate, 72+ hour rendering marathon designed to provide zero-emission, sustainable heat for my room this winter.
 
@@ -474,6 +519,8 @@ export default function CreationsPage() {
   };
 
   // Video thumbnail helper
+  const base = import.meta.env.BASE_URL;
+
   const getThumbnailSrc = (media: any[]) => {
     const first = media[0];
     if (first.type === "youtube") {
@@ -483,7 +530,7 @@ export default function CreationsPage() {
         ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`
         : "https://via.placeholder.com/640x360?text=YouTube+Video";
     }
-    return first.src;
+    return `${base}${first.src}`; // ← fixed
   };
 
   const filteredProjects = useMemo(
