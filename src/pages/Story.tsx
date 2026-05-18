@@ -26,8 +26,8 @@ export default function StoryPage() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <span className="mb-4 text-4xl font-bold bg-gradient-to-br from-pistachio-dark via-pistachio-medium to-pistachio-dark bg-clip-text text-transparent uppercase mb-4 block">
-              My Story</span>
+            <h1 className="mb-4 text-4xl font-bold bg-gradient-to-br from-pistachio-dark via-pistachio-medium to-pistachio-dark bg-clip-text text-transparent uppercase mb-4 block">
+              My Story</h1>
             <h1 className="text-5xl lg:text-7xl mb-6">
               A Journey Through
               <motion.span
