@@ -30,6 +30,19 @@ interface Comment {
 type LikeCounts = Record<number, number>;
 type UserLikes = Record<number, boolean>;
 
+function renderWithLinks(text: string) {
+  const parts = text.split(/(https?:\/\/[^\s]+)/g);
+  return parts.map((part, i) =>
+    /https?:\/\/[^\s]+/.test(part) ? (
+      <a key={i} href={part} target="_blank" rel="noopener noreferrer" className="text-pistachio-dark underline hover:opacity-70 transition-opacity">
+        {part}
+      </a>
+    ) : (
+      <span key={i}>{part}</span>
+    )
+  );
+}
+
 export const ProjectModal = ({
   project,
   onClose,
@@ -47,10 +60,10 @@ export const ProjectModal = ({
   useEffect(() => {
     const savedComments = localStorage.getItem("projectComments");
     if (savedComments) setComments(JSON.parse(savedComments));
-    
+
     const savedLikeCounts = localStorage.getItem("projectLikeCounts");
     if (savedLikeCounts) setLikeCounts(JSON.parse(savedLikeCounts));
-    
+
     const savedUserLikes = localStorage.getItem("projectUserLikes");
     if (savedUserLikes) setUserLikes(JSON.parse(savedUserLikes));
 
@@ -70,6 +83,7 @@ export const ProjectModal = ({
   useEffect(() => {
     localStorage.setItem("projectUserLikes", JSON.stringify(userLikes));
   }, [userLikes]);
+
 
 
   // ESC button and scroll lock
@@ -106,7 +120,7 @@ export const ProjectModal = ({
       }));
     }
   }, [project, comments]);
-  
+
   useEffect(() => {
     if (project && likeCounts[project.id] === undefined) {
       setLikeCounts(prev => ({
@@ -141,16 +155,16 @@ export const ProjectModal = ({
   // Handle like/unlike toggle
   const handleLikeToggle = () => {
     const projectId = project.id;
-    
+
     setUserLikes(prevUserLikes => ({
       ...prevUserLikes,
-      [projectId]: !isLiked, 
+      [projectId]: !isLiked,
     }));
 
     setLikeCounts(prevLikeCounts => ({
       ...prevLikeCounts,
-      [projectId]: isLiked 
-        ? prevLikeCounts[projectId] - 1 
+      [projectId]: isLiked
+        ? prevLikeCounts[projectId] - 1
         : (prevLikeCounts[projectId] || 0) + 1,
     }));
   };
@@ -158,7 +172,7 @@ export const ProjectModal = ({
   // Handle comment submission
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!name.trim() || !text.trim()) return; 
+    if (!name.trim() || !text.trim()) return;
 
     const newComment: Comment = {
       name: name.trim(),
@@ -186,6 +200,8 @@ export const ProjectModal = ({
     );
 
   const media = project.media[currentIndex];
+
+
 
   // Need to Render modal in React Portal so it's separated from main DOM
   return ReactDOM.createPortal(
@@ -256,11 +272,10 @@ export const ProjectModal = ({
                     <button
                       key={index}
                       onClick={() => setCurrentIndex(index)}
-                      className={`w-3 h-3 rounded-full transition-all ${
-                        index === currentIndex
+                      className={`w-3 h-3 rounded-full transition-all ${index === currentIndex
                           ? "bg-pistachio-dark scale-110"
                           : "bg-white/40 hover:bg-white/70"
-                      }`}
+                        }`}
                     />
                   ))}
                 </div>
@@ -290,7 +305,7 @@ export const ProjectModal = ({
               <div>
                 <h2 className="text-2xl text-primary dark:text-primary font-semibold mb-2">{project.title}</h2>
                 <p className="text-primary dark:text-accent-foreground mb-4 leading-relaxed whitespace-pre-line">
-                  {project.description}
+                  {renderWithLinks(project.description)}
                 </p>
 
                 <div className="flex flex-wrap gap-2 mb-4">
@@ -306,13 +321,12 @@ export const ProjectModal = ({
 
                 {/* Like Section */}
                 <div className="flex items-center gap-4 mt-4">
-                  <button 
+                  <button
                     onClick={handleLikeToggle}
-                    className={`flex items-center gap-1 transition ${
-                      isLiked 
+                    className={`flex items-center gap-1 transition ${isLiked
                         ? "text-red-500 hover:text-red-600"
                         : "text-pistachio-dark hover:text-pistachio-medium"
-                    }`}
+                      }`}
                   >
                     <Heart size={18} fill={isLiked ? "currentColor" : "none"} />
                     <span>{isLiked ? "Liked!" : "Like"} ({currentLikes})</span>
