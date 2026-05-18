@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import ReactDOM from "react-dom";
 import { X, ChevronLeft, ChevronRight, Heart } from "lucide-react";
 
@@ -55,6 +55,7 @@ export const ProjectModal = ({
   const [text, setText] = useState("");
   const [likeCounts, setLikeCounts] = useState<LikeCounts>({});
   const [userLikes, setUserLikes] = useState<UserLikes>({});
+  const saveTimers = useRef<Record<string, ReturnType<typeof setTimeout>>>({});
 
   // Local storage load for Comments and Likes
   useEffect(() => {
@@ -69,19 +70,25 @@ export const ProjectModal = ({
 
   }, []);
 
-  // Local storage save
   useEffect(() => {
-    localStorage.setItem("projectComments", JSON.stringify(comments));
+    clearTimeout(saveTimers.current.comments);
+    saveTimers.current.comments = setTimeout(() => {
+      localStorage.setItem("projectComments", JSON.stringify(comments));
+    }, 500);
   }, [comments]);
 
-
   useEffect(() => {
-    localStorage.setItem("projectLikeCounts", JSON.stringify(likeCounts));
+    clearTimeout(saveTimers.current.likeCounts);
+    saveTimers.current.likeCounts = setTimeout(() => {
+      localStorage.setItem("projectLikeCounts", JSON.stringify(likeCounts));
+    }, 500);
   }, [likeCounts]);
 
-
   useEffect(() => {
-    localStorage.setItem("projectUserLikes", JSON.stringify(userLikes));
+    clearTimeout(saveTimers.current.userLikes);
+    saveTimers.current.userLikes = setTimeout(() => {
+      localStorage.setItem("projectUserLikes", JSON.stringify(userLikes));
+    }, 500);
   }, [userLikes]);
 
 

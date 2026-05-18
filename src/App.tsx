@@ -2,14 +2,14 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Routes, Route, useLocation } from "react-router-dom";
 import Navigation from "./components/Navigation";
 import FloatingDots from "./components/FloatingDots";
+import { lazy, Suspense, useEffect } from "react";
 
-import HeroPage from "./pages/Hero";
-import StoryPage from "./pages/Story";
-import JourneyPage from "./pages/Journey";
-import CreationsPage from "./pages/Creations";
-import { BlogPage } from "./pages/Blog";
-import { useEffect } from "react";
-import BlogDetailPage from "./components/BlogDetailPage";
+const HeroPage = lazy(() => import("./pages/Hero"));
+const StoryPage = lazy(() => import("./pages/Story"));
+const JourneyPage = lazy(() => import("./pages/Journey"));
+const CreationsPage = lazy(() => import("./pages/Creations"));
+const BlogPage = lazy(() => import("./pages/Blog").then((m) => ({ default: m.BlogPage })));
+const BlogDetailPage = lazy(() => import("./components/BlogDetailPage"));
 
 // Motion wrapper for page transitions to reduce clutter in main App component
 const PageWrapper = ({ children }: { children: React.ReactNode }) => {
@@ -41,41 +41,28 @@ const PageWrapper = ({ children }: { children: React.ReactNode }) => {
 
 export default function App() {
   const location = useLocation();
-  // Scroll to top on route change
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo(0, 0);
   }, [location.pathname]);
-
-  const routes = [
-    { path: "/", element: <HeroPage /> },
-    { path: "/story", element: <StoryPage /> },
-    { path: "/journey", element: <JourneyPage /> },
-    { path: "/creations", element: <CreationsPage /> },
-    { path: "/blogs", element: <BlogPage onContactClick={function (): void {
-      throw new Error("Function not implemented.");
-    } } />},
-    { path: "/blogs/rain-ruins-rhythm", element: <BlogDetailPage /> },
-  ];
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-hidden">
       <Navigation />
 
-      <AnimatePresence mode="wait">
-        <Routes location={location} key={location.pathname}>
-          {routes.map(({ path, element }) => (
-            <Route
-              key={path}
-              path={path}
-              element={<PageWrapper>{element}</PageWrapper>}
-            />
-          ))}
-        </Routes>
-      </AnimatePresence>
-      {/* Background layer for floating dots */}
+      <Suspense fallback={null}>
+        <AnimatePresence mode="wait">
+          <Routes location={location} key={location.pathname}>
+            <Route path="/" element={<PageWrapper><HeroPage /></PageWrapper>} />
+            <Route path="/story" element={<PageWrapper><StoryPage /></PageWrapper>} />
+            <Route path="/journey" element={<PageWrapper><JourneyPage /></PageWrapper>} />
+            <Route path="/creations" element={<PageWrapper><CreationsPage /></PageWrapper>} />
+            <Route path="/blogs" element={<PageWrapper><BlogPage onContactClick={() => {}} /></PageWrapper>} />
+            <Route path="/blogs/rain-ruins-rhythm" element={<PageWrapper><BlogDetailPage /></PageWrapper>} />
+          </Routes>
+        </AnimatePresence>
+      </Suspense>
       <div className="fixed inset-0 pointer-events-none z-0" />
-      {/* Floating dots component */}
-      <FloatingDots count={50} floatX={20} floatY={20} />
+      <FloatingDots count={30} floatX={20} floatY={20} />
     </div>
   );
 }

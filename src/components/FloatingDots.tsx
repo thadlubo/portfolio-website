@@ -56,6 +56,8 @@ export default function FloatingDots({
             height: `${dot.size}vw`,
             backgroundColor: dot.color,
             filter: "blur(2px)",
+            willChange: "transform",
+            transform: "translateZ(0)",
           }}
           initial={{ x: 0, y: 0, opacity: 0.5 }}
           animate={{

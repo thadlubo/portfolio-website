@@ -1,7 +1,6 @@
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
-import Button from "react-bootstrap/Button";
 import { useNavigate } from "react-router-dom";
 
 const hoverInfo = {
@@ -45,9 +44,9 @@ const HoverArrow = ({
       scale: { duration: 0.3 },
     }}
   >
-    <Button variant="light" className="rounded-full bg-pistachio-medium text-white p-2 border-0 shadow-lg pointer-events-none">
+    <button className="rounded-full bg-pistachio-medium text-white p-2 border-0 shadow-lg pointer-events-none">
       <Icon size={20} />
-    </Button>
+    </button>
   </motion.div>
 );
 
@@ -174,16 +173,12 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.8 }}
           >
-            <Button size="lg" onClick={() => navigate("/creations")} className="bg-pistachio-dark text-white px-8 py-3 rounded-full hover:bg-pistachio-light hover:text-pistachio-dark transition-transform duration-300 hover:scale-105">
+            <button onClick={() => navigate("/creations")} className="bg-pistachio-dark text-white px-8 py-3 rounded-full hover:bg-pistachio-light hover:text-pistachio-dark transition-transform duration-300 hover:scale-105">
               Explore Creations
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="bg-pistachio-medium text-pistachio-dark px-8 py-3 rounded-full border hover:bg-pistachio-light transition-transform duration-300 hover:scale-105"
-            >
+            </button>
+            <button className="bg-pistachio-medium text-pistachio-dark px-8 py-3 rounded-full border hover:bg-pistachio-light transition-transform duration-300 hover:scale-105">
               Download CV
-            </Button>
+            </button>
           </motion.div>
 
           {/* Socials */}
