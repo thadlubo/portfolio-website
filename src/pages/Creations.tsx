@@ -23,9 +23,9 @@ const creationsProjects = [
     description:
       `Documentation of an interactive, modular sculpture build: materials, assembly, and how people engage with the piece in space.
 
-Watch the full walkthrough and process video: https://www.youtube.com/watch?v=X3Y4dqWDYIY`,
+Watch the full walkthrough and process video: https://www.youtube.com/watch?v=SriAVlpl3sA`,
     media: [
-      { type: "youtube", src: "https://www.youtube.com/embed/X3Y4dqWDYIY" },
+      { type: "youtube", src: "https://www.youtube.com/embed/SriAVlpl3sA?si=Y5AO2XhhVlcmfppO" },
     ],
     tags: ["Digital Media", "Sculpture", "Interactive", "Others"],
     color: "from-pistachio-medium to-pistachio-dark",
@@ -35,11 +35,12 @@ Watch the full walkthrough and process video: https://www.youtube.com/watch?v=X3
     title: "CladdaghAI",
     category: "webapp",
     shortDescription:
-      "The ring that approves love — a playful web experience built around the Claddagh story.",
+      "The ring that approves love. A playful dystopian web experience built around the Claddagh AI story.",
     description:
-      `CladdaghAI is a small web experience that reframes the Claddagh ring as a lighthearted “approval” ritual for love and connection.
+      `CladdaghAI is a small web experience that reframes the Claddagh ring as a government-mandated, lighthearted “approval” ritual for love and connection.
 
 Live site: https://thadlubo.github.io/claddagh-ai/`,
+link: { label: "Live site", href: "https://thadlubo.github.io/claddagh-ai/" },
     media: [
       { type: "image", src: "images/Hackathon/Login_Hackathon.png" },
       { type: "image", src: "images/InteractiveArt/S4.png" },
