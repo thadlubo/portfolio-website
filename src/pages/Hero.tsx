@@ -31,19 +31,13 @@ const SLIDES = [
   },
 ] as const;
 
-const SOCIALS = [
-  { href: "https://github.com/thadlubo", icon: Github, label: "GitHub" },
-  { href: "https://www.linkedin.com/in/thaddeus-lubo/", icon: Linkedin, label: "LinkedIn" },
-  { href: "mailto:thadlubo@gmail.com", icon: Mail, label: "Email" },
-] as const;
-
 // Motion tokens 
 const EASE_OUT = [0.23, 1, 0.32, 1] as const; // entering elements
 const EASE_IN_OUT = [0.76, 0, 0.24, 1] as const; // morphing / on-screen movement
 
 const WIPE_DURATION = 0.9;
 const TEXT_DURATION = 0.8;
-const PRESS_DURATION = 0.16;
+
 
 const wipeTrans = { duration: WIPE_DURATION, ease: EASE_IN_OUT };
 const h1Trans = { type: "tween" as const, ease: "anticipate" as const, duration: TEXT_DURATION };
@@ -51,7 +45,6 @@ const pTrans = { type: "tween" as const, ease: "anticipate" as const, duration: 
 
 // transition lands as one beat instead of three.
 const dotTrans = { duration: WIPE_DURATION, ease: EASE_IN_OUT };
-const pressTrans = { duration: PRESS_DURATION, ease: EASE_OUT };
 
 // Sub-components 
 function SlideComposition({ hero1Percent }: { hero1Percent: number }) {
@@ -93,9 +86,7 @@ function AnimatedLine({
   const exitX = direction > 0 ? -80 : 80;
 
   return (
-    // overflow-hidden clips
-    <div className="overflow-hidden relative">
-      {/* Current line — slides out when incoming is set */}
+    <div className="relative">
       <motion.div
         animate={{
           x: incoming ? exitX : 0,
@@ -106,11 +97,10 @@ function AnimatedLine({
         <Tag className={className}>{current}</Tag>
       </motion.div>
 
-      {/* Incoming line — slides in on top */}
       {incoming && (
         <motion.div
           key={incoming}
-          className="absolute inset-0"
+          className="absolute inset-x-0 top-0"
           initial={{ x: enterX, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={transition}
@@ -205,7 +195,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden pt-12"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden pt-8"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
 
@@ -254,21 +244,19 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        {/*  Text  */}
         <motion.div
           initial={{ opacity: 0, y: reduceMotion ? 0 : 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: EASE_OUT, delay: 0.4 }}
-          className="mt-2 flex flex-col items-center gap-4"
+          className="mt-2 flex flex-col items-stretch gap-4"
         >
-          {/* Heading */}
           <AnimatedLine
             as="h1"
             current={SLIDES[current].h1}
             incoming={incoming !== null ? SLIDES[incoming].h1 : null}
             direction={direction}
             transition={h1Trans}
-            className="text-5xl sm:text-6xl font-bold bg-gradient-to-b from-accent via-primary to-primary bg-clip-text text-transparent leading-tight"
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-b from-accent via-primary to-primary bg-clip-text text-transparent leading-tight"
           />
 
           <AnimatedLine
@@ -276,34 +264,48 @@ export default function Hero() {
             incoming={incoming !== null ? SLIDES[incoming].p : null}
             direction={direction}
             transition={pTrans}
-            className="text-base sm:text-lg lg:text-xl max-w-2xl text-pistachio-dark"
+            className="text-base sm:text-lg lg:text-xl max-w-2xl mx-auto text-pistachio-dark"
           />
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-6">
-            <motion.button
-              onClick={() => navigate("/creations")}
-              className="group relative inline-flex items-center gap-3 px-8 py-3 bg-gradient-to-r from-primary via-primary to-accent text-primary-foreground rounded-2xl overflow-hidden shadow-2xl"
-              whileHover={{ scale: 1.05, boxShadow: '0 20px 40px rgba(0,0,0,0.3)' }}
-              whileTap={{ scale: 0.98 }}
-              transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-            >
-              <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-              <span className="relative z-10">Explore Creations</span>
-            </motion.button>
+          <motion.div
+            initial={{ opacity: 0, y: reduceMotion ? 0 : 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: EASE_OUT, delay: 0.4 }}
+            className="mt-2 flex flex-col items-center gap-4"
+          >
 
-            <motion.button
-              className="group relative inline-flex items-center gap-3 px-8 py-3 bg-gradient-to-r from-primary via-primary to-accent text-primary-foreground rounded-2xl overflow-hidden shadow-2xl"
-              whileHover={{ scale: 1.05, boxShadow: '0 20px 40px rgba(0,0,0,0.3)' }}
-              whileTap={{ scale: 0.98 }}
-              transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-            >
-              <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-              <span className="relative z-10 items-center">Download CV</span>
-            </motion.button>
-          </div>
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-6">
+              <motion.button
+                onClick={() => navigate("/creations")}
+                className="group relative inline-flex items-center gap-3 px-8 py-3 bg-gradient-to-r from-primary via-primary to-accent text-primary-foreground rounded-2xl overflow-hidden shadow-2xl"
+                whileHover={{
+                  scale: 1.025,
+                  boxShadow: "0 0 22px rgba(128, 255, 213, 0.38)",
+                }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+              >
+                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+                <span className="relative z-10">Explore Creations</span>
+              </motion.button>
 
-          {/* Socials */}
+              <motion.button
+                className="group relative inline-flex items-center gap-3 px-8 py-3 bg-gradient-to-r from-primary via-primary to-accent text-primary-foreground rounded-2xl overflow-hidden shadow-2xl"
+                whileHover={{
+                  scale: 1.025,
+                  boxShadow: "0 0 22px rgba(128, 255, 213, 0.38)",
+                }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+              >
+                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+                <span className="relative z-10 items-center">Download CV</span>
+              </motion.button>
+            </div>
+          </motion.div>
+
+          {/* Socials
           <motion.div
             className="flex justify-center space-x-5"
             initial={{ opacity: 0, y: reduceMotion ? 0 : 30 }}
@@ -326,7 +328,7 @@ export default function Hero() {
                 <Icon className="relative z-10 h-6 w-6" />
               </motion.a>
             ))}
-          </motion.div>
+          </motion.div> */}
         </motion.div>
 
       </div>
