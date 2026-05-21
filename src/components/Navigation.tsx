@@ -7,17 +7,12 @@ export default function Navigation() {
   const navigate = useNavigate();
   const location = useLocation(); 
 
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(true);
 
-  // System preference for dark or light mode
   useEffect(() => {
-    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      setIsDark(true);
-      document.documentElement.classList.add("dark");
-    }
+    document.documentElement.classList.add("dark");
   }, []);
 
-  // Apply dark or light class when toggled
   useEffect(() => {
     if (isDark) {
       document.documentElement.classList.add("dark");
