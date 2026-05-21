@@ -2,12 +2,35 @@ import { motion } from 'motion/react';
 import { ImageWithFallback } from '../components/ImageWithFallback';
 import { Gamepad2 } from 'lucide-react';
 import { FooterCTA } from '../components/FooterCTA';
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { ContactModal } from '../components/ContactModal';
 
 
+const SECTIONS = ['Intro', 'Childhood', 'Teenage', 'Career', 'Contact'];
+
 export default function StoryPage() {
   const [isContactOpen, setIsContactOpen] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const sectionRefs = useRef<(HTMLElement | null)[]>([]);
+
+  // Track which section is in view
+  useEffect(() => {
+    const container = scrollRef.current;
+    if (!container) return;
+    const onScroll = () => {
+      const scrollTop = container.scrollTop;
+      const height = container.clientHeight;
+      setActiveIndex(Math.round(scrollTop / height));
+    };
+    container.addEventListener('scroll', onScroll, { passive: true });
+    return () => container.removeEventListener('scroll', onScroll);
+  }, []);
+
+  const scrollTo = (i: number) => {
+    sectionRefs.current[i]?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   const containerVariants = {
     hidden: { opacity: 0, scale: 0.8 },
     visible: {
@@ -17,9 +40,25 @@ export default function StoryPage() {
   };
 
   return (
-    <div className="min-h-screen">
+    <div
+      ref={scrollRef}
+      className="h-screen overflow-y-scroll"
+      style={{ scrollSnapType: 'y mandatory', scrollbarWidth: 'none' }}
+    >
+      {/* Progress dots */}
+      <nav className="fixed right-5 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-1.5">
+        {SECTIONS.map((label, i) => (
+          <button key={label} onClick={() => scrollTo(i)} aria-label={label}>
+            <motion.span
+              className="block w-1.5 rounded-full bg-primary"
+              animate={{ height: i === activeIndex ? 16 : 6, opacity: i === activeIndex ? 1 : 0.3 }}
+              transition={{ duration: 0.25, ease: 'easeOut' }}
+            />
+          </button>
+        ))}
+      </nav>
       {/* Story Intro Section */}
-      <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary/5 via-background to-primary/10">
+      <section ref={el => { sectionRefs.current[0] = el; }} className="h-screen flex items-center justify-center bg-gradient-to-br from-primary/5 via-background to-primary/10" style={{ scrollSnapAlign: 'start' }}>
         <div className="container mx-auto px-6 text-center">
           <motion.div
             initial={{ y: 50, opacity: 0 }}
@@ -53,12 +92,12 @@ export default function StoryPage() {
       </section>
 
       {/* Childhood Section */}
-      <section className="min-h-screen flex items-center py-20 bg-gradient-to-b from-transparent via-pistachio-light to-blue-50 dark:from-transparent dark:via-transparent dark:to-pistachio-light">
+      <section ref={el => { sectionRefs.current[1] = el; }} className="h-screen flex items-center py-20 bg-gradient-to-b from-transparent via-pistachio-light to-blue-50 dark:from-transparent dark:via-transparent dark:to-pistachio-light" style={{ scrollSnapAlign: 'start' }}>
         <div className="container mx-auto px-6">
           <motion.div
             className="grid lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto"
             variants={containerVariants}
-            transition={{ duration: 1.5, ease: "easeInOut" }}
+            transition={{ duration: 0.8, ease: "easeInOut" }}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
@@ -72,11 +111,11 @@ export default function StoryPage() {
                 <p className="text-lg leading-relaxed text-muted-foreground">
                   As a kid, I was <span className="text-primary">stylish</span>, <span className="text-primary">brave</span>,
                   <span className="text-primary"> quick-witted</span>, and full of adventure. I was the one who dove headfirst into new experiences. Sometimes literally, like the first time I jumped into a pool, bold and completely naked 😂
-                  Every day felt like unexplored territory. I’d wake up ready to test something, touch something, climb something.
+                  Every day felt like unexplored territory. I'd wake up ready to test something, touch something, climb something.
                 </p>
                 <p className="text-lg leading-relaxed text-muted-foreground mt-4">
                   Curiosity was my compass, fear was barely a concept, and uncertainty only made things more exciting.
-                  I didn’t analyze or hesitate I just trusted that the world was worth discovering. The unknown didn’t feel like a threat. It felt like an open door, waiting for a little chaos, courage, and imagination to walk through it.
+                  I didn't analyze or hesitate I just trusted that the world was worth discovering. The unknown didn't feel like a threat. It felt like an open door, waiting for a little chaos, courage, and imagination to walk through it.
                 </p>
               </div>
             </div>
@@ -85,8 +124,8 @@ export default function StoryPage() {
               <div className="relative">
                 <motion.div
                   className="absolute -top-10 -rotate-6 bg-white p-4 shadow-xl border-2 border-white"
-                  whileHover={{ rotate: -3, scale: 1.05 }}
-                  transition={{ type: "spring", stiffness: 300 }}
+                  whileHover={{ rotate: -3, scale: 1.2 }}
+                  transition={{ type: "spring", stiffness: 200 }}
                 >
                   <ImageWithFallback
                     src="images/meAndPool.jpg"
@@ -98,8 +137,8 @@ export default function StoryPage() {
 
                 <motion.div
                   className="absolute right-0 top-1 rotate-12 bg-white p-4 shadow-xl border-2 border-white"
-                  whileHover={{ rotate: 8, scale: 1.05 }}
-                  transition={{ type: "spring", stiffness: 300 }}
+                  whileHover={{ rotate: 8, scale: 1.2 }}
+                  transition={{ type: "spring", stiffness: 100 }}
                 >
                   <ImageWithFallback
                     src="images/meAndBirthday.jpg"
@@ -115,12 +154,12 @@ export default function StoryPage() {
       </section>
 
       {/* Teenage Years Section */}
-      <section className="min-h-screen flex items-center py-20 bg-gradient-to-b from-blue-50 to-pistachio-medium dark:from-pistachio-light dark:via-pistachio-soft dark:to-pistachio-medium">
+      <section ref={el => { sectionRefs.current[2] = el; }} className="h-screen flex items-center py-20 bg-gradient-to-b from-blue-50 to-pistachio-medium dark:from-pistachio-light dark:via-pistachio-soft dark:to-pistachio-medium" style={{ scrollSnapAlign: 'start' }}>
         <div className="container mx-auto px-6">
           <motion.div
             className="grid lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto"
             variants={containerVariants}
-            transition={{ duration: 1.5, ease: "easeInOut" }}
+            transition={{ duration: 1.2, ease: "easeInOut" }}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
@@ -129,8 +168,8 @@ export default function StoryPage() {
               <div className="grid grid-cols-2 gap-6">
                 <motion.div
                   className="relative bg-white p-4 shadow-xl border-2 border-white -rotate-3"
-                  whileHover={{ scale: 1.05, rotate: -1, y: -10 }}
-                  transition={{ type: "spring", stiffness: 300 }}
+                  whileHover={{ scale: 1.2, rotate: -1, y: -10 }}
+                  transition={{ type: "spring", stiffness: 120 }}
                 >
                   <ImageWithFallback
                     src="images/meAndSkateboard.jpg"
@@ -142,8 +181,8 @@ export default function StoryPage() {
 
                 <motion.div
                   className="relative bg-white p-4 shadow-xl border-2 border-white rotate-6 mt-8"
-                  whileHover={{ scale: 1.05, rotate: 3 }}
-                  transition={{ type: "spring", stiffness: 300 }}
+                  whileHover={{ scale: 1.2, rotate: 3 }}
+                  transition={{ type: "spring", stiffness: 350 }}
                 >
                   <ImageWithFallback
                     src="images/meAndGuitar.jpg"
@@ -158,7 +197,7 @@ export default function StoryPage() {
                   className="w-64 bg-gradient-to-br from-blue-600 to-purple-700 text-white p-4 rounded-lg shadow-lg opacity-90"
                   initial={{ scale: 0, rotate: -10 }}
                   whileInView={{ scale: 1, rotate: 0 }}
-                  transition={{ delay: 0.5, type: "spring" }}
+                  transition={{  type: "spring" }}
                   viewport={{ once: true }}
                   whileHover={{ scale: 1.5 }}
                 >
@@ -200,12 +239,12 @@ export default function StoryPage() {
       </section>
 
       {/* University & Career Section */}
-      <section className="min-h-screen flex items-center py-20 bg-gradient-to-b from-pistachio-medium via-pistachio-light to-transparent">
+      <section ref={el => { sectionRefs.current[3] = el; }} className="h-screen flex items-center py-20 bg-gradient-to-b from-pistachio-medium via-pistachio-light to-transparent" style={{ scrollSnapAlign: 'start' }}>
         <div className="container mx-auto px-6">
           <motion.div
             className="grid lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto"
             variants={containerVariants}
-            transition={{ duration: 1.5, ease: "easeInOut" }}
+            transition={{ duration: 1, ease: "easeInOut" }}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
@@ -219,10 +258,10 @@ export default function StoryPage() {
                 <p className="text-lg leading-relaxed text-muted-foreground">
                   After graduating in <span className="text-primary">ECE at UL</span>, I took a necessary career break to care for my terminally ill mother. 
                   This challenging time taught me  <span className="text-primary">resiliency</span> on how to handle emergencies and unexpected situations with both 
-                  <span className="text-primary">empathy and sensitivity</span>.
+                  <span className="text-primary"> empathy and sensitivity</span>.
                 </p>
                 <p className="text-lg leading-relaxed text-muted-foreground mt-4">
-                  I then jumped back into the technical world, leveraging my side-projects to land a role as a <span className="text-primary">front-end developer</span> and <span className="text-primary">QA</span>. Inspired by working closely with a design lead, I realized my calling was at the intersection of my technical skills and creative vision. I am currently deepening this expertise through a Master's in <span className="text-primary">UI/UX Design</span>.
+                  I then jumped back into the technical world, leveraging my side-projects to land a role as a <span className="text-primary">front-end developer</span> and <span className="text-primary">QA</span>. Inspired by working closely with a design lead, I realized my calling was at the intersection of my technical skills and creative vision. I am currently deepening this expertise through a Master's in <span className="text-primary">Interaction and Experience Design</span>.
                 </p>
               </div>
             </div>
@@ -231,7 +270,7 @@ export default function StoryPage() {
               <motion.div
                 className="relative bg-white p-6 shadow-xl border-2 border-white rotate-2"
                 whileHover={{ scale: 1.05, rotate: 0, y: -15 }}
-                transition={{ type: "spring", stiffness: 300 }}
+                transition={{ type: "tween", stiffness: 300 }}
               >
                 <ImageWithFallback
                   src="images/momAndMe.jpg"
@@ -256,8 +295,11 @@ export default function StoryPage() {
           </motion.div>
         </div>
       </section>
-       {/* Footer CTA */}
-      <FooterCTA onContactClick={() => setIsContactOpen(true)} />
+
+      {/* Footer CTA */}
+      <section ref={el => { sectionRefs.current[4] = el; }} className="h-screen flex flex-col justify-center" style={{ scrollSnapAlign: 'start' }}>
+        <FooterCTA onContactClick={() => setIsContactOpen(true)} />
+      </section>
 
       {/* Contact modal */}
       <ContactModal
