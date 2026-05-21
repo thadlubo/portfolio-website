@@ -14,7 +14,7 @@ const SLIDES = [
   {
     id: 1,
     hero1Percent: 100,
-    h1: "Frontend Developer",
+    h1: "Frontend Engineer",
     p: "Fluent in JavaScript, lethal with CSS, and allergic to misaligned pixels. I bridge design and production code to ship fluid user experiences.",
   },
   {
@@ -32,25 +32,25 @@ const SLIDES = [
 ] as const;
 
 const SOCIALS = [
-  { href: "https://github.com/thadlubo",                icon: Github,   label: "GitHub"   },
+  { href: "https://github.com/thadlubo", icon: Github, label: "GitHub" },
   { href: "https://www.linkedin.com/in/thaddeus-lubo/", icon: Linkedin, label: "LinkedIn" },
-  { href: "mailto:thadlubo@gmail.com",                  icon: Mail,     label: "Email"    },
+  { href: "mailto:thadlubo@gmail.com", icon: Mail, label: "Email" },
 ] as const;
 
 // Motion tokens 
-const EASE_OUT      = [0.23, 1, 0.32, 1]   as const; // entering elements
-const EASE_IN_OUT   = [0.76, 0, 0.24, 1]   as const; // morphing / on-screen movement
+const EASE_OUT = [0.23, 1, 0.32, 1] as const; // entering elements
+const EASE_IN_OUT = [0.76, 0, 0.24, 1] as const; // morphing / on-screen movement
 
 const WIPE_DURATION = 0.9;
 const TEXT_DURATION = 0.8;
 const PRESS_DURATION = 0.16;
 
 const wipeTrans = { duration: WIPE_DURATION, ease: EASE_IN_OUT };
-const h1Trans   = { type: "tween" as const, ease: "anticipate" as const, duration: TEXT_DURATION };
-const pTrans    = { type: "tween" as const, ease: "anticipate" as const, duration: TEXT_DURATION, delay: 0.06 };
+const h1Trans = { type: "tween" as const, ease: "anticipate" as const, duration: TEXT_DURATION };
+const pTrans = { type: "tween" as const, ease: "anticipate" as const, duration: TEXT_DURATION, delay: 0.06 };
 
 // transition lands as one beat instead of three.
-const dotTrans  = { duration: WIPE_DURATION, ease: EASE_IN_OUT };
+const dotTrans = { duration: WIPE_DURATION, ease: EASE_IN_OUT };
 const pressTrans = { duration: PRESS_DURATION, ease: EASE_OUT };
 
 // Sub-components 
@@ -89,8 +89,8 @@ function AnimatedLine({
   className,
   as: Tag = "p",
 }: AnimatedLineProps) {
-  const enterX = direction > 0 ?  80 : -80;
-  const exitX  = direction > 0 ? -80 :  80;
+  const enterX = direction > 0 ? 80 : -80;
+  const exitX = direction > 0 ? -80 : 80;
 
   return (
     // overflow-hidden clips
@@ -98,8 +98,8 @@ function AnimatedLine({
       {/* Current line — slides out when incoming is set */}
       <motion.div
         animate={{
-          x:       incoming ? exitX : 0,
-          opacity: incoming ? 0     : 1,
+          x: incoming ? exitX : 0,
+          opacity: incoming ? 0 : 1,
         }}
         transition={incoming ? transition : { duration: 0 }}
       >
@@ -124,22 +124,22 @@ function AnimatedLine({
 
 // Hero 
 export default function Hero() {
-  const navigate     = useNavigate();
+  const navigate = useNavigate();
   const reduceMotion = useReducedMotion();
 
-  const [current, setCurrent]               = useState(0);
-  const [incoming, setIncoming]             = useState<number | null>(null);
-  const [direction, setDirection]           = useState<1 | -1>(1);
+  const [current, setCurrent] = useState(0);
+  const [incoming, setIncoming] = useState<number | null>(null);
+  const [direction, setDirection] = useState<1 | -1>(1);
   const [scrollUnlocked, setScrollUnlocked] = useState(false);
 
-  const currentRef  = useRef(0);
+  const currentRef = useRef(0);
   const isAnimating = useRef(false);
   const unlockedRef = useRef(false);
 
   const activeSlide = incoming ?? current;
 
-  useEffect(() => { currentRef.current  = current; },         [current]);
-  useEffect(() => { unlockedRef.current = scrollUnlocked; },  [scrollUnlocked]);
+  useEffect(() => { currentRef.current = current; }, [current]);
+  useEffect(() => { unlockedRef.current = scrollUnlocked; }, [scrollUnlocked]);
 
   const goTo = useCallback((target: number) => {
     if (isAnimating.current) return;
@@ -163,9 +163,9 @@ export default function Hero() {
 
   const handleWheel = useCallback(
     (e: WheelEvent) => {
-      const atTop    = window.scrollY === 0;
+      const atTop = window.scrollY === 0;
       const unlocked = unlockedRef.current;
-      const cur      = currentRef.current;
+      const cur = currentRef.current;
 
       if (unlocked) {
         // Scroll-up at top → re-lock to the slide carousel and step back.
@@ -240,10 +240,10 @@ export default function Hero() {
                   {SLIDES.map((s) => (
                     <motion.span
                       key={s.id}
-                      className="block h-1.5 rounded-full bg-white"
+                      className="block h-1.5 rounded-full bg-pistachio-mint"
                       animate={{
-                        width:   activeSlide === s.id ? 16 : 6,
-                        opacity: activeSlide === s.id ? 1  : 0.4,
+                        width: activeSlide === s.id ? 16 : 6,
+                        opacity: activeSlide === s.id ? 1 : 0.7,
                       }}
                       transition={dotTrans}
                     />
@@ -280,35 +280,32 @@ export default function Hero() {
           />
 
           {/* CTA Buttons */}
-          <motion.div
-            className="flex flex-col sm:flex-row gap-4 justify-center mt-6"
-            initial={{ opacity: 0, y: reduceMotion ? 0 : 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.8, ease: EASE_OUT }}
-          >
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-6">
             <motion.button
               onClick={() => navigate("/creations")}
-              className="bg-primary text-primary-foreground px-8 py-3 rounded-full border border-pistachio-dark/10 hover:bg-pistachio-light hover:text-pistachio-dark transition-colors duration-200"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.97 }}
-              transition={pressTrans}
+              className="group relative inline-flex items-center gap-3 px-8 py-3 bg-gradient-to-r from-primary via-primary to-accent text-primary-foreground rounded-2xl overflow-hidden shadow-2xl"
+              whileHover={{ scale: 1.05, boxShadow: '0 20px 40px rgba(0,0,0,0.3)' }}
+              whileTap={{ scale: 0.98 }}
+              transition={{ type: 'spring', stiffness: 300, damping: 20 }}
             >
-              Explore Creations
+              <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+              <span className="relative z-10">Explore Creations</span>
             </motion.button>
 
             <motion.button
-              className="bg-primary text-primary-foreground px-8 py-3 rounded-full border border-pistachio-dark/10 hover:bg-pistachio-light hover:text-pistachio-dark transition-colors duration-200"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.97 }}
-              transition={pressTrans}
+              className="group relative inline-flex items-center gap-3 px-8 py-3 bg-gradient-to-r from-primary via-primary to-accent text-primary-foreground rounded-2xl overflow-hidden shadow-2xl"
+              whileHover={{ scale: 1.05, boxShadow: '0 20px 40px rgba(0,0,0,0.3)' }}
+              whileTap={{ scale: 0.98 }}
+              transition={{ type: 'spring', stiffness: 300, damping: 20 }}
             >
-              Download CV
+              <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+              <span className="relative z-10 items-center">Download CV</span>
             </motion.button>
-          </motion.div>
+          </div>
 
           {/* Socials */}
           <motion.div
-            className="flex justify-center space-x-6"
+            className="flex justify-center space-x-5"
             initial={{ opacity: 0, y: reduceMotion ? 0 : 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.8, ease: EASE_OUT }}
@@ -320,12 +317,13 @@ export default function Hero() {
                 aria-label={label}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 rounded-full glass bg-pistachio-soft border border-pistachio-medium text-pistachio-dark hover:bg-pistachio-dark hover:text-pistachio-light transition-colors duration-200"
+                className="group relative p-3 rounded-full overflow-hidden glass bg-pistachio-soft border border-pistachio-medium text-pistachio-dark hover:bg-pistachio-dark hover:text-pistachio-light transition-colors duration-200"
                 whileHover={{ scale: 1.15 }}
                 whileTap={{ scale: 0.97 }}
                 transition={pressTrans}
               >
-                <Icon className="h-6 w-6" />
+                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-black/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+                <Icon className="relative z-10 h-6 w-6" />
               </motion.a>
             ))}
           </motion.div>

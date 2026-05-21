@@ -7,37 +7,17 @@ interface FooterCTAProps {
 
 export function FooterCTA({ onContactClick }: FooterCTAProps) {
   return (
-    <motion.div
-      className="relative py-24 px-6 overflow-hidden"
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.8 }}
-    >
-      {/* Background gradient effect */}
+    <div className="relative py-24 px-6 overflow-hidden">
+      {/* Static gradient background */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-accent/20 to-accent/40" />
-      
-      {/* Animated background particles */}
-      <div className="absolute inset-0 overflow-hidden">
-        {[...Array(3)].map((_, i) => (
-          <motion.div
+
+      {/* Soft static blobs — opacity only, no blur animation */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {[20, 50, 80].map((left, i) => (
+          <div
             key={i}
-            className="absolute w-96 h-96 rounded-full bg-primary/5 blur-3xl"
-            animate={{
-              x: [0, 100, 0],
-              y: [0, -50, 0],
-              scale: [1, 1.2, 1],
-            }}
-            transition={{
-              duration: 8 + i * 2,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: i * 2,
-            }}
-            style={{
-              left: `${20 + i * 30}%`,
-              top: `${10 + i * 20}%`,
-            }}
+            className="absolute w-96 h-96 rounded-full bg-primary/5"
+            style={{ left: `${left}%`, top: `${10 + i * 20}%`, filter: 'blur(80px)' }}
           />
         ))}
       </div>
@@ -45,21 +25,16 @@ export function FooterCTA({ onContactClick }: FooterCTAProps) {
       <div className="container mx-auto max-w-4xl relative z-10">
         <motion.div
           className="text-center space-y-8"
-          initial={{ y: 30, opacity: 0 }}
+          initial={{ y: 24, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 0.55, ease: [0.23, 1, 0.32, 1] }}
         >
-          {/* Sparkle Icon */}
-          <motion.div
-            className="inline-flex"
-            animate={{ rotate: [0, 10, -10, 0] }}
-            transition={{ duration: 3, repeat: Infinity }}
-          >
+          {/* SparkleCSS animation, no JS loop */}
+          <div className="inline-flex animate-pulse">
             <Sparkles className="w-12 h-12 text-primary" />
-          </motion.div>
+          </div>
 
-          {/* Heading */}
           <div className="space-y-4">
             <h2 className="text-4xl md:text-5xl lg:text-6xl">
               Ready to Create Something
@@ -70,88 +45,36 @@ export function FooterCTA({ onContactClick }: FooterCTAProps) {
             </p>
           </div>
 
-          {/* CTA Button */}
-          <motion.div
-            className="pt-4"
-            initial={{ scale: 0.9, opacity: 0 }}
-            whileInView={{ scale: 1, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
+          {/* CTA button */}
+          <div className="pt-4">
             <motion.button
               onClick={onContactClick}
               className="group relative inline-flex items-center gap-3 px-12 py-6 bg-gradient-to-r from-primary via-primary to-accent text-primary-foreground rounded-2xl overflow-hidden shadow-2xl"
-              whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(0,0,0,0.3)" }}
+              whileHover={{ scale: 1.05, boxShadow: '0 20px 40px rgba(0,0,0,0.3)' }}
               whileTap={{ scale: 0.98 }}
-              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              transition={{ type: 'spring', stiffness: 300, damping: 20 }}
             >
-              {/* Animated shine effect */}
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
-                animate={{
-                  x: ["-200%", "200%"],
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "linear",
-                  repeatDelay: 1,
-                }}
+              {/* Shimmer — CSS only */}
+              <span
+                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"
               />
-              
-              {/* Button content */}
               <span className="relative z-10 text-xl">Get In Touch</span>
-              <motion.div
-                className="relative z-10"
-                animate={{ x: [0, 5, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity }}
-              >
-                <ArrowRight className="w-6 h-6" />
-              </motion.div>
-              
-              {/* Hover glow effect */}
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-0 group-hover:opacity-100 blur-xl"
-                transition={{ duration: 0.3 }}
-              />
+              {/* Arrow — CSS translate loop */}
+              <ArrowRight className="relative z-10 w-6 h-6 animate-bounce" style={{ animationDuration: '1.2s' }} />
             </motion.button>
-          </motion.div>
+          </div>
 
-          {/* Quick Stats/Info */}
-          <motion.div
-            className="flex flex-wrap justify-center gap-8 pt-8 text-sm"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-          >
-            <div className="flex items-center gap-2">
-              <motion.div
-                className="w-2.5 h-2.5 bg-green-500 rounded-full"
-                animate={{ scale: [1, 1.3, 1] }}
-                transition={{ duration: 2, repeat: Infinity }}
-              />
-              <span className="text-muted-foreground">Available for work</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <motion.div
-                className="w-2.5 h-2.5 bg-green-500 rounded-full"
-                animate={{ scale: [1, 1.3, 1] }}
-                transition={{ duration: 2, repeat: Infinity }}
-              />
-              <span className="text-muted-foreground">Responds within 24 hours</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <motion.div
-                className="w-2.5 h-2.5 bg-green-500 rounded-full"
-                animate={{ scale: [1, 1.3, 1] }}
-                transition={{ duration: 2, repeat: Infinity }}
-              />
-              <span className="text-muted-foreground">Based in Ireland</span>
-            </div>
-          </motion.div>
+          {/* Stats */}
+          <div className="flex flex-wrap justify-center gap-8 pt-8 text-sm">
+            {['Available for work', 'Responds within 24 hours', 'Based in Ireland'].map((label) => (
+              <div key={label} className="flex items-center gap-2">
+                <div className="w-2.5 h-2.5 bg-green-500 rounded-full animate-pulse" />
+                <span className="text-muted-foreground">{label}</span>
+              </div>
+            ))}
+          </div>
         </motion.div>
       </div>
-    </motion.div>
+    </div>
   );
 }

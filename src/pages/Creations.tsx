@@ -643,14 +643,6 @@ export default function CreationsPage() {
                         </div>
                       </div>
                     )}
-
-                    <div
-                      className={`pointer-events-none absolute inset-0 bg-gradient-to-t ${project.color} opacity-0 transition-opacity duration-300 group-hover:opacity-80`}
-                    />
-
-                    <div className="pointer-events-none absolute top-4 right-4 flex h-12 w-12 items-center justify-center rounded-full bg-background/90 opacity-0 shadow-sm transition-all duration-300 group-hover:scale-110 group-hover:opacity-100 group-hover:rotate-90">
-                      <span className="text-primary">→</span>
-                    </div>
                   </div>
 
                   <div className="relative p-6">
