@@ -9,6 +9,7 @@ export default function Navigation() {
 
   const [isDark, setIsDark] = useState(true);
 
+  // default dark mode
   useEffect(() => {
     document.documentElement.classList.add("dark");
   }, []);
