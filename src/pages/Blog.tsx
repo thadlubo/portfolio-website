@@ -105,7 +105,7 @@ export function BlogPage({ onContactClick }: BlogPageProps) {
             </motion.div>
 
             <motion.h1
-              className="mt-12 text-4xl font-bold bg-gradient-to-br from-pistachio-dark via-pistachio-medium to-pistachio-dark bg-clip-text text-transparent uppercase mb-4 block"
+              className="mt-12 mb-4 text-4xl sm:text-4xl font-bold bg-gradient-to-b from-accent via-primary to-primary bg-clip-text text-transparent leading-tight"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.6 }}

@@ -62,7 +62,7 @@ export default function App() {
         </AnimatePresence>
       </Suspense>
       <div className="fixed inset-0 pointer-events-none z-0" />
-      <FloatingDots count={30} floatX={20} floatY={20} />
+      <FloatingDots count={36} floatX={20} floatY={20} />
     </div>
   );
 }

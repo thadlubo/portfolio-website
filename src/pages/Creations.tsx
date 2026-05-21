@@ -558,8 +558,7 @@ export default function CreationsPage() {
           viewport={{ once: true }}
         >
           <motion.h1
-            className="mt-12 text-4xl font-bold bg-gradient-to-br from-pistachio-dark via-pistachio-medium to-pistachio-medium dark:from-pistachio-light dark:via-pistachio-dark dark:to-pistachio-mint bg-clip-text 
-            text-transparent uppercase mb-4 "
+            className="mt-12 mb-4 text-4xl sm:text-4xl font-bold bg-gradient-to-b from-accent via-primary to-primary bg-clip-text text-transparent leading-tight"
           >
             My Creations
           </motion.h1>
@@ -659,7 +658,7 @@ export default function CreationsPage() {
                       {project.tags.map((tag, tagIndex) => (
                         <span
                           key={tagIndex}
-                          className="rounded-full bg-accent px-3 py-1 text-xs text-pistachio-dark"
+                          className="rounded-full bg-primary px-3 py-1 text-xs text-primary-foreground"
                         >
                           {tag}
                         </span>

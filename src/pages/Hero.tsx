@@ -205,7 +205,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden pt-24"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden pt-12"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
 
@@ -268,7 +268,7 @@ export default function Hero() {
             incoming={incoming !== null ? SLIDES[incoming].h1 : null}
             direction={direction}
             transition={h1Trans}
-            className="text-5xl sm:text-6xl font-bold bg-gradient-to-r from-pistachio-dark via-pistachio-medium to-pistachio-dark bg-clip-text text-transparent leading-tight"
+            className="text-5xl sm:text-6xl font-bold bg-gradient-to-b from-accent via-primary to-primary bg-clip-text text-transparent leading-tight"
           />
 
           <AnimatedLine
@@ -288,7 +288,7 @@ export default function Hero() {
           >
             <motion.button
               onClick={() => navigate("/creations")}
-              className="bg-pistachio-dark text-white px-8 py-3 rounded-full hover:bg-pistachio-light hover:text-pistachio-dark transition-colors duration-200"
+              className="bg-primary text-primary-foreground px-8 py-3 rounded-full border border-pistachio-dark/10 hover:bg-pistachio-light hover:text-pistachio-dark transition-colors duration-200"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
               transition={pressTrans}
@@ -297,7 +297,7 @@ export default function Hero() {
             </motion.button>
 
             <motion.button
-              className="bg-pistachio-medium text-pistachio-dark px-8 py-3 rounded-full border border-pistachio-dark/10 hover:bg-pistachio-light transition-colors duration-200"
+              className="bg-primary text-primary-foreground px-8 py-3 rounded-full border border-pistachio-dark/10 hover:bg-pistachio-light hover:text-pistachio-dark transition-colors duration-200"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
               transition={pressTrans}
@@ -320,8 +320,8 @@ export default function Hero() {
                 aria-label={label}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 rounded-full glass bg-pistachio-soft border border-pistachio-dark/10 text-pistachio-dark hover:bg-pistachio-dark hover:text-pistachio-light transition-colors duration-200"
-                whileHover={{ scale: 1.1 }}
+                className="p-3 rounded-full glass bg-pistachio-soft border border-pistachio-medium text-pistachio-dark hover:bg-pistachio-dark hover:text-pistachio-light transition-colors duration-200"
+                whileHover={{ scale: 1.15 }}
                 whileTap={{ scale: 0.97 }}
                 transition={pressTrans}
               >

@@ -57,8 +57,8 @@ export default function Navigation() {
               <span
                 className={`transition-colors duration-300 ${
                   isActive
-                    ? "text-pistachio-light"
-                    : "text-primary hover:text-pistachio-medium"
+                    ? "text-primary-foreground"
+                    : "text-pistachio-dark hover:text-pistachio-medium"
                 }`}
               >
                 {page.label}
@@ -66,7 +66,7 @@ export default function Navigation() {
 
               {isActive && (
                 <motion.div
-                  className="absolute inset-0 bg-pistachio-dark rounded-full"
+                  className="absolute inset-0 bg-primary rounded-full"
                   layoutId="activeTab"
                   style={{ zIndex: -1 }}
                   transition={{ type: "spring", bounce: 0.25, duration: 1.2 }}

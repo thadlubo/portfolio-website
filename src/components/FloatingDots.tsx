@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 // Pistachio palette
-const colors = ["#84B067", "#A4EDA5", "#C6D67E", "#A8E6CF", "#948F4E"];
+const colors = ["#9ed2a7", "#A4EDA5", "#94f3d7", "#FFED29", "#ffae00"];
 
 interface Dot {
   id: number;
