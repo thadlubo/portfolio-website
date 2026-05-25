@@ -3,7 +3,7 @@ import { BlogSection } from "./BlogSection";
 import { BlogHeroSection } from "./BlogHeroSection";
 const base = import.meta.env.BASE_URL; 
 
-export default function BlogDetailPage() {
+export default function BlogVideography() {
   return (
     <div className="scroll-snap-container">
       <BlogHeroSection

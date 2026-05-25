@@ -9,7 +9,10 @@ const StoryPage = lazy(() => import("./pages/Story"));
 const JourneyPage = lazy(() => import("./pages/Journey"));
 const CreationsPage = lazy(() => import("./pages/Creations"));
 const BlogPage = lazy(() => import("./pages/Blog").then((m) => ({ default: m.BlogPage })));
-const BlogDetailPage = lazy(() => import("./components/BlogDetailPage"));
+const BlogVideography = lazy(() => import("./components/BlogVideography"));
+const BlogInteractiveSculpture = lazy(() => import("./components/BlogInteractiveSculpture"));
+const BlogInteractiveInstallation = lazy(() => import("./components/BlogInteractiveInstallation"));
+const BlogSoundscape = lazy(() => import("./components/BlogSoundscape"));
 
 // Motion wrapper for page transitions to reduce clutter in main App component
 const PageWrapper = ({ children }: { children: React.ReactNode }) => {
@@ -57,7 +60,10 @@ export default function App() {
             <Route path="/journey" element={<PageWrapper><JourneyPage /></PageWrapper>} />
             <Route path="/creations" element={<PageWrapper><CreationsPage /></PageWrapper>} />
             <Route path="/blogs" element={<PageWrapper><BlogPage onContactClick={() => {}} /></PageWrapper>} />
-            <Route path="/blogs/rain-ruins-rhythm" element={<PageWrapper><BlogDetailPage /></PageWrapper>} />
+            <Route path="/blogs/rain-ruins-rhythm" element={<PageWrapper><BlogVideography /></PageWrapper>} />
+            <Route path="/blogs/interactive-sculpture" element={<PageWrapper><BlogInteractiveSculpture /></PageWrapper>} />
+            <Route path="/blogs/interactive-installation" element={<PageWrapper><BlogInteractiveInstallation /></PageWrapper>} />
+            <Route path="/blogs/algorithmic-soundscape" element={<PageWrapper><BlogSoundscape /></PageWrapper>} />
           </Routes>
         </AnimatePresence>
       </Suspense>

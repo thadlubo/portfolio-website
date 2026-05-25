@@ -1,18 +1,10 @@
-import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { BlogCarousel } from '../components/BlogCarousel';
 import { BentoGrid } from '../components/BentoGrid';
-import BlogDetailPage from '../components/BlogDetailPage';
 import { FooterCTA } from '../components/FooterCTA';
-
-export interface BlogPost {
-  id: string;
-  title: string;
-  excerpt: string;
-  image: string;
-  category: string;
-  date: string;
-}
+import type { BlogPost } from '../components/BlogCard';
+export type { BlogPost };
 
 interface BlogPageProps {
   onContactClick: () => void;
@@ -25,64 +17,51 @@ const blogPosts: BlogPost[] = [
     excerpt: 'A glimpse into our shoot at Clare Abbey. Rain, ruins, a tough barefoot dancer, and the small moments that made the day feel like its own story behind the camera.',
     image: "images/videography/Middle.jpeg",
     category: 'Videography',
-    date: '2025-11-23'
+    date: '2025-11-23',
+    slug: 'rain-ruins-rhythm',
   },
   {
     id: '2',
-    title: 'Rain, Ruins, and Rhythm: Behind the Scenes',
-    excerpt: 'A glimpse into our shoot at Clare Abbey. Rain, ruins, a tough barefoot dancer, and the small moments that made the day feel like its own story behind the camera.',
-    image: "images/videography/SideWallGimble.jpeg",
-    category: 'Videography',
-    date: '2025-11-23'
+    title: 'Interactive and Modular Sculpture',
+    excerpt: 'A Reflection for our Interactive and Modular Sculpture Project. Four laser-cut cuboids, one snake oracle, and about forty afternoons of absolute notions.',
+    image: "images/InteractiveSculpture/CosmicSlot.png",
+    category: 'Interactive Sculpture',
+    date: '2026-03-20',
+    slug: 'interactive-sculpture',
   },
   {
     id: '3',
-    title: 'Rain, Ruins, and Rhythm: Behind the Scenes',
-    excerpt: 'A glimpse into our shoot at Clare Abbey. Rain, ruins, a tough barefoot dancer, and the small moments that made the day feel like its own story behind the camera.',
-    image: "images/videography/Outside.jpeg",
-    category: 'Videography',
-    date: '2025-11-23'
+    title: 'Algorithmic Soundscape Performance',
+    excerpt: 'A chess game as a live, rule-driven medieval soundscape. Every move triggers a sound. Every phase shifts the atmosphere. Silence was never an option.',
+    image: "images/SoundScape/ss1.jpg",
+    category: 'Soundscape Performance', 
+    date: '2026-13-4',
+    slug: 'algorithmic-soundscape',
   },
   {
     id: '4',
-    title: 'Rain, Ruins, and Rhythm: Behind the Scenes',
-    excerpt: 'A glimpse into our shoot at Clare Abbey. Rain, ruins, a tough barefoot dancer, and the small moments that made the day feel like its own story behind the camera.',
-    image: "images/videography/DanceLol.jpeg",
+    title: 'UN Global Interactive Installation',
+    excerpt: 'People understand climate data intellectually, but the emotional and embodied experience of ecological collapse remains distant. Embodied Earth closes that gap by making collective behaviour viscerally visible.',
+    image: "images/InteractiveArt/S1.png",
     category: 'Videography',
-    date: '2025-11-23'
+    date: '2026-20-2',
+    slug: 'interactive-installation',
   },
   {
     id: '5',
     title: 'Rain, Ruins, and Rhythm: Behind the Scenes',
     excerpt: 'A glimpse into our shoot at Clare Abbey. Rain, ruins, a tough barefoot dancer, and the small moments that made the day feel like its own story behind the camera.',
-    image: "images/videography/Middle2.jpeg",
-    category: 'Videography',
-    date: '2025-11-23'
-  },
-  {
-    id: '6',
-    title: 'Rain, Ruins, and Rhythm: Behind the Scenes',
-    excerpt: 'A glimpse into our shoot at Clare Abbey. Rain, ruins, a tough barefoot dancer, and the small moments that made the day feel like its own story behind the camera.',
     image: "images/videography/GroupPhoto.jpeg",
     category: 'Videography',
-    date: '2025-11-23'
+    date: '2025-11-23',
+    slug: 'rain-ruins-rhythm',
   }
 ];
 
 export function BlogPage({ onContactClick }: BlogPageProps) {
-  const [selectedBlog, setSelectedBlog] = useState<BlogPost | null>(null);
+  const navigate = useNavigate();
 
-  // If a blog is selected, show the detail page
-  if (selectedBlog) {
-    return (
-      <BlogDetailPage
-      />
-    );
-  }
-
-  // Latest 2 for carousel
-  const latestBlogs = blogPosts.slice(0, 3);
-  // Remaining for bento grid. add slice (2)
+  const latestBlogs = blogPosts.slice(0, 4);
   const remainingBlogs = blogPosts;
 
   return (
@@ -146,7 +125,7 @@ export function BlogPage({ onContactClick }: BlogPageProps) {
             </p>
           </motion.div>
 
-          <BentoGrid blogs={remainingBlogs} onReadMore={setSelectedBlog} />
+          <BentoGrid blogs={remainingBlogs} onReadMore={(blog) => navigate(`/blogs/${blog.slug}`)} />
         </div>
       </section>
 

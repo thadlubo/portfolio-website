@@ -8,6 +8,7 @@ export interface BlogPost {
   image: string;
   category: string;
   date: string;
+  slug: string;
 }
 
 interface BlogCardProps {

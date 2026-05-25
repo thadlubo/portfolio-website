@@ -26,7 +26,7 @@ export function BlogCarousel({ blogs }: BlogCarouselProps) {
   };
 
   const handleReadFullArticle = () => {
-    navigate("/blogs/rain-ruins-rhythm");
+    navigate(`/blogs/${blogs[currentIndex].slug}`);
   };
 
   return (
